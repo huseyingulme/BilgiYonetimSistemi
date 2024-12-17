@@ -11,6 +11,7 @@ namespace BilgiYonetimSistemi.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            
             migrationBuilder.CreateTable(
                 name: "Advisors",
                 columns: table => new
@@ -26,7 +27,7 @@ namespace BilgiYonetimSistemi.Migrations
                 {
                     table.PrimaryKey("PK_Advisors", x => x.AdvisorID);
                 });
-
+           
             migrationBuilder.CreateTable(
                 name: "Courses",
                 columns: table => new
@@ -200,6 +201,11 @@ namespace BilgiYonetimSistemi.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_CourseSelection_StudentID",
+                table: "CourseSelection",
+                column: "StudentID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CourseSelection_CourseID",
                 table: "CourseSelection",
                 column: "StudentID");
 

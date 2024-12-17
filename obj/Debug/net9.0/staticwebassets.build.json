@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Wmc0LAjox+vTgl65wjGE2fgG0cEzjRkYS6sh/klHEus=",
+  "Hash": "W6nmtfAVbr2YTx14vq3XY+Ssx6RHKr+zZ8Vx0w10bYs=",
   "Source": "BilgiYonetimSistemi",
   "BasePath": "_content/BilgiYonetimSistemi",
   "Mode": "Default",
@@ -143,12 +143,12 @@
       "OriginalItemSpec": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\Login.css"
     },
     {
-      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-q1b7xfi58d.gz",
+      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-ly4y6ok4zb.gz",
       "SourceId": "BilgiYonetimSistemi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BilgiYonetimSistemi",
-      "RelativePath": "css/AdvisorPanel#[.{fingerprint=q1b7xfi58d}]?.css.gz",
+      "RelativePath": "css/AdvisorPanel#[.{fingerprint=ly4y6ok4zb}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -157,19 +157,19 @@
       "RelatedAsset": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\AdvisorPanel.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "6a86c6ktou",
-      "Integrity": "blNCHeIJ1gZV3gl8sgrchVFEz5IbOrijXCsEDc1ALUc=",
+      "Fingerprint": "y1pzyf5q29",
+      "Integrity": "ljekSjB5CoRpzDmsS+YmAK1s0Due5bbPkJcWKqWHVmQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\AdvisorPanel.css"
     },
     {
-      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-ydlenaemus.gz",
+      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-8hnpy4hz6t.gz",
       "SourceId": "BilgiYonetimSistemi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BilgiYonetimSistemi",
-      "RelativePath": "js/AdvisorPanel#[.{fingerprint=ydlenaemus}]?.js.gz",
+      "RelativePath": "js/AdvisorPanel#[.{fingerprint=8hnpy4hz6t}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -178,8 +178,8 @@
       "RelatedAsset": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\AdvisorPanel.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "69fpgxzwc3",
-      "Integrity": "en3qaqZZUMBuZwxXyBHrpvcM/03lwZaH87I8+O9FpNU=",
+      "Fingerprint": "04p9hu8961",
+      "Integrity": "oG+Dir0J2t748FK+WEGA2mG4ZtDfx6MY3H/fk1aKHTM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\AdvisorPanel.js"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "q1b7xfi58d",
-      "Integrity": "rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY=",
+      "Fingerprint": "ly4y6ok4zb",
+      "Integrity": "nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\AdvisorPanel.css"
@@ -304,8 +304,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ydlenaemus",
-      "Integrity": "Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI=",
+      "Fingerprint": "8hnpy4hz6t",
+      "Integrity": "5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\AdvisorPanel.js"
@@ -377,12 +377,12 @@
   "Endpoints": [
     {
       "Route": "css/AdvisorPanel.css",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-q1b7xfi58d.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-ly4y6ok4zb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002061855670"
+          "Quality": "0.001519756839"
         }
       ],
       "ResponseHeaders": [
@@ -392,15 +392,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "484"
+          "Value": "657"
         },
         {
           "Name": "ETag",
-          "Value": "\"blNCHeIJ1gZV3gl8sgrchVFEz5IbOrijXCsEDc1ALUc=\""
+          "Value": "\"ljekSjB5CoRpzDmsS+YmAK1s0Due5bbPkJcWKqWHVmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:50 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -420,13 +420,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY=\""
+          "Value": "W/\"nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY="
+          "Value": "sha256-nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o="
         }
       ]
     },
@@ -441,7 +441,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1396"
+          "Value": "2172"
         },
         {
           "Name": "Content-Type",
@@ -449,11 +449,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY=\""
+          "Value": "\"nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:50 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -463,13 +463,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY="
+          "Value": "sha256-nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o="
         }
       ]
     },
     {
       "Route": "css/AdvisorPanel.css.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-q1b7xfi58d.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-ly4y6ok4zb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -478,7 +478,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "484"
+          "Value": "657"
         },
         {
           "Name": "Content-Type",
@@ -486,11 +486,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"blNCHeIJ1gZV3gl8sgrchVFEz5IbOrijXCsEDc1ALUc=\""
+          "Value": "\"ljekSjB5CoRpzDmsS+YmAK1s0Due5bbPkJcWKqWHVmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:50 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -508,18 +508,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-blNCHeIJ1gZV3gl8sgrchVFEz5IbOrijXCsEDc1ALUc="
+          "Value": "sha256-ljekSjB5CoRpzDmsS+YmAK1s0Due5bbPkJcWKqWHVmQ="
         }
       ]
     },
     {
-      "Route": "css/AdvisorPanel.q1b7xfi58d.css",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-q1b7xfi58d.gz",
+      "Route": "css/AdvisorPanel.ly4y6ok4zb.css",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-ly4y6ok4zb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002061855670"
+          "Quality": "0.001519756839"
         }
       ],
       "ResponseHeaders": [
@@ -529,15 +529,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "484"
+          "Value": "657"
         },
         {
           "Name": "ETag",
-          "Value": "\"blNCHeIJ1gZV3gl8sgrchVFEz5IbOrijXCsEDc1ALUc=\""
+          "Value": "\"ljekSjB5CoRpzDmsS+YmAK1s0Due5bbPkJcWKqWHVmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:50 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -557,13 +557,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY=\""
+          "Value": "W/\"nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "q1b7xfi58d"
+          "Value": "ly4y6ok4zb"
         },
         {
           "Name": "label",
@@ -571,12 +571,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY="
+          "Value": "sha256-nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o="
         }
       ]
     },
     {
-      "Route": "css/AdvisorPanel.q1b7xfi58d.css",
+      "Route": "css/AdvisorPanel.ly4y6ok4zb.css",
       "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\AdvisorPanel.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -586,7 +586,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1396"
+          "Value": "2172"
         },
         {
           "Name": "Content-Type",
@@ -594,11 +594,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY=\""
+          "Value": "\"nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:50 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -608,7 +608,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "q1b7xfi58d"
+          "Value": "ly4y6ok4zb"
         },
         {
           "Name": "label",
@@ -616,13 +616,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY="
+          "Value": "sha256-nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o="
         }
       ]
     },
     {
-      "Route": "css/AdvisorPanel.q1b7xfi58d.css.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-q1b7xfi58d.gz",
+      "Route": "css/AdvisorPanel.ly4y6ok4zb.css.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\p2u5qw86td-ly4y6ok4zb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -631,7 +631,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "484"
+          "Value": "657"
         },
         {
           "Name": "Content-Type",
@@ -639,11 +639,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"blNCHeIJ1gZV3gl8sgrchVFEz5IbOrijXCsEDc1ALUc=\""
+          "Value": "\"ljekSjB5CoRpzDmsS+YmAK1s0Due5bbPkJcWKqWHVmQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:50 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -661,7 +661,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "q1b7xfi58d"
+          "Value": "ly4y6ok4zb"
         },
         {
           "Name": "label",
@@ -669,7 +669,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-blNCHeIJ1gZV3gl8sgrchVFEz5IbOrijXCsEDc1ALUc="
+          "Value": "sha256-ljekSjB5CoRpzDmsS+YmAK1s0Due5bbPkJcWKqWHVmQ="
         }
       ]
     },
@@ -1650,13 +1650,13 @@
       ]
     },
     {
-      "Route": "js/AdvisorPanel.js",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-ydlenaemus.gz",
+      "Route": "js/AdvisorPanel.8hnpy4hz6t.js",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-8hnpy4hz6t.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002341920375"
+          "Quality": "0.003412969283"
         }
       ],
       "ResponseHeaders": [
@@ -1666,19 +1666,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "426"
+          "Value": "292"
         },
         {
           "Name": "ETag",
-          "Value": "\"en3qaqZZUMBuZwxXyBHrpvcM/03lwZaH87I8+O9FpNU=\""
+          "Value": "\"oG+Dir0J2t748FK+WEGA2mG4ZtDfx6MY3H/fk1aKHTM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:58 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:57 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -1694,18 +1694,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI=\""
+          "Value": "W/\"5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "8hnpy4hz6t"
+        },
+        {
+          "Name": "label",
+          "Value": "js/AdvisorPanel.js"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI="
+          "Value": "sha256-5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg="
         }
       ]
     },
     {
-      "Route": "js/AdvisorPanel.js",
+      "Route": "js/AdvisorPanel.8hnpy4hz6t.js",
       "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\AdvisorPanel.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1715,7 +1723,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "957"
+          "Value": "523"
         },
         {
           "Name": "Content-Type",
@@ -1723,121 +1731,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI=\""
+          "Value": "\"5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:58 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI="
-        }
-      ]
-    },
-    {
-      "Route": "js/AdvisorPanel.js.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-ydlenaemus.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "426"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"en3qaqZZUMBuZwxXyBHrpvcM/03lwZaH87I8+O9FpNU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:58 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-en3qaqZZUMBuZwxXyBHrpvcM/03lwZaH87I8+O9FpNU="
-        }
-      ]
-    },
-    {
-      "Route": "js/AdvisorPanel.ydlenaemus.js",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-ydlenaemus.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.002341920375"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "426"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"en3qaqZZUMBuZwxXyBHrpvcM/03lwZaH87I8+O9FpNU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:58 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:57 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ydlenaemus"
+          "Value": "8hnpy4hz6t"
         },
         {
           "Name": "label",
@@ -1845,13 +1753,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI="
+          "Value": "sha256-5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg="
         }
       ]
     },
     {
-      "Route": "js/AdvisorPanel.ydlenaemus.js",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\AdvisorPanel.js",
+      "Route": "js/AdvisorPanel.8hnpy4hz6t.js.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-8hnpy4hz6t.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1860,7 +1768,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "957"
+          "Value": "292"
         },
         {
           "Name": "Content-Type",
@@ -1868,56 +1776,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI=\""
+          "Value": "\"oG+Dir0J2t748FK+WEGA2mG4ZtDfx6MY3H/fk1aKHTM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:58 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ydlenaemus"
-        },
-        {
-          "Name": "label",
-          "Value": "js/AdvisorPanel.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI="
-        }
-      ]
-    },
-    {
-      "Route": "js/AdvisorPanel.ydlenaemus.js.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-ydlenaemus.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "426"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"en3qaqZZUMBuZwxXyBHrpvcM/03lwZaH87I8+O9FpNU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 13 Dec 2024 21:33:58 GMT"
+          "Value": "Tue, 17 Dec 2024 13:31:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1935,7 +1798,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ydlenaemus"
+          "Value": "8hnpy4hz6t"
         },
         {
           "Name": "label",
@@ -1943,7 +1806,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-en3qaqZZUMBuZwxXyBHrpvcM/03lwZaH87I8+O9FpNU="
+          "Value": "sha256-oG+Dir0J2t748FK+WEGA2mG4ZtDfx6MY3H/fk1aKHTM="
+        }
+      ]
+    },
+    {
+      "Route": "js/AdvisorPanel.js",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-8hnpy4hz6t.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003412969283"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oG+Dir0J2t748FK+WEGA2mG4ZtDfx6MY3H/fk1aKHTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 17 Dec 2024 13:31:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg="
+        }
+      ]
+    },
+    {
+      "Route": "js/AdvisorPanel.js",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\AdvisorPanel.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "523"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 17 Dec 2024 13:31:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg="
+        }
+      ]
+    },
+    {
+      "Route": "js/AdvisorPanel.js.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\y4znciza4w-8hnpy4hz6t.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oG+Dir0J2t748FK+WEGA2mG4ZtDfx6MY3H/fk1aKHTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 17 Dec 2024 13:31:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oG+Dir0J2t748FK+WEGA2mG4ZtDfx6MY3H/fk1aKHTM="
         }
       ]
     },

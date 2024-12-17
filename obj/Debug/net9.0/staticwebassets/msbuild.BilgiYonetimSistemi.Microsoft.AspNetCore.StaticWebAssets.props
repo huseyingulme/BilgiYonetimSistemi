@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>q1b7xfi58d</Fingerprint>
-      <Integrity>rvBUDAwP6T10RSkImcbJF1gB9KGivCP00MfVFeqjEOY=</Integrity>
+      <Fingerprint>ly4y6ok4zb</Fingerprint>
+      <Integrity>nbM2t6WegbFAedDsw2dEB2IwV0lvQIM8sI8dZgAiJ8o=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\AdvisorPanel.css'))</OriginalItemSpec>
@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ydlenaemus</Fingerprint>
-      <Integrity>Ol2TOm3nTViHYRogIwmMgNuqjWUyCGcGKDK6+k9HsUI=</Integrity>
+      <Fingerprint>8hnpy4hz6t</Fingerprint>
+      <Integrity>5Po+T4gBSW6JI1Nnw6R8FjkX52HxaXoAE546C+SdlUg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\AdvisorPanel.js'))</OriginalItemSpec>

@@ -18,9 +18,9 @@ namespace BilgiYonetimSistemi.Controllers
 
         // GET: api/CourseSelections
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<object>>> GetAllCourseSelections()
+        public async Task<ActionResult<IEnumerable<object>>> TumDersSecimleriniGetir()
         {
-            var studentsWithCourses = await _context.Students
+            var ogrencilerVeDersler = await _context.Students
                 .Include(s => s.CourseSelection)
                     .ThenInclude(cs => cs.Course)
                 .Select(s => new
@@ -28,7 +28,7 @@ namespace BilgiYonetimSistemi.Controllers
                     s.StudentID,
                     s.FirstName,
                     s.LastName,
-                    Courses = s.CourseSelection.Select(cs => new
+                    Dersler = s.CourseSelection.Select(cs => new
                     {
                         cs.CourseID,
                         cs.SelectionDate,
@@ -37,24 +37,24 @@ namespace BilgiYonetimSistemi.Controllers
                 })
                 .ToListAsync();
 
-            if (studentsWithCourses == null || !studentsWithCourses.Any())
+            if (ogrencilerVeDersler == null || !ogrencilerVeDersler.Any())
             {
-                return NotFound(new { Message = "No students or course selections found." });
+                return NotFound(new { Mesaj = "Öğrenci veya ders seçimi bulunamadı." });
             }
 
-            return Ok(studentsWithCourses);
+            return Ok(ogrencilerVeDersler);
         }
 
         // GET: api/CourseSelections/Student/5
         [HttpGet("Student/{studentId}")]
-        public async Task<ActionResult<IEnumerable<object>>> GetStudentCourseSelections(int studentId)
+        public async Task<ActionResult<IEnumerable<object>>> OgrenciDersSecimleriniGetir(int studentId)
         {
-            var selections = await _context.CourseSelection
+            var secimler = await _context.CourseSelection
                 .Where(cs => cs.StudentID == studentId)
                 .Select(cs => new
                 {
                     cs.Student.StudentID,
-                    Course = new
+                    Ders = new
                     {
                         cs.Course.CourseCode,
                         cs.Course.CourseName,
@@ -64,32 +64,32 @@ namespace BilgiYonetimSistemi.Controllers
                 })
                 .ToListAsync();
 
-            if (selections == null || !selections.Any())
+            if (secimler == null || !secimler.Any())
             {
-                return NotFound("No course selections found for this student.");
+                return NotFound(new { Mesaj = "Bu öğrenciye ait ders seçimi bulunamadı." });
             }
 
-            return Ok(selections);
+            return Ok(secimler);
         }
 
         // POST: api/CourseSelections
         [HttpPost]
-        public async Task<ActionResult<CourseSelection>> PostCourseSelection(CourseSelection courseSelection)
+        public async Task<ActionResult<CourseSelection>> DersSecimiEkle(CourseSelection courseSelection)
         {
             _context.CourseSelection.Add(courseSelection);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStudentCourseSelections", new { studentId = courseSelection.StudentID }, courseSelection);
+            return CreatedAtAction("OgrenciDersSecimleriniGetir", new { studentId = courseSelection.StudentID }, courseSelection);
         }
 
         // DELETE: api/CourseSelections/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCourseSelection(int id)
+        public async Task<IActionResult> DersSecimiSil(int id)
         {
             var courseSelection = await _context.CourseSelection.FindAsync(id);
             if (courseSelection == null)
             {
-                return NotFound();
+                return NotFound(new { Mesaj = "Silinecek ders seçimi bulunamadı." });
             }
 
             _context.CourseSelection.Remove(courseSelection);
@@ -100,51 +100,51 @@ namespace BilgiYonetimSistemi.Controllers
 
         // GET: api/CourseSelections/History
         [HttpGet("History")]
-        public async Task<ActionResult<IEnumerable<object>>> GetCourseSelectionHistory()
+        public async Task<ActionResult<IEnumerable<object>>> DersSecimGecmisiniGetir()
         {
-            var courseSelectionHistory = await _context.CourseSelectionHistory
+            var secimGecmisi = await _context.CourseSelectionHistory
                 .Include(csh => csh.Student)
                 .Select(csh => new
                 {
                     csh.StudentID,
                     csh.SelectionDate,
-                    StudentName = csh.Student.FirstName,
-                    StudentLastName = csh.Student.LastName
+                    OgrenciAdi = csh.Student.FirstName,
+                    OgrenciSoyadi = csh.Student.LastName
                 })
                 .ToListAsync();
 
-            return Ok(courseSelectionHistory);
+            return Ok(secimGecmisi);
         }
 
         // GET: api/CourseSelections/History/5
         [HttpGet("History/{id}")]
-        public async Task<ActionResult<object>> GetCourseSelectionHistoryByStudent(int id)
+        public async Task<ActionResult<object>> OgrenciDersSecimGecmisi(int id)
         {
-            var courseSelectionHistory = await _context.CourseSelectionHistory
+            var secimGecmisi = await _context.CourseSelectionHistory
                 .Include(csh => csh.Student)
                 .Where(csh => csh.StudentID == id)
                 .Select(csh => new
                 {
                     csh.StudentID,
                     csh.SelectionDate,
-                    StudentName = csh.Student.FirstName,
-                    StudentLastName = csh.Student.LastName
+                    OgrenciAdi = csh.Student.FirstName,
+                    OgrenciSoyadi = csh.Student.LastName
                 })
                 .FirstOrDefaultAsync();
 
-            if (courseSelectionHistory == null)
+            if (secimGecmisi == null)
             {
-                return NotFound();
+                return NotFound(new { Mesaj = "Seçim geçmişi bulunamadı." });
             }
 
-            return Ok(courseSelectionHistory);
+            return Ok(secimGecmisi);
         }
 
         // GET: api/CourseSelections/NonConfirmed
         [HttpGet("NonConfirmed")]
-        public async Task<ActionResult<IEnumerable<object>>> GetNonConfirmedSelections()
+        public async Task<ActionResult<IEnumerable<object>>> OnaylanmayanDersSecimleriGetir()
         {
-            var nonConfirmedSelections = await _context.NonConfirmedSelections
+            var onaylanmayanSecimler = await _context.NonConfirmedSelections
                 .Include(ns => ns.Student)
                 .Include(ns => ns.Course)
                 .Select(ns => new
@@ -158,14 +158,14 @@ namespace BilgiYonetimSistemi.Controllers
                 })
                 .ToListAsync();
 
-            return Ok(nonConfirmedSelections);
+            return Ok(onaylanmayanSecimler);
         }
 
         // GET: api/CourseSelections/NonConfirmed/Advisor/{advisorId}
         [HttpGet("NonConfirmed/Advisor/{advisorId}")]
-        public async Task<ActionResult<IEnumerable<object>>> GetNonConfirmedSelectionsByAdvisor(int advisorId)
+        public async Task<ActionResult<IEnumerable<object>>> DanismanaGoreOnaylanmayanSecimler(int advisorId)
         {
-            var nonConfirmedSelections = await _context.NonConfirmedSelections
+            var onaylanmayanSecimler = await _context.NonConfirmedSelections
                 .Include(ns => ns.Student)
                 .Include(ns => ns.Course)
                 .Where(ns => ns.Student.AdvisorID == advisorId)
@@ -180,56 +180,56 @@ namespace BilgiYonetimSistemi.Controllers
                 })
                 .ToListAsync();
 
-            return Ok(nonConfirmedSelections);
+            return Ok(onaylanmayanSecimler);
         }
 
         // GET: api/CourseSelections/NonConfirmed/Student/{studentId}
         [HttpGet("NonConfirmed/Student/{studentId}")]
-        public async Task<IActionResult> GetNonConfirmedSelectionsByStudent(int studentId)
+        public async Task<IActionResult> OgrenciyeGoreOnaylanmayanSecimler(int studentId)
         {
-            var nonConfirmedSelections = await _context.NonConfirmedSelections
+            var onaylanmayanSecimler = await _context.NonConfirmedSelections
                 .Include(ns => ns.Course)
                 .Where(ns => ns.StudentId == studentId)
                 .Select(ns => new
                 {
                     ns.Id,
                     ns.StudentId,
-                    FirstName = ns.Student.FirstName,
-                    LastName = ns.Student.LastName,
-                    CourseName = ns.Course.CourseName,
-                    CourseID = ns.Course.CourseID
+                    OgrenciAdi = ns.Student.FirstName,
+                    OgrenciSoyadi = ns.Student.LastName,
+                    DersAdi = ns.Course.CourseName,
+                    DersID = ns.Course.CourseID
                 })
                 .ToListAsync();
 
-            if (nonConfirmedSelections == null || !nonConfirmedSelections.Any())
+            if (onaylanmayanSecimler == null || !onaylanmayanSecimler.Any())
             {
-                return NotFound(new { message = "No non-confirmed course selections found for this student." });
+                return NotFound(new { Mesaj = "Bu öğrenciye ait onaylanmayan ders seçimi bulunamadı." });
             }
 
-            return Ok(nonConfirmedSelections);
+            return Ok(onaylanmayanSecimler);
         }
 
         // POST: api/CourseSelections/NonConfirmed
         [HttpPost("NonConfirmed")]
-        public async Task<ActionResult<NonConfirmedSelections>> PostNonConfirmedSelections(NonConfirmedSelections nonConfirmedSelections)
+        public async Task<ActionResult<NonConfirmedSelections>> OnaylanmayanSecimEkle(NonConfirmedSelections nonConfirmedSelections)
         {
             _context.NonConfirmedSelections.Add(nonConfirmedSelections);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetNonConfirmedSelections", new { id = nonConfirmedSelections.Id }, nonConfirmedSelections);
+            return CreatedAtAction("OnaylanmayanDersSecimleriGetir", new { id = nonConfirmedSelections.Id }, nonConfirmedSelections);
         }
 
         // DELETE: api/CourseSelections/NonConfirmed/5
         [HttpDelete("NonConfirmed/{id}")]
-        public async Task<IActionResult> DeleteNonConfirmedSelections(int id)
+        public async Task<IActionResult> OnaylanmayanSecimSil(int id)
         {
-            var nonConfirmedSelections = await _context.NonConfirmedSelections.FindAsync(id);
-            if (nonConfirmedSelections == null)
+            var onaylanmayanSecim = await _context.NonConfirmedSelections.FindAsync(id);
+            if (onaylanmayanSecim == null)
             {
-                return NotFound();
+                return NotFound(new { Mesaj = "Silinecek onaylanmayan ders seçimi bulunamadı." });
             }
 
-            _context.NonConfirmedSelections.Remove(nonConfirmedSelections);
+            _context.NonConfirmedSelections.Remove(onaylanmayanSecim);
             await _context.SaveChangesAsync();
 
             return NoContent();

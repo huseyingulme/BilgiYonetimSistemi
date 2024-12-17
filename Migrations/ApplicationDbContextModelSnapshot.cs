@@ -85,15 +85,9 @@ namespace BilgiYonetimSistemi.Migrations
             modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseCapacity", b =>
                 {
                     b.Property<int>("CourseID")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseID"));
 
                     b.Property<int>("Capacity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CourseID1")
                         .HasColumnType("int");
 
                     b.Property<int>("RemainingCapacity")
@@ -101,17 +95,18 @@ namespace BilgiYonetimSistemi.Migrations
 
                     b.HasKey("CourseID");
 
-                    b.HasIndex("CourseID1");
-
                     b.ToTable("CourseCapacity");
                 });
 
             modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseSelection", b =>
                 {
-                    b.Property<int>("CourseID")
-                        .HasColumnType("int");
+                    b.Property<int>("SelectionID")
+                       .ValueGeneratedOnAdd()
+                       .HasColumnType("int");
 
-                    b.Property<int>("StudentID")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SelectionID"));
+
+                    b.Property<int>("CourseID")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsApproved")
@@ -120,14 +115,16 @@ namespace BilgiYonetimSistemi.Migrations
                     b.Property<DateTime>("SelectionDate")
                         .HasColumnType("date");
 
-                    b.Property<int>("SelectionID")
+                    b.Property<int>("StudentID")
                         .HasColumnType("int");
 
-                    b.HasKey("CourseID", "StudentID");
+                    b.HasKey("SelectionID");
+
+                    b.HasIndex("CourseID");
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("CourseSelection");
+                    b.ToTable("StudentCourseSelections");
                 });
 
             modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseSelectionHistory", b =>
@@ -263,7 +260,7 @@ namespace BilgiYonetimSistemi.Migrations
                 {
                     b.HasOne("BilgiYonetimSistemi.Models.Course", "Course")
                         .WithMany()
-                        .HasForeignKey("CourseID1")
+                        .HasForeignKey("CourseID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

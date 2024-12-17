@@ -159,13 +159,13 @@ C:\Users\husey\Desktop\BilgiYonetimSistemi\bin\Debug\net9.0\Swashbuckle.AspNetCo
 C:\Users\husey\Desktop\BilgiYonetimSistemi\bin\Debug\net9.0\BilgiYonetimSistemi.staticwebassets.runtime.json
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\BilgiYonetimSistemi.RazorAssemblyInfo.cache
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\BilgiYonetimSistemi.RazorAssemblyInfo.cs
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\p2u5qw86td-q1b7xfi58d.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\ff2hffahsz-6x92ljo7bf.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\32co78wf1x-76a2co94gr.gz
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\y4znciza4w-ydlenaemus.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\7db9443b7b-t6l9ym5dcz.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\g1ui3ptt9o-ei9tidvqd4.gz
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\ae5l9vhune-8aoasdqool.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\ismwa9ij9j-f54ms78rh8.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\p2u5qw86td-ly4y6ok4zb.gz
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\y4znciza4w-8hnpy4hz6t.gz
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

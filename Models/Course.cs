@@ -12,7 +12,7 @@ namespace BilgiYonetimSistemi.Models
         public int Credit { get; set; }
         public string Department{get; set;}
 
-        public ICollection<CourseSelection> CourseSelection { get; set; } = new List<CourseSelection>();
+        public ICollection<CourseSelection> CourseSelection { get; set; }
         public  ICollection<NonConfirmedSelections> NonConfirmedSelections { get; set; }
     }
 }
