@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\AdvisorPanel.css",
+      "PackagePath": "staticwebassets\\css\\AdvisorPanel.css"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\StudentPanel.css",
+      "PackagePath": "staticwebassets\\css\\StudentPanel.css"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\reset-password.css",
+      "PackagePath": "staticwebassets\\css\\reset-password.css"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\images\\ktu-logo.png",
+      "PackagePath": "staticwebassets\\images\\ktu-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\AdvisorPanel.js",
+      "PackagePath": "staticwebassets\\js\\AdvisorPanel.js"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\StudentPanel.js",
+      "PackagePath": "staticwebassets\\js\\StudentPanel.js"
+    },
+    {
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\reset-password.js",
+      "PackagePath": "staticwebassets\\js\\reset-password.js"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BilgiYonetimSistemi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BilgiYonetimSistemi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.BilgiYonetimSistemi.props",
+      "PackagePath": "build\\BilgiYonetimSistemi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.BilgiYonetimSistemi.props",
+      "PackagePath": "buildMultiTargeting\\BilgiYonetimSistemi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.BilgiYonetimSistemi.props",
+      "PackagePath": "buildTransitive\\BilgiYonetimSistemi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

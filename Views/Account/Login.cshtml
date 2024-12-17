@@ -1,0 +1,48 @@
+﻿@model BilgiYonetimSistemi.Models.LoginModel
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTÜ Giriş</title>
+    <link rel="stylesheet" href="~/css/Login.css">
+    <script src="~/js/Login.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="~/images/ktu-logo.png" alt="KTÜ Logo">
+        </div>
+
+        <!-- Sekme Alanı -->
+        <div class="tab-container">
+            <button id="personel-tab" class="tab-button" onclick="showForm('staff-form')">Personel</button>
+            <button id="ogrenci-tab" class="tab-button active" onclick="showForm('student-form')">Öğrenci</button>
+        </div>
+
+        <!-- Giriş Formları -->
+        <div class="form-container">
+            <!-- Öğrenci Formu -->
+            <form id="student-form" class="login-form" method="post" asp-action="LoginUser" asp-controller="Account">
+                <input type="text" name="Username" placeholder="Kullanıcı Adı" required>
+                <input type="password" name="Password" placeholder="Şifre" required>
+                <input type="hidden" name="Role" value="Student">
+                <button type="submit" class="submit-btn">Giriş Yap</button>
+            </form>
+
+            <!-- Personel Formu -->
+            <form id="staff-form" class="login-form hidden" method="post" asp-action="LoginUser" asp-controller="Account">
+                <input type="text" name="Username" placeholder="Kullanıcı Adı" required>
+                <input type="password" name="Password" placeholder="Şifre" required>
+                <input type="hidden" name="Role" value="Advisor">
+                <button type="submit" class="submit-btn">Giriş Yap</button>
+            </form>
+        </div>
+
+        <div class="forgot-password">
+            <a href="@Url.Action("ForgotPassword", "Account")">Şifreni mi unuttun?</a>
+        </div>
+    </div>
+</body>
+</html>

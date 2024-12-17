@@ -1,0 +1,117 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #00426a;
+    color: white;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #003b5c;
+    width: 250px;
+    padding: 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-items {
+    margin-bottom: 30px;
+}
+
+.nav-item {
+    padding: 10px;
+    background-color: #004c77;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .nav-item:hover {
+        background-color: #006fa1;
+    }
+
+.logout-btn {
+    background-color: #e74c3c;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+    .logout-btn:hover {
+        background-color: #c0392b;
+    }
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.section {
+    display: none;
+}
+
+#danismanBilgileri, #ogrencilerim {
+    display: block;
+}
+
+.update-btn, .submit-btn, .btn-approve, .btn-reject, .view-details-btn {
+    padding: 10px;
+    background-color: #00426a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+    .update-btn:hover, .submit-btn:hover, .btn-approve:hover, .btn-reject:hover, .view-details-btn:hover {
+        background-color: #006fa1;
+    }
+
+.update-form {
+    margin-top: 20px;
+}
+
+    .update-form input {
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .update-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+        .update-form button:hover {
+            background-color: #218838;
+        }

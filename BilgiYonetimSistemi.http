@@ -1,0 +1,6 @@
+@BilgiYonetimSistemi_HostAddress = http://localhost:5121
+
+GET {{BilgiYonetimSistemi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

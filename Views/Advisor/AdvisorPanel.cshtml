@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danışman Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/AdvisorPanel.css">
+    <script src="~/js/AdvisorPanel.js" defer></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="/image/instructor.webp" alt="Logo" class="logo">
+            <h2>@ViewBag.Advisor?.fullName ?? "Danışman Bilgileri Yüklenemedi"</h2>
+        </div>
+        <div class="nav-items">
+            <div class="nav-item" onclick="showSection('danismanBilgileri')">Danışman Bilgileri</div>
+            <div class="nav-item" onclick="showSection('dersOnaylama')">Ders Onaylama</div>
+            <div class="nav-item" onclick="showSection('ogrencilerim')">Öğrencilerim</div>
+        </div>
+        <div class="logout-btn" onclick="logout()">Çıkış Yap</div>
+    </div>
+
+    <div class="main-content">
+        <div id="duyurular" class="section">
+            <h1>Duyurular</h1>
+            <p><strong>Danışmanlık Toplantısı:</strong> 10 Ocak'ta yapılacaktır.</p>
+            <p><strong>Sistem Güncellemesi:</strong> 20 Aralık 2024 tarihinde bakım yapılacaktır.</p>
+        </div>
+
+        <div id="danismanBilgileri" class="section">
+            <h1>Danışman Bilgileri</h1>
+            <p><strong>Ad:</strong> @ViewBag.Advisor?.fullName</p>
+            <p><strong>Email:</strong> @ViewBag.Advisor?.email</p>
+            <p><strong>Unvan:</strong> @ViewBag.Advisor?.title</p>
+            <p><strong>Bölüm:</strong> @ViewBag.Advisor?.department</p>
+            <button class="update-btn" onclick="toggleUpdateForm()">Bilgileri Güncelle</button>
+            <div class="update-form" id="updateForm" style="display: none;">
+                <h3>Bilgileri Güncelle</h3>
+                <form asp-action="UpdateAdvisor" method="post">
+                    <input type="hidden" name="id" value="@ViewBag.Advisor?.advisorID" />
+                    <label for="newEmail">Yeni E-posta:</label>
+                    <input type="email" id="newEmail" name="newEmail" placeholder="Yeni e-posta">
+                    <label for="newPassword">Yeni Şifre:</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifre">
+                    <button type="submit" class="submit-btn">Kaydet</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="dersOnaylama" class="section">
+            <h1>Ders Onaylama</h1>
+            <div class="course-approval">
+                <label for="pendingCourses">Onay Bekleyen Dersler:</label>
+                <ul id="pendingCoursesList">
+                    @foreach (var course in ViewBag.PendingCourses ?? new List<Course>())
+                    {
+                        <li>
+                            <span>@course.courseName (@course.courseID)</span>
+                            <form asp-action="ApproveCourse" method="post">
+                                <button type="submit" class="btn-approve">Onayla</button>
+                            </form>
+                            <form asp-action="RejectCourse" method="post">
+                                <button type="submit" class="btn-reject">Reddet</button>
+                            </form>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div id="ogrencilerim" class="section">
+            <h1>Öğrencilerim</h1>
+            <ul id="studentsList">
+                @foreach (var student in ViewBag.Advisor?.students ?? new List<Student>())
+                {
+                    <li>
+                        <span>@student.firstName @student.lastName (@student.studentID)</span>
+                        <button onclick="viewStudentDetails(@student.studentID)" class="view-details-btn">Detayları Gör</button>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

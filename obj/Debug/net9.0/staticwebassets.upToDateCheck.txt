@@ -1,0 +1,17 @@
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\StudentPanel.css
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\js\reset-password.js
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\js\Login.js
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\reset-password.css
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\js\StudentPanel.js
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\Login.css
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\AdvisorPanel.css
+C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\js\AdvisorPanel.js
+wwwroot\css\AdvisorPanel.css
+wwwroot\css\Login.css
+wwwroot\css\reset-password.css
+wwwroot\css\StudentPanel.css
+wwwroot\images\ktu-logo.png
+wwwroot\js\AdvisorPanel.js
+wwwroot\js\Login.js
+wwwroot\js\reset-password.js
+wwwroot\js\StudentPanel.js
