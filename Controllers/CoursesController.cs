@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BilgiYonetimSistemi.Data;
+﻿using BilgiYonetimSistemi.Data;
 using BilgiYonetimSistemi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BilgiYonetimSistemi.Controllers
 {
@@ -16,11 +16,12 @@ namespace BilgiYonetimSistemi.Controllers
             _context = context;
         }
 
+        // GET: api/Courses
         [HttpGet]
-        public async Task<IActionResult> TumDersleriGetir()
+        public async Task<ActionResult<IEnumerable<object>>> GetCourse()
         {
             var courses = await _context.Courses
-                .Include(c => c.CourseSelection)  // CourseSelection ilişkisini dahil ediyoruz
+                .Include(c => c.StudentCourseSelections)  // StudentCourseSelections ilişkisini dahil ediyoruz
                 .Select(c => new
                 {
                     c.CourseID,
@@ -29,18 +30,13 @@ namespace BilgiYonetimSistemi.Controllers
                     c.IsMandatory,
                     c.Credit,
                     c.Department,
-                    Students = c.CourseSelection.Select(cs => new
+                    StudentCourseSelections = c.StudentCourseSelections.Select(sc => new
                     {
-                        cs.StudentID,
-                        cs.SelectionDate
-                    }).ToList()  // Öğrencilerin sadece ID ve seçim tarihlerini alıyoruz
+                        sc.StudentID,
+                        sc.SelectionDate
+                    }).ToList()  // Sadece StudentID ve SelectionDate bilgilerini alıyoruz
                 })
                 .ToListAsync();
-
-            if (!courses.Any())
-            {
-                return NotFound(new { Message = "Hiç ders bulunamadı." });
-            }
 
             return Ok(courses);
         }
@@ -48,10 +44,10 @@ namespace BilgiYonetimSistemi.Controllers
 
         // GET: api/Courses/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> DersGetir(int id)
+        public async Task<IActionResult> GetCourse(int id)
         {
             var course = await _context.Courses
-                .Include(c => c.CourseSelection)  // Ders seçimleri ilişkisini dahil ediyoruz
+                .Include(c => c.StudentCourseSelections)  // StudentCourseSelections ilişkisini dahil ediyoruz
                 .Where(c => c.CourseID == id)
                 .Select(c => new
                 {
@@ -61,34 +57,30 @@ namespace BilgiYonetimSistemi.Controllers
                     c.IsMandatory,
                     c.Credit,
                     c.Department,
-                    Students = c.CourseSelection.Select(cs => new
+                    StudentCourseSelections = c.StudentCourseSelections.Select(sc => new
                     {
-                        cs.StudentID,
-                        cs.SelectionDate
-                    }).ToList()  // Öğrencilerin sadece ID ve seçim tarihlerini alıyoruz
+                        sc.StudentID,
+                        sc.SelectionDate
+                    }).ToList()  // Sadece StudentID ve SelectionDate bilgilerini alıyoruz
                 })
                 .FirstOrDefaultAsync();
 
             if (course == null)
             {
-                return NotFound(new { Message = $"ID {id} ile eşleşen ders bulunamadı." });
+                return NotFound();
             }
 
             return Ok(course);
         }
 
+
         // PUT: api/Courses/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> DersGuncelle(int id, [FromBody] Course course)
+        public async Task<IActionResult> PutCourse(int id, Course course)
         {
             if (id != course.CourseID)
             {
-                return BadRequest(new { Message = "Ders ID'si eşleşmiyor." });
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
+                return BadRequest();
             }
 
             _context.Entry(course).State = EntityState.Modified;
@@ -99,9 +91,9 @@ namespace BilgiYonetimSistemi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await DersVarMi(id))
+                if (!CourseExists(id))
                 {
-                    return NotFound(new { Message = $"ID {id} ile ders bulunamadı." });
+                    return NotFound();
                 }
                 else
                 {
@@ -114,38 +106,33 @@ namespace BilgiYonetimSistemi.Controllers
 
         // POST: api/Courses
         [HttpPost]
-        public async Task<IActionResult> DersEkle([FromBody] Course course)
+        public async Task<ActionResult<Course>> PostCourse(Course course)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             _context.Courses.Add(course);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(DersGetir), new { id = course.CourseID }, course);
+            return CreatedAtAction("GetCourse", new { id = course.CourseID }, course);
         }
 
         // DELETE: api/Courses/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DersSil(int id)
+        public async Task<IActionResult> DeleteCourse(int id)
         {
             var course = await _context.Courses.FindAsync(id);
             if (course == null)
             {
-                return NotFound(new { Message = $"ID {id} ile ders bulunamadı." });
+                return NotFound();
             }
 
             _context.Courses.Remove(course);
             await _context.SaveChangesAsync();
 
-            return Ok(new { Message = $"Ders ID {id} başarıyla silindi." });
+            return NoContent();
         }
 
-        private async Task<bool> DersVarMi(int id)
+        private bool CourseExists(int id)
         {
-            return await _context.Courses.AnyAsync(e => e.CourseID == id);
+            return _context.Courses.Any(e => e.CourseID == id);
         }
     }
 }

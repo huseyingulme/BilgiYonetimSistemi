@@ -1,40 +1,32 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\AdvisorPanel.css",
-      "PackagePath": "staticwebassets\\css\\AdvisorPanel.css"
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\advisorpanel.css",
+      "PackagePath": "staticwebassets\\css\\advisorpanel.css"
     },
     {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\Login.css",
-      "PackagePath": "staticwebassets\\css\\Login.css"
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\StudentPanel.css",
-      "PackagePath": "staticwebassets\\css\\StudentPanel.css"
-    },
-    {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\reset-password.css",
-      "PackagePath": "staticwebassets\\css\\reset-password.css"
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\studentpanel.css",
+      "PackagePath": "staticwebassets\\css\\studentpanel.css"
     },
     {
       "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\images\\ktu-logo.png",
       "PackagePath": "staticwebassets\\images\\ktu-logo.png"
     },
     {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\AdvisorPanel.js",
-      "PackagePath": "staticwebassets\\js\\AdvisorPanel.js"
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\advisorpanel.js",
+      "PackagePath": "staticwebassets\\js\\advisorpanel.js"
     },
     {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\Login.js",
-      "PackagePath": "staticwebassets\\js\\Login.js"
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\StudentPanel.js",
-      "PackagePath": "staticwebassets\\js\\StudentPanel.js"
-    },
-    {
-      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\reset-password.js",
-      "PackagePath": "staticwebassets\\js\\reset-password.js"
+      "Id": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
+      "PackagePath": "staticwebassets\\js\\studentpanel.js"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BilgiYonetimSistemi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

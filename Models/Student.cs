@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BilgiYonetimSistemi.Models
 {
@@ -13,10 +13,10 @@ namespace BilgiYonetimSistemi.Models
         public int? AdvisorID { get; set; }
 
         [ForeignKey("AdvisorID")]
-        public virtual Advisors Advisors { get; set; }
+        public Advisors Advisors { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
-        public ICollection<CourseSelection> CourseSelection { get; set; }
+        public ICollection<StudentCourseSelections> StudentCourseSelections { get; set; }
         public ICollection<NonConfirmedSelections> NonConfirmedSelections { get; set; }
 
 

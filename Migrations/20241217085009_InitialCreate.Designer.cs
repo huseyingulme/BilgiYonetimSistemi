@@ -85,7 +85,7 @@ namespace BilgiYonetimSistemi.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseCapacity", b =>
+            modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseQuotas", b =>
                 {
                     b.Property<int>("CourseID")
                         .ValueGeneratedOnAdd()
@@ -106,7 +106,7 @@ namespace BilgiYonetimSistemi.Migrations
 
                     b.HasIndex("CourseID1");
 
-                    b.ToTable("CourseCapacity");
+                    b.ToTable("CourseQuotas");
                 });
 
             modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseSelection", b =>
@@ -262,7 +262,7 @@ namespace BilgiYonetimSistemi.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseCapacity", b =>
+            modelBuilder.Entity("BilgiYonetimSistemi.Models.CourseQuotas", b =>
                 {
                     b.HasOne("BilgiYonetimSistemi.Models.Course", "Course")
                         .WithMany()

@@ -147,10 +147,10 @@
         }
       }
     },
-    "/api/CourseCapacity": {
+    "/api/CourseQuotas": {
       "get": {
         "tags": [
-          "CourseCapacity"
+          "CourseQuotas"
         ],
         "responses": {
           "200": {
@@ -159,25 +159,19 @@
               "text/plain": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CourseWithCapacityModel"
-                  }
+                  "items": { }
                 }
               },
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CourseWithCapacityModel"
-                  }
+                  "items": { }
                 }
               },
               "text/json": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CourseWithCapacityModel"
-                  }
+                  "items": { }
                 }
               }
             }
@@ -186,23 +180,23 @@
       },
       "post": {
         "tags": [
-          "CourseCapacity"
+          "CourseQuotas"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCapacity"
+                "$ref": "#/components/schemas/CourseQuotas"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCapacity"
+                "$ref": "#/components/schemas/CourseQuotas"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCapacity"
+                "$ref": "#/components/schemas/CourseQuotas"
               }
             }
           }
@@ -213,17 +207,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseCapacity"
+                  "$ref": "#/components/schemas/CourseQuotas"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseCapacity"
+                  "$ref": "#/components/schemas/CourseQuotas"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseCapacity"
+                  "$ref": "#/components/schemas/CourseQuotas"
                 }
               }
             }
@@ -231,10 +225,10 @@
         }
       }
     },
-    "/api/CourseCapacity/{id}": {
+    "/api/CourseQuotas/{id}": {
       "get": {
         "tags": [
-          "CourseCapacity"
+          "CourseQuotas"
         ],
         "parameters": [
           {
@@ -255,7 +249,7 @@
       },
       "put": {
         "tags": [
-          "CourseCapacity"
+          "CourseQuotas"
         ],
         "parameters": [
           {
@@ -272,17 +266,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCapacity"
+                "$ref": "#/components/schemas/CourseQuotas"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCapacity"
+                "$ref": "#/components/schemas/CourseQuotas"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseCapacity"
+                "$ref": "#/components/schemas/CourseQuotas"
               }
             }
           }
@@ -295,7 +289,7 @@
       },
       "delete": {
         "tags": [
-          "CourseCapacity"
+          "CourseQuotas"
         ],
         "parameters": [
           {
@@ -315,10 +309,10 @@
         }
       }
     },
-    "/api/CourseCapacity/{courseId}": {
+    "/api/CourseQuotas/coursequotas/{courseId}": {
       "patch": {
         "tags": [
-          "CourseCapacity"
+          "CourseQuotas"
         ],
         "parameters": [
           {
@@ -345,7 +339,27 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
           }
         }
       },
@@ -374,7 +388,24 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
           }
         }
       }
@@ -625,10 +656,10 @@
         }
       }
     },
-    "/api/CourseSelections": {
+    "/api/StudentCourseSelections": {
       "get": {
         "tags": [
-          "CourseSelections"
+          "StudentCourseSelections"
         ],
         "responses": {
           "200": {
@@ -637,19 +668,25 @@
               "text/plain": {
                 "schema": {
                   "type": "array",
-                  "items": { }
+                  "items": {
+                    "$ref": "#/components/schemas/StudentCourseSelections"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": { }
+                  "items": {
+                    "$ref": "#/components/schemas/StudentCourseSelections"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
                   "type": "array",
-                  "items": { }
+                  "items": {
+                    "$ref": "#/components/schemas/StudentCourseSelections"
+                  }
                 }
               }
             }
@@ -658,23 +695,23 @@
       },
       "post": {
         "tags": [
-          "CourseSelections"
+          "StudentCourseSelections"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseSelection"
+                "$ref": "#/components/schemas/StudentCourseSelections"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseSelection"
+                "$ref": "#/components/schemas/StudentCourseSelections"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseSelection"
+                "$ref": "#/components/schemas/StudentCourseSelections"
               }
             }
           }
@@ -685,17 +722,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseSelection"
+                  "$ref": "#/components/schemas/StudentCourseSelections"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseSelection"
+                  "$ref": "#/components/schemas/StudentCourseSelections"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CourseSelection"
+                  "$ref": "#/components/schemas/StudentCourseSelections"
                 }
               }
             }
@@ -703,252 +740,10 @@
         }
       }
     },
-    "/api/CourseSelections/Student/{studentId}": {
+    "/api/StudentCourseSelections/{studentId}": {
       "get": {
         "tags": [
-          "CourseSelections"
-        ],
-        "parameters": [
-          {
-            "name": "studentId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/CourseSelections/{id}": {
-      "delete": {
-        "tags": [
-          "CourseSelections"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/CourseSelections/History": {
-      "get": {
-        "tags": [
-          "CourseSelections"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/CourseSelections/History/{id}": {
-      "get": {
-        "tags": [
-          "CourseSelections"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/CourseSelections/NonConfirmed": {
-      "get": {
-        "tags": [
-          "CourseSelections"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "CourseSelections"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NonConfirmedSelections"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NonConfirmedSelections"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/NonConfirmedSelections"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/NonConfirmedSelections"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NonConfirmedSelections"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NonConfirmedSelections"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/CourseSelections/NonConfirmed/Advisor/{advisorId}": {
-      "get": {
-        "tags": [
-          "CourseSelections"
-        ],
-        "parameters": [
-          {
-            "name": "advisorId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/CourseSelections/NonConfirmed/Student/{studentId}": {
-      "get": {
-        "tags": [
-          "CourseSelections"
+          "StudentCourseSelections"
         ],
         "parameters": [
           {
@@ -968,10 +763,50 @@
         }
       }
     },
-    "/api/CourseSelections/NonConfirmed/{id}": {
+    "/api/StudentCourseSelections/{id}": {
+      "put": {
+        "tags": [
+          "StudentCourseSelections"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentCourseSelections"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentCourseSelections"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentCourseSelections"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "delete": {
         "tags": [
-          "CourseSelections"
+          "StudentCourseSelections"
         ],
         "parameters": [
           {
@@ -998,7 +833,33 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -1027,7 +888,24 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              }
+            }
           }
         }
       }
@@ -1050,7 +928,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              }
+            }
           }
         }
       },
@@ -1097,131 +992,6 @@
       "delete": {
         "tags": [
           "Students"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Transcripts": {
-      "get": {
-        "tags": [
-          "Transcripts"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Transcripts"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Transcripts"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Transcripts"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Transcripts"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Transcripts/{id}": {
-      "get": {
-        "tags": [
-          "Transcripts"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Transcripts"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Transcripts"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Transcripts"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Transcripts"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Transcripts"
         ],
         "parameters": [
           {
@@ -1248,7 +1018,33 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Users"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Users"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Users"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -1277,7 +1073,24 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              }
+            }
           }
         }
       }
@@ -1300,7 +1113,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Users"
+                }
+              }
+            }
           }
         }
       },
@@ -1398,6 +1228,13 @@
               "$ref": "#/components/schemas/Student"
             },
             "nullable": true
+          },
+          "courses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1428,10 +1265,13 @@
             "type": "string",
             "nullable": true
           },
-          "courseSelection": {
+          "advisor": {
+            "$ref": "#/components/schemas/Advisors"
+          },
+          "studentCourseSelections": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CourseSelection"
+              "$ref": "#/components/schemas/StudentCourseSelections"
             },
             "nullable": true
           },
@@ -1445,51 +1285,20 @@
         },
         "additionalProperties": false
       },
-      "CourseCapacity": {
+      "CourseQuotas": {
         "type": "object",
         "properties": {
-          "courseID": {
+          "courseId": {
             "type": "integer",
             "format": "int32"
           },
-          "capacity": {
+          "quota": {
             "type": "integer",
             "format": "int32"
           },
-          "remainingCapacity": {
+          "remainingQuota": {
             "type": "integer",
             "format": "int32"
-          },
-          "course": {
-            "$ref": "#/components/schemas/Course"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CourseSelection": {
-        "type": "object",
-        "properties": {
-          "selectionID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "courseID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "selectionDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isApproved": {
-            "type": "boolean"
-          },
-          "studentID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "student": {
-            "$ref": "#/components/schemas/Student"
           },
           "course": {
             "$ref": "#/components/schemas/Course"
@@ -1510,36 +1319,6 @@
           },
           "student": {
             "$ref": "#/components/schemas/Student"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CourseWithCapacityModel": {
-        "type": "object",
-        "properties": {
-          "courseID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "courseName": {
-            "type": "string",
-            "nullable": true
-          },
-          "courseCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "credit": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "capacity": {
-            "type": "string",
-            "nullable": true
-          },
-          "remainingCapacity": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1603,10 +1382,10 @@
             "type": "string",
             "format": "date-time"
           },
-          "courseSelection": {
+          "studentCourseSelections": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CourseSelection"
+              "$ref": "#/components/schemas/StudentCourseSelections"
             },
             "nullable": true
           },
@@ -1620,14 +1399,10 @@
         },
         "additionalProperties": false
       },
-      "Transcripts": {
+      "StudentCourseSelections": {
         "type": "object",
         "properties": {
-          "transcriptID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "studentID": {
+          "selectionID": {
             "type": "integer",
             "format": "int32"
           },
@@ -1635,13 +1410,22 @@
             "type": "integer",
             "format": "int32"
           },
-          "grade": {
+          "selectionDate": {
             "type": "string",
-            "nullable": true
+            "format": "date-time"
           },
-          "semester": {
-            "type": "string",
-            "nullable": true
+          "isApproved": {
+            "type": "boolean"
+          },
+          "studentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "student": {
+            "$ref": "#/components/schemas/Student"
+          },
+          "course": {
+            "$ref": "#/components/schemas/Course"
           }
         },
         "additionalProperties": false

@@ -1,47 +1,56 @@
-﻿@model BilgiYonetimSistemi.Models.LoginModel
+﻿@{
+    Layout = null;
+}
 
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KTÜ Giriş</title>
-    <link rel="stylesheet" href="~/css/Login.css">
-    <script src="~/js/Login.js" defer></script>
+    <title>KTÜ Giriş Sayfası</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="~/css/login.css" rel="stylesheet" />
+    <script src="~/js/login.js" defer></script>
 </head>
 <body>
-    <div class="login-container">
-        <div class="logo">
-            <img src="~/images/ktu-logo.png" alt="KTÜ Logo">
-        </div>
+    <div class="container">
+        <div class="login-box">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="~/images/ktu-logo.png" alt="KTÜ Logo" />
+            </div>
 
-        <!-- Sekme Alanı -->
-        <div class="tab-container">
-            <button id="personel-tab" class="tab-button" onclick="showForm('staff-form')">Personel</button>
-            <button id="ogrenci-tab" class="tab-button active" onclick="showForm('student-form')">Öğrenci</button>
-        </div>
+            <h1 class="title">KTÜ Giriş Sistemi</h1>
 
-        <!-- Giriş Formları -->
-        <div class="form-container">
-            <!-- Öğrenci Formu -->
-            <form id="student-form" class="login-form" method="post" asp-action="LoginUser" asp-controller="Account">
-                <input type="text" name="Username" placeholder="Kullanıcı Adı" required>
-                <input type="password" name="Password" placeholder="Şifre" required>
-                <input type="hidden" name="Role" value="Student">
-                <button type="submit" class="submit-btn">Giriş Yap</button>
-            </form>
+            <!-- Kullanıcı Seçimi -->
+            <div class="user-selection">
+                <button id="student-login-btn" class="selection-btn active" onclick="showForm('student-form')">Öğrenci Girişi</button>
+                <button id="staff-login-btn" class="selection-btn" onclick="showForm('staff-form')">Personel Girişi</button>
+            </div>
 
-            <!-- Personel Formu -->
-            <form id="staff-form" class="login-form hidden" method="post" asp-action="LoginUser" asp-controller="Account">
-                <input type="text" name="Username" placeholder="Kullanıcı Adı" required>
-                <input type="password" name="Password" placeholder="Şifre" required>
-                <input type="hidden" name="Role" value="Advisor">
-                <button type="submit" class="submit-btn">Giriş Yap</button>
-            </form>
-        </div>
+            <!-- Giriş formları -->
+            <div id="forms-container">
+                <!-- Öğrenci Giriş Formu -->
+                <form id="student-form" class="login-form" method="post" asp-action="LoginUser" asp-controller="Account">
+                    <input type="text" name="Username" placeholder="Kullanıcı Adı" required>
+                    <input type="password" name="Password" placeholder="Şifre" required>
+                    <input type="hidden" name="Role" value="Student">
+                    <button type="submit" class="submit-btn">Öğrenci Girişi</button>
+                </form>
 
-        <div class="forgot-password">
-            <a href="@Url.Action("ForgotPassword", "Account")">Şifreni mi unuttun?</a>
+                <!-- Personel Giriş Formu -->
+                <form id="staff-form" class="login-form" method="post" asp-action="LoginUser" asp-controller="Account">
+                    <input type="text" name="Username" placeholder="Kullanıcı Adı" required>
+                    <input type="password" name="Password" placeholder="Şifre" required>
+                    <input type="hidden" name="Role" value="Advisor">
+                    <button type="submit" class="submit-btn">Personel Girişi</button>
+                </form>
+            </div>
+
+            <!-- Şifre Sıfırlama -->
+            <div class="forgot-password">
+                <a href="@Url.Action("ForgotPassword", "Account")">Şifrenizi mi unuttunuz?</a>
+            </div>
         </div>
     </div>
 </body>

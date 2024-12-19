@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BilgiYonetimSistemi.Data;
+﻿using BilgiYonetimSistemi.Data;
 using BilgiYonetimSistemi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,69 +18,58 @@ namespace BilgiYonetimSistemi.Controllers
 
         // GET: api/CourseSelectionHistories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<object>>> TumSecimGecmisiniGetir()
+        public async Task<ActionResult<IEnumerable<object>>> GetCourseSelectionHistory()
         {
-            var gecmisler = await _context.CourseSelectionHistory
-                .Include(csh => csh.Student)
+            var courseSelectionHistory = await _context.CourseSelectionHistory
+                .Include(csh => csh.Student) // Student ilişkisini dahil ediyoruz
                 .Select(csh => new
                 {
                     csh.StudentID,
-                    Tarih = csh.SelectionDate,
-                    OgrenciAdi = $"{csh.Student.FirstName} {csh.Student.LastName}"
+                    csh.SelectionDate,
+                    StudentName = csh.Student.FirstName, // Öğrencinin adı
+                    StudentLastName = csh.Student.LastName // Öğrencinin soyadı
                 })
                 .ToListAsync();
 
-            return Ok(gecmisler);
+            return Ok(courseSelectionHistory);
         }
 
-        // GET: api/CourseSelectionHistories/{id}
+
+        // GET: api/CourseSelectionHistories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<object>> OgrenciGecmisiGetir(int id)
+        public async Task<IActionResult> GetCourseSelectionHistory(int id)
         {
-            var gecmis = await _context.CourseSelectionHistory
-                .Include(csh => csh.Student)
+            var courseSelectionHistory = await _context.CourseSelectionHistory
+                .Include(csh => csh.Student) // Student ilişkisini dahil ediyoruz
                 .Where(csh => csh.StudentID == id)
                 .Select(csh => new
                 {
                     csh.StudentID,
-                    Tarih = csh.SelectionDate,
-                    OgrenciAdi = $"{csh.Student.FirstName} {csh.Student.LastName}"
+                    csh.SelectionDate,
+                    StudentName = csh.Student.FirstName, // Öğrencinin adı
+                    StudentLastName = csh.Student.LastName // Öğrencinin soyadı
                 })
                 .FirstOrDefaultAsync();
 
-            if (gecmis == null)
+            if (courseSelectionHistory == null)
             {
-                return NotFound(new { Mesaj = "Öğrenciye ait seçim geçmişi bulunamadı." });
+                return NotFound();
             }
 
-            return Ok(gecmis);
+            return Ok(courseSelectionHistory);
         }
 
-        // POST: api/CourseSelectionHistories
-        [HttpPost]
-        public async Task<ActionResult<CourseSelectionHistory>> SecimGecmisiEkle(CourseSelectionHistory gecmis)
-        {
-            if (_context.CourseSelectionHistory.Any(csh => csh.StudentID == gecmis.StudentID))
-            {
-                return Conflict(new { Mesaj = "Bu öğrenci için zaten bir seçim geçmişi mevcut." });
-            }
 
-            _context.CourseSelectionHistory.Add(gecmis);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(OgrenciGecmisiGetir), new { id = gecmis.StudentID }, gecmis);
-        }
-
-        // PUT: api/CourseSelectionHistories/{id}
+        // PUT: api/CourseSelectionHistories/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> SecimGecmisiGuncelle(int id, CourseSelectionHistory gecmis)
+        public async Task<IActionResult> PutCourseSelectionHistory(int id, CourseSelectionHistory courseSelectionHistory)
         {
-            if (id != gecmis.StudentID)
+            if (id != courseSelectionHistory.StudentID)
             {
-                return BadRequest(new { Mesaj = "ID ile öğrenci ID'si eşleşmiyor." });
+                return BadRequest();
             }
 
-            _context.Entry(gecmis).State = EntityState.Modified;
+            _context.Entry(courseSelectionHistory).State = EntityState.Modified;
 
             try
             {
@@ -92,9 +77,9 @@ namespace BilgiYonetimSistemi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SecimGecmisiVarMi(id))
+                if (!CourseSelectionHistoryExists(id))
                 {
-                    return NotFound(new { Mesaj = "Seçim geçmişi bulunamadı." });
+                    return NotFound();
                 }
                 else
                 {
@@ -105,25 +90,49 @@ namespace BilgiYonetimSistemi.Controllers
             return NoContent();
         }
 
-        // DELETE: api/CourseSelectionHistories/{id}
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> SecimGecmisiSil(int id)
+        // POST: api/CourseSelectionHistories
+        [HttpPost]
+        public async Task<ActionResult<CourseSelectionHistory>> PostCourseSelectionHistory(CourseSelectionHistory courseSelectionHistory)
         {
-            var gecmis = await _context.CourseSelectionHistory.FindAsync(id);
-            if (gecmis == null)
+            _context.CourseSelectionHistory.Add(courseSelectionHistory);
+            try
             {
-                return NotFound(new { Mesaj = "Silinecek seçim geçmişi bulunamadı." });
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (CourseSelectionHistoryExists(courseSelectionHistory.StudentID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
             }
 
-            _context.CourseSelectionHistory.Remove(gecmis);
+            return CreatedAtAction("GetCourseSelectionHistory", new { id = courseSelectionHistory.StudentID }, courseSelectionHistory);
+        }
+
+        // DELETE: api/CourseSelectionHistories/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCourseSelectionHistory(int id)
+        {
+            var courseSelectionHistory = await _context.CourseSelectionHistory.FindAsync(id);
+            if (courseSelectionHistory == null)
+            {
+                return NotFound();
+            }
+
+            _context.CourseSelectionHistory.Remove(courseSelectionHistory);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool SecimGecmisiVarMi(int id)
+        private bool CourseSelectionHistoryExists(int id)
         {
-            return _context.CourseSelectionHistory.Any(csh => csh.StudentID == id);
+            return _context.CourseSelectionHistory.Any(e => e.StudentID == id);
         }
     }
 }

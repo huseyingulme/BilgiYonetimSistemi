@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.AdvisorsController",
-    "Method": "GetAdvisors",
+    "Method": "GetAdvisor",
     "RelativePath": "api/Advisors",
     "HttpMethod": "GET",
     "IsController": true,
@@ -11,14 +11,14 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.AdvisorsController",
-    "Method": "CreateAdvisor",
+    "Method": "PostAdvisors",
     "RelativePath": "api/Advisors",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "advisor",
+        "Name": "advisors",
         "Type": "BilgiYonetimSistemi.Models.Advisors",
         "IsRequired": true
       }
@@ -37,7 +37,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.AdvisorsController",
-    "Method": "GetAdvisorById",
+    "Method": "GetAdvisors",
     "RelativePath": "api/Advisors/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -53,7 +53,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.AdvisorsController",
-    "Method": "UpdateAdvisor",
+    "Method": "PutAdvisors",
     "RelativePath": "api/Advisors/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -65,7 +65,7 @@
         "IsRequired": true
       },
       {
-        "Name": "advisor",
+        "Name": "advisors",
         "Type": "BilgiYonetimSistemi.Models.Advisors",
         "IsRequired": true
       }
@@ -74,7 +74,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.AdvisorsController",
-    "Method": "DeleteAdvisor",
+    "Method": "DeleteAdvisors",
     "RelativePath": "api/Advisors/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -89,16 +89,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseCapacityController",
-    "Method": "GetAllCourseCapacities",
-    "RelativePath": "api/CourseCapacity",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseQuotasController",
+    "Method": "GetCourseQuotas",
+    "RelativePath": "api/CourseQuotas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BilgiYonetimSistemi.Models.CourseWithCapacityModel, BilgiYonetimSistemi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -109,22 +109,22 @@
     ]
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseCapacityController",
-    "Method": "CreateCourseCapacity",
-    "RelativePath": "api/CourseCapacity",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseQuotasController",
+    "Method": "PostCourseQuota",
+    "RelativePath": "api/CourseQuotas",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "courseCapacity",
-        "Type": "BilgiYonetimSistemi.Models.CourseCapacity",
+        "Name": "courseQuota",
+        "Type": "BilgiYonetimSistemi.Models.CourseQuotas",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BilgiYonetimSistemi.Models.CourseCapacity",
+        "Type": "BilgiYonetimSistemi.Models.CourseQuotas",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -135,9 +135,62 @@
     ]
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseCapacityController",
-    "Method": "UpdateRemainingCapacity",
-    "RelativePath": "api/CourseCapacity/{courseId}",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseQuotasController",
+    "Method": "GetCourseQuota",
+    "RelativePath": "api/CourseQuotas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseQuotasController",
+    "Method": "PutCourseQuota",
+    "RelativePath": "api/CourseQuotas/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "courseQuota",
+        "Type": "BilgiYonetimSistemi.Models.CourseQuotas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseQuotasController",
+    "Method": "DeleteCourseQuota",
+    "RelativePath": "api/CourseQuotas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseQuotasController",
+    "Method": "UpdateCourseQuota",
+    "RelativePath": "api/CourseQuotas/coursequotas/{courseId}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -151,71 +204,28 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseCapacityController",
-    "Method": "GetCourseCapacityById",
-    "RelativePath": "api/CourseCapacity/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseCapacityController",
-    "Method": "UpdateCourseCapacity",
-    "RelativePath": "api/CourseCapacity/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "updatedCourseCapacity",
-        "Type": "BilgiYonetimSistemi.Models.CourseCapacity",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseCapacityController",
-    "Method": "DeleteCourseCapacity",
-    "RelativePath": "api/CourseCapacity/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CoursesController",
-    "Method": "TumDersleriGetir",
+    "Method": "GetCourse",
     "RelativePath": "api/Courses",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CoursesController",
-    "Method": "DersEkle",
+    "Method": "PostCourse",
     "RelativePath": "api/Courses",
     "HttpMethod": "POST",
     "IsController": true,
@@ -227,11 +237,21 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "BilgiYonetimSistemi.Models.Course",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CoursesController",
-    "Method": "DersGetir",
+    "Method": "GetCourse",
     "RelativePath": "api/Courses/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -247,7 +267,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CoursesController",
-    "Method": "DersGuncelle",
+    "Method": "PutCourse",
     "RelativePath": "api/Courses/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -268,7 +288,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CoursesController",
-    "Method": "DersSil",
+    "Method": "DeleteCourse",
     "RelativePath": "api/Courses/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -284,7 +304,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionHistoriesController",
-    "Method": "TumSecimGecmisiniGetir",
+    "Method": "GetCourseSelectionHistory",
     "RelativePath": "api/CourseSelectionHistories",
     "HttpMethod": "GET",
     "IsController": true,
@@ -304,14 +324,14 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionHistoriesController",
-    "Method": "SecimGecmisiEkle",
+    "Method": "PostCourseSelectionHistory",
     "RelativePath": "api/CourseSelectionHistories",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "gecmis",
+        "Name": "courseSelectionHistory",
         "Type": "BilgiYonetimSistemi.Models.CourseSelectionHistory",
         "IsRequired": true
       }
@@ -330,7 +350,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionHistoriesController",
-    "Method": "OgrenciGecmisiGetir",
+    "Method": "GetCourseSelectionHistory",
     "RelativePath": "api/CourseSelectionHistories/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -346,7 +366,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionHistoriesController",
-    "Method": "SecimGecmisiGuncelle",
+    "Method": "PutCourseSelectionHistory",
     "RelativePath": "api/CourseSelectionHistories/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -358,7 +378,7 @@
         "IsRequired": true
       },
       {
-        "Name": "gecmis",
+        "Name": "courseSelectionHistory",
         "Type": "BilgiYonetimSistemi.Models.CourseSelectionHistory",
         "IsRequired": true
       }
@@ -367,7 +387,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionHistoriesController",
-    "Method": "SecimGecmisiSil",
+    "Method": "DeleteCourseSelectionHistory",
     "RelativePath": "api/CourseSelectionHistories/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -382,16 +402,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "TumDersSecimleriniGetir",
-    "RelativePath": "api/CourseSelections",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
+    "Method": "GetStudentCourseSelections",
+    "RelativePath": "api/StudentCourseSelections",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BilgiYonetimSistemi.Models.StudentCourseSelections, BilgiYonetimSistemi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -402,22 +422,22 @@
     ]
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "DersSecimiEkle",
-    "RelativePath": "api/CourseSelections",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
+    "Method": "PostStudentCourseSelections",
+    "RelativePath": "api/StudentCourseSelections",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "courseSelection",
-        "Type": "BilgiYonetimSistemi.Models.CourseSelection",
+        "Name": "studentCourseSelections",
+        "Type": "BilgiYonetimSistemi.Models.StudentCourseSelections",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BilgiYonetimSistemi.Models.CourseSelection",
+        "Type": "BilgiYonetimSistemi.Models.StudentCourseSelections",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -428,9 +448,30 @@
     ]
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "DersSecimiSil",
-    "RelativePath": "api/CourseSelections/{id}",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
+    "Method": "PutStudentCourseSelections",
+    "RelativePath": "api/StudentCourseSelections/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "studentCourseSelections",
+        "Type": "BilgiYonetimSistemi.Models.StudentCourseSelections",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
+    "Method": "DeleteStudentCourseSelections",
+    "RelativePath": "api/StudentCourseSelections/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -444,133 +485,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "DersSecimGecmisiniGetir",
-    "RelativePath": "api/CourseSelections/History",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "OgrenciDersSecimGecmisi",
-    "RelativePath": "api/CourseSelections/History/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "OnaylanmayanDersSecimleriGetir",
-    "RelativePath": "api/CourseSelections/NonConfirmed",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "OnaylanmayanSecimEkle",
-    "RelativePath": "api/CourseSelections/NonConfirmed",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "nonConfirmedSelections",
-        "Type": "BilgiYonetimSistemi.Models.NonConfirmedSelections",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BilgiYonetimSistemi.Models.NonConfirmedSelections",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "OnaylanmayanSecimSil",
-    "RelativePath": "api/CourseSelections/NonConfirmed/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "DanismanaGoreOnaylanmayanSecimler",
-    "RelativePath": "api/CourseSelections/NonConfirmed/Advisor/{advisorId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "advisorId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "OgrenciyeGoreOnaylanmayanSecimler",
-    "RelativePath": "api/CourseSelections/NonConfirmed/Student/{studentId}",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
+    "Method": "GetStudentCourseSelections",
+    "RelativePath": "api/StudentCourseSelections/{studentId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -584,22 +501,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.CourseSelectionsController",
-    "Method": "OgrenciDersSecimleriniGetir",
-    "RelativePath": "api/CourseSelections/Student/{studentId}",
+    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentsController",
+    "Method": "GetStudent",
+    "RelativePath": "api/Students",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "studentId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BilgiYonetimSistemi.Models.Student, BilgiYonetimSistemi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -611,33 +522,33 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.StudentsController",
-    "Method": "TumOgrencileriGetir",
-    "RelativePath": "api/Students",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentsController",
-    "Method": "OgrenciEkle",
+    "Method": "PostStudent",
     "RelativePath": "api/Students",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "yeniOgrenci",
+        "Name": "student",
         "Type": "BilgiYonetimSistemi.Models.Student",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "BilgiYonetimSistemi.Models.Student",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.StudentsController",
-    "Method": "OgrenciGetir",
+    "Method": "GetStudent",
     "RelativePath": "api/Students/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -649,11 +560,21 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "BilgiYonetimSistemi.Models.Student",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.StudentsController",
-    "Method": "OgrenciGuncelle",
+    "Method": "PutStudent",
     "RelativePath": "api/Students/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -665,7 +586,7 @@
         "IsRequired": true
       },
       {
-        "Name": "guncelOgrenci",
+        "Name": "student",
         "Type": "BilgiYonetimSistemi.Models.Student",
         "IsRequired": true
       }
@@ -674,7 +595,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.StudentsController",
-    "Method": "OgrenciSil",
+    "Method": "DeleteStudent",
     "RelativePath": "api/Students/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -689,113 +610,54 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.TranscriptsController",
-    "Method": "TumTranskriptleriGetir",
-    "RelativePath": "api/Transcripts",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.TranscriptsController",
-    "Method": "TranskriptEkle",
-    "RelativePath": "api/Transcripts",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "yeniTranskript",
-        "Type": "BilgiYonetimSistemi.Models.Transcripts",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.TranscriptsController",
-    "Method": "TranskriptGetir",
-    "RelativePath": "api/Transcripts/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.TranscriptsController",
-    "Method": "TranskriptGuncelle",
-    "RelativePath": "api/Transcripts/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "guncelTranskript",
-        "Type": "BilgiYonetimSistemi.Models.Transcripts",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BilgiYonetimSistemi.Controllers.TranscriptsController",
-    "Method": "TranskriptSil",
-    "RelativePath": "api/Transcripts/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "BilgiYonetimSistemi.Controllers.UsersController",
-    "Method": "TumKullanicilariGetir",
+    "Method": "GetUsers",
     "RelativePath": "api/Users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BilgiYonetimSistemi.Models.Users, BilgiYonetimSistemi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.UsersController",
-    "Method": "KullaniciEkle",
+    "Method": "PostUsers",
     "RelativePath": "api/Users",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
+        "Name": "users",
         "Type": "BilgiYonetimSistemi.Models.Users",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "BilgiYonetimSistemi.Models.Users",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.UsersController",
-    "Method": "KullaniciGetir",
+    "Method": "GetUsers",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -807,11 +669,21 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "BilgiYonetimSistemi.Models.Users",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.UsersController",
-    "Method": "KullaniciGuncelle",
+    "Method": "PutUsers",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -823,7 +695,7 @@
         "IsRequired": true
       },
       {
-        "Name": "user",
+        "Name": "users",
         "Type": "BilgiYonetimSistemi.Models.Users",
         "IsRequired": true
       }
@@ -832,7 +704,7 @@
   },
   {
     "ContainingType": "BilgiYonetimSistemi.Controllers.UsersController",
-    "Method": "KullaniciSil",
+    "Method": "DeleteUsers",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,

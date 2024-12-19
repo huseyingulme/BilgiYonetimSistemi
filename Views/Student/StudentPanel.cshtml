@@ -1,157 +1,149 @@
-﻿@model dynamic
+﻿@using BilgiYonetimSistemi.Models
 @{
-    ViewBag.Title = "Ogrenci Paneli";
+    Layout = null;
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Öğrenci Paneli</title>
-    <link href="/css/StudentPanel.css" rel="stylesheet"> <!-- Ayrı CSS dosyası -->
-    <script src="/js/StudentPanel.js" defer></script> <!-- Ayrı JS dosyası -->
+    <title>Öğrenci Bilgilendirme Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/studentpanel.css">
 </head>
 <body>
-    <div class="flex min-h-screen">
-        <!-- Yan Panel -->
-        <aside class="w-64 bg-gray-800 text-white flex flex-col">
-            <div class="p-4 text-center font-bold text-lg">Öğrenci Paneli</div>
-            <nav class="flex-grow">
-                <ul class="space-y-4 p-4">
-                    <li><a href="#dashboard" class="nav-link">Öğrenci Bilgisi</a></li>
-                    <li><a href="#lessons" class="nav-link">Kayıtlı Derslerim</a></li>
-                    <li><a href="#select-lessons" class="nav-link">Ders Seçimi</a></li>
-                    <li><a href="#profile-update" class="nav-link">Profil Güncelleme</a></li>
-                    <li><a href="#transcript" class="nav-link">Transkript</a></li>
-                    <li><a href="/Account/Logout" class="nav-link">Çıkış Yap</a></li>
-                </ul>
-            </nav>
-        </aside>
 
-        <!-- Ana İçerik -->
-        <main class="flex-grow bg-gray-100 p-6">
-            <!-- Öğrenci Bilgisi Bölümü -->
-            <section id="dashboard" class="hidden">
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <h1 class="text-2xl font-bold text-gray-800 mb-4">Öğrenci Bilgileri</h1>
-                    <p><strong>ID:</strong> @Model.StudentID</p>
-                    <p><strong>Ad Soyad:</strong> @Model.FirstName @Model.LastName</p>
-                </div>
-            </section>
-
-            <!-- Kayıtlı Derslerim Bölümü -->
-            <section id="lessons" class="hidden">
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <h1 class="text-2xl font-bold text-gray-800 mb-4">Kayıtlı Derslerim</h1>
-                    <table class="w-full text-left border-collapse">
-                        <thead class="bg-gray-800 text-white">
-                            <tr>
-                                <th class="p-2">#</th>
-                                <th class="p-2">Ders Adı</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if (Model.RegisteredCourses != null && Model.RegisteredCourses.Any())
-                            {
-                                int index = 1;
-                                foreach (var course in Model.RegisteredCourses)
-                                {
-                                    <tr class="border-b">
-                                        <td class="p-2">@index++</td>
-                                        <td class="p-2">@course.CourseName</td>
-                                    </tr>
-                                }
-                            }
-                            else
-                            {
-                                <tr>
-                                    <td colspan="2" class="p-2 text-center">Henüz kayıtlı dersiniz bulunmamaktadır.</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Ders Seçimi Bölümü -->
-            <section id="select-lessons" class="hidden">
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <h1 class="text-2xl font-bold text-gray-800 mb-4">Ders Seçimi</h1>
-                    <form method="post" action="/Student/SubmitCourseSelections">
-                        <div class="space-y-4">
-                            @for (int i = 0; i < Model.AvailableCourses.Count(); i++)
-                            {
-                                <div class="flex items-center space-x-4">
-                                    <input type="checkbox" name="selectedCourseIds" value="@Model.AvailableCourses[i].CourseID" class="form-checkbox">
-                                    <label>@Model.AvailableCourses[i].CourseName</label>
-                                </div>
-                            }
-                        </div>
-                        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-blue-600">Ders Seç</button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- Profil Güncelleme Bölümü -->
-            <section id="profile-update" class="hidden">
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <h1 class="text-2xl font-bold text-gray-800 mb-4">Profil Güncelleme</h1>
-                    <form method="post" action="/Student/UpdateProfile">
-                        <div class="space-y-4">
-                            <div>
-                                <label for="firstName" class="block text-sm font-bold text-gray-700">Ad</label>
-                                <input type="text" id="firstName" name="FirstName" value="@Model.FirstName" class="w-full border rounded-lg p-2">
-                            </div>
-                            <div>
-                                <label for="lastName" class="block text-sm font-bold text-gray-700">Soyad</label>
-                                <input type="text" id="lastName" name="LastName" value="@Model.LastName" class="w-full border rounded-lg p-2">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-bold text-gray-700">E-posta</label>
-                                <input type="email" id="email" name="Email" value="@Model.Email" class="w-full border rounded-lg p-2">
-                            </div>
-                        </div>
-                        <button type="submit" class="bg-green-500 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-green-600">Güncelle</button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- Transkript Bölümü -->
-            <section id="transcript" class="hidden">
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <h1 class="text-2xl font-bold text-gray-800 mb-4">Transkript</h1>
-                    <table class="w-full text-left border-collapse">
-                        <thead class="bg-gray-800 text-white">
-                            <tr>
-                                <th class="p-2">Ders Kodu</th>
-                                <th class="p-2">Ders Adı</th>
-                                <th class="p-2">Not</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if (Model.Transcripts != null && Model.Transcripts.Any())
-                            {
-                                foreach (var transcript in Model.Transcripts)
-                                {
-                                    <tr class="border-b">
-                                        <td class="p-2">@transcript.CourseID</td>
-                                        <td class="p-2">@transcript.CourseName</td>
-                                        <td class="p-2">@transcript.Grade</td>
-                                    </tr>
-                                }
-                            }
-                            else
-                            {
-                                <tr>
-                                    <td colspan="3" class="p-2 text-center">Henüz transkript verisi bulunmamaktadır.</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </main>
+    <!-- Sol Menü -->
+    <div class="menu">
+        <img src="~/images/ktu-logo.png" alt="KTÜ Logo" class="logo">
+        <h2>@(ViewBag.Student != null ? $"{ViewBag.Student.firstName} {ViewBag.Student.lastName}" : "Öğrenci Paneli")</h2>
+        <div id="menu-items">
+            <div class="nav-item" onclick="toggleSection('ogrenci')">Öğrenci Bilgileri</div>
+            <div class="nav-item" onclick="toggleSection('derslerim')">Ders Bilgileri</div>
+            <div class="nav-item" onclick="toggleSection('dersler')">Ders Seçimi</div>
+            <div class="nav-item" onclick="toggleSection('danisman')">Danışman</div>
+        </div>
+        <div class="logout" onclick="logout()">Çıkış Yap</div>
     </div>
+
+    <!-- İçerik Alanı -->
+    <div class="content">
+        <!-- Öğrenci Bilgileri -->
+        <div id="ogrenci" class="section hidden">
+            <h1>Öğrenci Bilgileri</h1>
+            @if (ViewBag.Student != null)
+            {
+                <p><strong>Öğrenci No:</strong> @ViewBag.Student.studentID</p>
+                <p><strong>Ad Soyad:</strong> @ViewBag.Student.firstName @ViewBag.Student.lastName</p>
+                <p><strong>Email:</strong> @ViewBag.Student.email</p>
+                <button class="btn" onclick="showUpdateForm()">Bilgileri Güncelle</button>
+
+                <div id="updateForm" style="display: none; margin-top: 20px;">
+                    <h3>Bilgileri Güncelle</h3>
+                    <form asp-action="UpdateStudent" method="post">
+                        <input type="hidden" name="id" value="@ViewBag.Student.studentID" />
+                        <label for="newEmail">Yeni E-posta:</label>
+                        <input type="email" id="newEmail" name="newEmail" placeholder="Yeni e-posta">
+                        <label for="newPassword">Yeni Şifre:</label>
+                        <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifre">
+                        <button type="submit" class="btn">Bilgileri Kaydet</button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <p>Bilgiler yüklenemedi, lütfen tekrar deneyiniz.</p>
+            }
+        </div>
+
+        <!-- Ders Bilgileri -->
+        <div id="derslerim" class="section hidden">
+            <h1>Ders Bilgileri</h1>
+            @if (ViewBag.Scs != null)
+            {
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Ders Adı</th>
+                            <th>Ders Kodu</th>
+                            <th>Kredi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in ViewBag.Scs)
+                        {
+                            <tr>
+                                <td>@course.course.courseName</td>
+                                <td>@course.course.courseCode</td>
+                                <td>@course.course.credit</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>Henüz ders bilgisi mevcut değil.</p>
+            }
+        </div>
+
+        <!-- Ders Seçimi -->
+        <div id="dersler" class="section" ">
+            @if (ViewBag.AllowCourseSelection == true)
+            {
+                <h1>Ders Seçimi</h1>
+                <p>Lütfen derslerinizi seçin:</p>
+                <form id="courseSelectionForm" method="post" asp-action="SubmitCourseSelections">
+                    <!-- Butonu Liste Üstüne Aldık -->
+                    <button type="submit" id="confirmSelection" class="btn">Dersleri Onayla</button>
+
+                    <div class="course-selection">
+                        <ul id="courseList" class="combo-list">
+                            @foreach (var course in ViewBag.Courses)
+                            {
+                                <li class="course-option" onclick="toggleCourseSelection('@course.CourseID')">
+                                    <span>@course.CourseName (@course.CourseCode)</span>
+                                    <span class="course-credits">@course.Credit Kredi</span>
+                                    <input type="checkbox" name="selectedCourseIds" value="@course.CourseID">
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </form>
+            }
+            else if (ViewBag.SelectionMessage != null)
+            {
+                <p class="info-message">@ViewBag.SelectionMessage</p>
+            }
+            else
+            {
+                <p class="error-message">Ders bilgileri alınamadı. Lütfen daha sonra tekrar deneyiniz.</p>
+            }
+        </div>
+
+        <!-- Danışman Bilgileri -->
+        <div id="danisman" class="section hidden">
+            <h1>Danışman Bilgileri</h1>
+            @if (ViewBag.Advisor != null)
+            {
+                <p><strong>Adı:</strong> @ViewBag.Advisor.FullName </p>
+            }
+            else
+            {
+                <p>Danışman bilgileri yüklenemedi.</p>
+            }
+        </div>
+        
+        <!-- Çıkış Yap -->
+        <div id="logout" class="section hidden">
+            <h1>Çıkış Yap</h1>
+            <p>Hesabınızdan çıkış yapmak üzeresiniz. Devam etmek istiyor musunuz?</p>
+            <button class="btn" onclick="confirmLogout()">Evet, Çıkış Yap</button>
+        </div>
+
+    </div>
+
+    <script src="~/js/studentpanel.js"></script>
 </body>
 </html>

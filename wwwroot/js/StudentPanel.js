@@ -1,18 +1,15 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
+﻿function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const isHidden = section.classList.contains('hidden');
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-
-            const targetSection = document.querySelector(link.getAttribute('href'));
-            targetSection.classList.remove('hidden');
-        });
+    document.querySelectorAll('.section').forEach(s => {
+        s.classList.add('hidden');
+        s.classList.remove('visible');
     });
 
-    document.querySelector('#dashboard').classList.remove('hidden');
-});
+    if (isHidden) {
+        section.classList.remove('hidden');
+        section.classList.add('visible');
+    }
+}
+

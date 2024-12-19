@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BilgiYonetimSistemi.Data;
+﻿using BilgiYonetimSistemi.Data;
 using BilgiYonetimSistemi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BilgiYonetimSistemi.Controllers
 {
@@ -18,12 +18,9 @@ namespace BilgiYonetimSistemi.Controllers
 
         // GET: api/Students
         [HttpGet]
-        public async Task<IActionResult> TumOgrencileriGetir()
+        public async Task<ActionResult<IEnumerable<Student>>> GetStudent()
         {
             var studentsWithAdvisorAndCourses = await _context.Students
-                .Include(s => s.Advisors) // Danışmanı dahil et
-                .Include(s => s.CourseSelection) // Seçilen dersleri dahil et
-                .ThenInclude(cs => cs.Course) // Kurs bilgilerini dahil et
                 .Select(s => new
                 {
                     s.StudentID,
@@ -32,36 +29,28 @@ namespace BilgiYonetimSistemi.Controllers
                     s.Email,
                     Advisor = new
                     {
-                        s.Advisors.FullName,
-                        s.Advisors.Title,
-                        s.Advisors.Department
+                        s.Advisors.FullName, // Danışmanın adı
+                        s.Advisors.Title, // Danışmanın unvanı
+                        s.Advisors.Department // Danışmanın bölümü
                     },
-                    Courses = s.CourseSelection.Select(cs => new
+                    Courses = s.StudentCourseSelections.Select(sc => new
                     {
-                        cs.CourseID,
-                        cs.Course.CourseName,
-                        cs.SelectionDate
+                        sc.CourseID,
+                        sc.Course.CourseName, // Kurs adı
+                        sc.SelectionDate
                     }).ToList()
                 })
                 .ToListAsync();
-
-            if (studentsWithAdvisorAndCourses.Count == 0)
-            {
-                return NotFound(new { Message = "Herhangi bir öğrenci bulunamadı." });
-            }
 
             return Ok(studentsWithAdvisorAndCourses);
         }
 
         // GET: api/Students/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> OgrenciGetir(int id)
+        public async Task<ActionResult<Student>> GetStudent(int id)
         {
             var studentWithAdvisorAndCourses = await _context.Students
                 .Where(s => s.StudentID == id)
-                .Include(s => s.Advisors)
-                .Include(s => s.CourseSelection)
-                .ThenInclude(cs => cs.Course)
                 .Select(s => new
                 {
                     s.StudentID,
@@ -70,42 +59,40 @@ namespace BilgiYonetimSistemi.Controllers
                     s.Email,
                     Advisor = new
                     {
-                        s.Advisors.FullName,
-                        s.Advisors.Title,
-                        s.Advisors.Department
+                        s.AdvisorID, // Bu satırı ekleyin
+                        s.Advisors.FullName, // Danışmanın adı
+                        s.Advisors.Title, // Danışmanın unvanı
+                        s.Advisors.Department // Danışmanın bölümü
                     },
-                    Courses = s.CourseSelection.Select(cs => new
+                    Courses = s.StudentCourseSelections.Select(sc => new
                     {
-                        cs.CourseID,
-                        cs.Course.CourseName,
-                        cs.SelectionDate
+                        sc.CourseID,
+                        sc.Course.CourseName, // Kurs adı
+                        sc.SelectionDate
                     }).ToList()
                 })
                 .FirstOrDefaultAsync();
 
             if (studentWithAdvisorAndCourses == null)
             {
-                return NotFound(new { Message = $"ID {id} ile eşleşen öğrenci bulunamadı." });
+                return NotFound(); // Öğrenci bulunamazsa 404 döndür
             }
 
-            return Ok(studentWithAdvisorAndCourses);
+            return Ok(studentWithAdvisorAndCourses); // Öğrenci ve ilişkili veriler başarılı şekilde döndürülür
         }
 
+
         // PUT: api/Students/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> OgrenciGuncelle(int id, [FromBody] Student guncelOgrenci)
+        public async Task<IActionResult> PutStudent(int id, Student student)
         {
-            if (id != guncelOgrenci.StudentID)
+            if (id != student.StudentID)
             {
-                return BadRequest(new { Message = "Öğrenci ID'si eşleşmiyor." });
+                return BadRequest();
             }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _context.Entry(guncelOgrenci).State = EntityState.Modified;
+            _context.Entry(student).State = EntityState.Modified;
 
             try
             {
@@ -113,9 +100,9 @@ namespace BilgiYonetimSistemi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await OgrenciVarMi(id))
+                if (!StudentExists(id))
                 {
-                    return NotFound(new { Message = $"ID {id} ile öğrenci bulunamadı." });
+                    return NotFound();
                 }
                 else
                 {
@@ -127,46 +114,43 @@ namespace BilgiYonetimSistemi.Controllers
         }
 
         // POST: api/Students
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<IActionResult> OgrenciEkle([FromBody] Student yeniOgrenci)
+        public async Task<ActionResult<Student>> PostStudent(Student student)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _context.Students.Add(yeniOgrenci);
+            _context.Students.Add(student);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(OgrenciGetir), new { id = yeniOgrenci.StudentID }, yeniOgrenci);
+            return CreatedAtAction("GetStudent", new { id = student.StudentID }, student);
         }
 
         // DELETE: api/Students/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> OgrenciSil(int id)
+        public async Task<IActionResult> DeleteStudent(int id)
         {
-            var ogrenci = await _context.Students
-                .Include(s => s.CourseSelection) // İlişkili ders seçimlerini dahil et
+            var student = await _context.Students
+                .Include(s => s.StudentCourseSelections) // İlişkili kayıtları getir
                 .FirstOrDefaultAsync(s => s.StudentID == id);
 
-            if (ogrenci == null)
+            if (student == null)
             {
-                return NotFound(new { Message = $"ID {id} ile öğrenci bulunamadı." });
+                return NotFound();
             }
 
-            // Önce ilişkili ders seçimlerini sil
-            _context.CourseSelection.RemoveRange(ogrenci.CourseSelection);
+            // Önce ilişkili kayıtları sil
+            _context.StudentCourseSelections.RemoveRange(student.StudentCourseSelections);
 
-            // Öğrenciyi sil
-            _context.Students.Remove(ogrenci);
+            // Ardından öğrenciyi sil
+            _context.Students.Remove(student);
+
             await _context.SaveChangesAsync();
 
-            return Ok(new { Message = $"Öğrenci {id} başarıyla silindi." });
+            return NoContent();
         }
 
-        private async Task<bool> OgrenciVarMi(int id)
+        private bool StudentExists(int id)
         {
-            return await _context.Students.AnyAsync(s => s.StudentID == id);
+            return _context.Students.Any(e => e.StudentID == id);
         }
     }
 }

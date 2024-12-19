@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -11,7 +10,6 @@ namespace BilgiYonetimSistemi.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            
             migrationBuilder.CreateTable(
                 name: "Advisors",
                 columns: table => new
@@ -27,7 +25,21 @@ namespace BilgiYonetimSistemi.Migrations
                 {
                     table.PrimaryKey("PK_Advisors", x => x.AdvisorID);
                 });
-           
+
+            migrationBuilder.CreateTable(
+                name: "NonConfirmedSelections",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                    .Annotation("SqlServer:Identity", "1, 1"),
+
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NonConfirmedSelections", x => x.Id);
+                });
+
+
             migrationBuilder.CreateTable(
                 name: "Courses",
                 columns: table => new
@@ -102,50 +114,20 @@ namespace BilgiYonetimSistemi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CourseCapacity",
+                name: "CourseQuotas",
                 columns: table => new
                 {
-                    CourseID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Capacity = table.Column<int>(type: "int", nullable: false),
-                    RemainingCapacity = table.Column<int>(type: "int", nullable: false),
-                    CourseID1 = table.Column<int>(type: "int", nullable: false)
+                    CourseId = table.Column<int>(type: "int", nullable: false),
+                    Quota = table.Column<int>(type: "int", nullable: false),
+                    RemainingQuota = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CourseCapacity", x => x.CourseID);
                     table.ForeignKey(
-                        name: "FK_CourseCapacity_Courses_CourseID1",
-                        column: x => x.CourseID1,
+                        name: "FK_CourseQuotas_Courses_CourseId",
+                        column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CourseSelection",
-                columns: table => new
-                {
-                    CourseID = table.Column<int>(type: "int", nullable: false),
-                    StudentID = table.Column<int>(type: "int", nullable: false),
-                    SelectionID = table.Column<int>(type: "int", nullable: false),
-                    SelectionDate = table.Column<DateTime>(type: "date", nullable: false),
-                    IsApproved = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CourseSelection", x => new { x.CourseID, x.StudentID });
-                    table.ForeignKey(
-                        name: "FK_CourseSelection_Courses_CourseID",
-                        column: x => x.CourseID,
-                        principalTable: "Courses",
-                        principalColumn: "CourseID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CourseSelection_Students_StudentID",
-                        column: x => x.StudentID,
-                        principalTable: "Students",
-                        principalColumn: "StudentID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -185,29 +167,48 @@ namespace BilgiYonetimSistemi.Migrations
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_NonConfirmedSelections_Students_StudentId",
                         column: x => x.StudentId,
+                        principalTable: "Students",
+                        principalColumn: "StudentID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "StudentCourseSelections",
+                columns: table => new
+                {
+                    SelectionID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CourseID = table.Column<int>(type: "int", nullable: false),
+                    SelectionDate = table.Column<DateTime>(type: "date", nullable: false),
+                    IsApproved = table.Column<bool>(type: "bit", nullable: false),
+                    StudentID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StudentCourseSelections", x => x.SelectionID);
+                    table.ForeignKey(
+                        name: "FK_StudentCourseSelections_Courses_CourseID",
+                        column: x => x.CourseID,
+                        principalTable: "Courses",
+                        principalColumn: "CourseID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_StudentCourseSelections_Students_StudentID",
+                        column: x => x.StudentID,
                         principalTable: "Students",
                         principalColumn: "StudentID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CourseCapacity_CourseID1",
-                table: "CourseCapacity",
-                column: "CourseID1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CourseSelection_StudentID",
-                table: "CourseSelection",
-                column: "StudentID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CourseSelection_CourseID",
-                table: "CourseSelection",
-                column: "StudentID");
+                name: "IX_CourseQuotas_CourseId",
+                table: "CourseQuotas",
+                column: "CourseId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_NonConfirmedSelections_CourseId",
@@ -220,6 +221,16 @@ namespace BilgiYonetimSistemi.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_StudentCourseSelections_CourseID",
+                table: "StudentCourseSelections",
+                column: "CourseID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentCourseSelections_StudentID",
+                table: "StudentCourseSelections",
+                column: "StudentID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Students_AdvisorID",
                 table: "Students",
                 column: "AdvisorID");
@@ -229,16 +240,16 @@ namespace BilgiYonetimSistemi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CourseCapacity");
-
-            migrationBuilder.DropTable(
-                name: "CourseSelection");
+                name: "CourseQuotas");
 
             migrationBuilder.DropTable(
                 name: "CourseSelectionHistory");
 
             migrationBuilder.DropTable(
                 name: "NonConfirmedSelections");
+
+            migrationBuilder.DropTable(
+                name: "StudentCourseSelections");
 
             migrationBuilder.DropTable(
                 name: "Transcripts");

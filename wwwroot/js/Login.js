@@ -1,25 +1,55 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
-    // Varsayılan olarak öğrenci formu göster
-    showForm("student-form");
+﻿document.addEventListener("DOMContentLoaded", () => {
+    showForm("staff-form"); // Varsayılan olarak öğrenci giriş formunu göster
+
+    // Öğrenci formu kontrolü
+    const studentForm = document.getElementById("student-form");
+    studentForm.addEventListener("submit", function (event) {
+        if (!validateForm("student-form")) {
+            event.preventDefault();
+        }
+    });
+
+    // Personel formu kontrolü
+    const staffForm = document.getElementById("staff-form");
+    staffForm.addEventListener("submit", function (event) {
+        if (!validateForm("staff-form")) {
+            event.preventDefault();
+        }
+    });
 });
 
+// Form gösterme işlevi
 function showForm(formId) {
-    // Tüm formları gizle
-    document.querySelectorAll(".login-form").forEach(form => {
-        form.classList.add("hidden");
-    });
+    const studentForm = document.getElementById("student-form");
+    const staffForm = document.getElementById("staff-form");
 
-    // İlgili formu göster
-    document.getElementById(formId).classList.remove("hidden");
-
-    // Sekme butonları için aktif durumu ayarla
-    document.querySelectorAll(".tab-button").forEach(button => {
-        button.classList.remove("active");
-    });
+    const studentBtn = document.getElementById("student-login-btn");
+    const staffBtn = document.getElementById("staff-login-btn");
 
     if (formId === "student-form") {
-        document.getElementById("ogrenci-tab").classList.add("active");
-    } else {
-        document.getElementById("personel-tab").classList.add("active");
+        studentForm.classList.add("active");
+        staffForm.classList.remove("active");
+
+        studentBtn.classList.add("active");
+        staffBtn.classList.remove("active");
+    } else if (formId === "staff-form") {
+        staffForm.classList.add("active");
+        studentForm.classList.remove("active");
+
+        staffBtn.classList.add("active");
+        studentBtn.classList.remove("active");
     }
+}
+
+// Form doğrulama
+function validateForm(formId) {
+    const form = document.getElementById(formId);
+    const username = form.querySelector("input[name='Username']").value.trim();
+    const password = form.querySelector("input[name='Password']").value.trim();
+
+    if (!username || !password) {
+        alert("Kullanıcı adı ve şifre alanları boş bırakılamaz!");
+        return false; // Form gönderimini engelle
+    }
+    return true; // Form gönderimine izin ver
 }

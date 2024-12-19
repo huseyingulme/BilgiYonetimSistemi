@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BilgiYonetimSistemi.Data;
+﻿using BilgiYonetimSistemi.Data;
 using BilgiYonetimSistemi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BilgiYonetimSistemi.Controllers
 {
@@ -18,46 +18,36 @@ namespace BilgiYonetimSistemi.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public async Task<IActionResult> TumKullanicilariGetir()
+        public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
         {
-            var users = await _context.Users.ToListAsync();
-            if (users == null || !users.Any())
-            {
-                return NotFound(new { Message = "Herhangi bir kullanıcı bulunamadı." });
-            }
-
-            return Ok(users);
+            return await _context.Users.ToListAsync();
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> KullaniciGetir(int id)
+        public async Task<ActionResult<Users>> GetUsers(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var users = await _context.Users.FindAsync(id);
 
-            if (user == null)
+            if (users == null)
             {
-                return NotFound(new { Message = $"ID {id} ile eşleşen kullanıcı bulunamadı." });
+                return NotFound();
             }
 
-            return Ok(user);
+            return users;
         }
 
         // PUT: api/Users/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> KullaniciGuncelle(int id, [FromBody] Users user)
+        public async Task<IActionResult> PutUsers(int id, Users users)
         {
-            if (id != user.UserID)
+            if (id != users.UserID)
             {
-                return BadRequest(new { Message = "Kullanıcı ID'si eşleşmiyor." });
+                return BadRequest();
             }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(users).State = EntityState.Modified;
 
             try
             {
@@ -65,9 +55,9 @@ namespace BilgiYonetimSistemi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await KullaniciVarMi(id))
+                if (!UsersExists(id))
                 {
-                    return NotFound(new { Message = $"ID {id} ile kullanıcı bulunamadı." });
+                    return NotFound();
                 }
                 else
                 {
@@ -79,39 +69,35 @@ namespace BilgiYonetimSistemi.Controllers
         }
 
         // POST: api/Users
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<IActionResult> KullaniciEkle([FromBody] Users user)
+        public async Task<ActionResult<Users>> PostUsers(Users users)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _context.Users.Add(user);
+            _context.Users.Add(users);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(KullaniciGetir), new { id = user.UserID }, user);
+            return CreatedAtAction("GetUsers", new { id = users.UserID }, users);
         }
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> KullaniciSil(int id)
+        public async Task<IActionResult> DeleteUsers(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var users = await _context.Users.FindAsync(id);
+            if (users == null)
             {
-                return NotFound(new { Message = $"ID {id} ile kullanıcı bulunamadı." });
+                return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.Users.Remove(users);
             await _context.SaveChangesAsync();
 
-            return Ok(new { Message = $"Kullanıcı {id} başarıyla silindi." });
+            return NoContent();
         }
 
-        private async Task<bool> KullaniciVarMi(int id)
+        private bool UsersExists(int id)
         {
-            return await _context.Users.AnyAsync(e => e.UserID == id);
+            return _context.Users.Any(e => e.UserID == id);
         }
     }
 }
