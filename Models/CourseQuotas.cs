@@ -5,7 +5,7 @@ namespace BilgiYonetimSistemi.Models
     public class CourseQuotas
     {
         [Key]
-        public int CourseId { get; set; }
+        public int CourseID { get; set; }
         public int Quota { get; set; }
         public int RemainingQuota { get; set; }
 
@@ -14,7 +14,7 @@ namespace BilgiYonetimSistemi.Models
     }
     public class CourseQuotaResponse
     {
-        public int CourseId { get; set; }
+        public int CourseID { get; set; }
         public int Quota { get; set; }
         public int RemainingQuota { get; set; }
         public Course Course { get; set; } // Bu alanda course verisi null geliyor, gerekirse daha fazla özelleştirebilirsiniz

@@ -16,14 +16,29 @@ namespace BilgiYonetimSistemi.Controllers.WebController
         // GET: Login
         public IActionResult Login()
         {
+            var userRole = HttpContext.Session.GetString("Role");
+
+            if (!string.IsNullOrEmpty(userRole))
+            {
+                if (userRole == "Student")
+                {
+                    // Öğrenci rolü ile ana sayfaya yönlendir
+                    return RedirectToAction("Login", "Student");
+                }
+                else if (userRole == "Advisor")
+                {
+                    // Danışman rolü ile ana sayfaya yönlendir
+                    return RedirectToAction("Login", "Advisor");
+                }
+            }
             return View();
         }
 
         // Kullanıcı girişini kontrol eden aksiyon
         [HttpPost]
-        public async Task<IActionResult> Login(string username, string password, string role)
+        public async Task<IActionResult> Login(string Username, string Password, string Role)
         {
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(role))
+            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(Role))
             {
                 ViewBag.ErrorMessage = "Kullanıcı adı, şifre veya rol boş olamaz.";
                 return View("Login");
@@ -31,12 +46,12 @@ namespace BilgiYonetimSistemi.Controllers.WebController
 
             // Kullanıcıyı kontrol et
             var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Username == username && u.Role == role);
+                .FirstOrDefaultAsync(u => u.Username == Username && u.Role == Role);
 
             if (user != null)
             {
                 // Şifre doğrulama (örnek: Hash'li şifre karşılaştırması)
-                if (user.PasswordHash != password) // Doğru bir şifreleme kontrolü ekleyin
+                if (user.PasswordHash != Password) // Doğru bir şifreleme kontrolü ekleyin
                 {
                     ViewBag.ErrorMessage = "Şifre yanlış.";
                     return View("Login");
@@ -45,7 +60,7 @@ namespace BilgiYonetimSistemi.Controllers.WebController
                 // Session'a UserID ekle
                 HttpContext.Session.SetString("UserID", user.UserID.ToString());
 
-                if (role == "Student")
+                if (Role == "Student")
                 {
                     // Öğrenci ID'sini oturuma ekle
                     if (user.RelatedID.HasValue)
@@ -60,7 +75,7 @@ namespace BilgiYonetimSistemi.Controllers.WebController
 
                     return RedirectToAction("StudentPanel", "Student");
                 }
-                else if (role == "Advisor")
+                else if (Role == "Advisor")
                 {
                     // Advisor ID'sini oturuma ekle
                     if (user.RelatedID.HasValue)

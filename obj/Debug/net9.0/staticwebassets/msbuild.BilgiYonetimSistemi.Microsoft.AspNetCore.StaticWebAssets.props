@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>rtfep2tqdg</Fingerprint>
-      <Integrity>n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg=</Integrity>
+      <Fingerprint>j2qv92rvdu</Fingerprint>
+      <Integrity>u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\studentpanel.css'))</OriginalItemSpec>
@@ -120,8 +120,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ig0zub7uaq</Fingerprint>
-      <Integrity>EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4=</Integrity>
+      <Fingerprint>vrwgkz27cu</Fingerprint>
+      <Integrity>6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</OriginalItemSpec>

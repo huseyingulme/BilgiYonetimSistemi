@@ -8,24 +8,16 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Veritabaný baðlantýsýný ayarlama
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-        // HTTP istemcisi fabrikasýný ekleme
-        builder.Services.AddHttpClient(); // IHttpClientFactory servisini ekledik
-
+        builder.Services.AddHttpClient();
         builder.Services.AddControllersWithViews();
-
-        // Loglama servislerini ekleme
         builder.Services.AddLogging(options =>
         {
             options.AddConsole();
             options.AddDebug();
             options.AddEventSourceLogger();
         });
-
-        // Session ve Cache yapýlandýrmasý
         builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession(options =>
         {
@@ -35,8 +27,6 @@ internal class Program
             options.IdleTimeout = TimeSpan.FromMinutes(30);
             options.Cookie.IsEssential = true;
         });
-
-        // Swagger ayarlarý
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "BilgiYonetimSistemi", Version = "v1" });
@@ -44,8 +34,6 @@ internal class Program
 
         var app = builder.Build();
 
-
-        // Development ortamý için Swagger ve hata sayfasý
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
@@ -63,12 +51,9 @@ internal class Program
         app.UseRouting();
         app.UseAuthorization();
         app.UseSession();
-
-        // Route ayarlarý
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Account}/{action=Login}");
-
         app.Run();
     }
 }

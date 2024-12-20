@@ -117,7 +117,7 @@ namespace BilgiYonetimSistemi.Migrations
                 name: "CourseQuotas",
                 columns: table => new
                 {
-                    CourseId = table.Column<int>(type: "int", nullable: false),
+                    CourseID = table.Column<int>(type: "int", nullable: false),
                     Quota = table.Column<int>(type: "int", nullable: false),
                     RemainingQuota = table.Column<int>(type: "int", nullable: false)
                 },
@@ -125,7 +125,7 @@ namespace BilgiYonetimSistemi.Migrations
                 {
                     table.ForeignKey(
                         name: "FK_CourseQuotas_Courses_CourseId",
-                        column: x => x.CourseId,
+                        column: x => x.CourseID,
                         principalTable: "Courses",
                         principalColumn: "CourseID",
                         onDelete: ReferentialAction.Cascade);

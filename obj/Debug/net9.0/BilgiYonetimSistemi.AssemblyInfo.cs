@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BilgiYonetimSistemi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c94d3a11678884da6042974e05c85f1721b7380")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c579209b5a520d64b9bb1854f48a36463a6a5c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("BilgiYonetimSistemi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BilgiYonetimSistemi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

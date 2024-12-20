@@ -16,134 +16,132 @@
 
     <!-- Sol Menü -->
     <div class="menu">
-        <img src="~/images/ktu-logo.png" alt="KTÜ Logo" class="logo">
+        <img src="~/images/ktu-logo.png" alt="ogr Logo" class="logo">
         <h2>@(ViewBag.Student != null ? $"{ViewBag.Student.firstName} {ViewBag.Student.lastName}" : "Öğrenci Paneli")</h2>
         <div id="menu-items">
-            <div class="nav-item" onclick="toggleSection('ogrenci')">Öğrenci Bilgileri</div>
-            <div class="nav-item" onclick="toggleSection('derslerim')">Ders Bilgileri</div>
-            <div class="nav-item" onclick="toggleSection('dersler')">Ders Seçimi</div>
-            <div class="nav-item" onclick="toggleSection('danisman')">Danışman</div>
+            <div class="nav-item active" onclick="showSection('ogrenci')">Öğrenci Bilgileri</div>
+            <div class="nav-item" onclick="showSection('derslerim')">Ders Bilgileri</div>
+            <div class="nav-item" onclick="showSection('dersler')">Ders Seçimi</div>
+            <div class="nav-item" onclick="showSection('danisman')">Danışman</div>
         </div>
         <div class="logout" onclick="logout()">Çıkış Yap</div>
     </div>
 
     <!-- İçerik Alanı -->
-    <div class="content">
-        <!-- Öğrenci Bilgileri -->
-        <div id="ogrenci" class="section hidden">
-            <h1>Öğrenci Bilgileri</h1>
-            @if (ViewBag.Student != null)
-            {
-                <p><strong>Öğrenci No:</strong> @ViewBag.Student.studentID</p>
-                <p><strong>Ad Soyad:</strong> @ViewBag.Student.firstName @ViewBag.Student.lastName</p>
-                <p><strong>Email:</strong> @ViewBag.Student.email</p>
-                <button class="btn" onclick="showUpdateForm()">Bilgileri Güncelle</button>
+    <div id="ogrenci" class="section">
+        <h1>Öğrenci Bilgileri</h1>
+        @if (ViewBag.Student != null)
+        {
+            <p><strong>Öğrenci No:</strong> @ViewBag.Student.studentID</p>
+            <p><strong>Ad Soyad:</strong> @ViewBag.Student.firstName @ViewBag.Student.lastName</p>
+            <p><strong>Email:</strong> @ViewBag.Student.email</p>
+            <button class="btn" onclick="showUpdateForm()">Bilgileri Güncelle</button>
 
-                <div id="updateForm" style="display: none; margin-top: 20px;">
-                    <h3>Bilgileri Güncelle</h3>
-                    <form asp-action="UpdateStudent" method="post">
-                        <input type="hidden" name="id" value="@ViewBag.Student.studentID" />
-                        <label for="newEmail">Yeni E-posta:</label>
-                        <input type="email" id="newEmail" name="newEmail" placeholder="Yeni e-posta">
-                        <label for="newPassword">Yeni Şifre:</label>
-                        <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifre">
-                        <button type="submit" class="btn">Bilgileri Kaydet</button>
-                    </form>
-                </div>
-            }
-            else
-            {
-                <p>Bilgiler yüklenemedi, lütfen tekrar deneyiniz.</p>
-            }
-        </div>
-
-        <!-- Ders Bilgileri -->
-        <div id="derslerim" class="section hidden">
-            <h1>Ders Bilgileri</h1>
-            @if (ViewBag.Scs != null)
-            {
-                <table class="modern-table">
-                    <thead>
-                        <tr>
-                            <th>Ders Adı</th>
-                            <th>Ders Kodu</th>
-                            <th>Kredi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var course in ViewBag.Scs)
-                        {
-                            <tr>
-                                <td>@course.course.courseName</td>
-                                <td>@course.course.courseCode</td>
-                                <td>@course.course.credit</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            }
-            else
-            {
-                <p>Henüz ders bilgisi mevcut değil.</p>
-            }
-        </div>
-
-        <!-- Ders Seçimi -->
-        <div id="dersler" class="section" ">
-            @if (ViewBag.AllowCourseSelection == true)
-            {
-                <h1>Ders Seçimi</h1>
-                <p>Lütfen derslerinizi seçin:</p>
-                <form id="courseSelectionForm" method="post" asp-action="SubmitCourseSelections">
-                    <!-- Butonu Liste Üstüne Aldık -->
-                    <button type="submit" id="confirmSelection" class="btn">Dersleri Onayla</button>
-
-                    <div class="course-selection">
-                        <ul id="courseList" class="combo-list">
-                            @foreach (var course in ViewBag.Courses)
-                            {
-                                <li class="course-option" onclick="toggleCourseSelection('@course.CourseID')">
-                                    <span>@course.CourseName (@course.CourseCode)</span>
-                                    <span class="course-credits">@course.Credit Kredi</span>
-                                    <input type="checkbox" name="selectedCourseIds" value="@course.CourseID">
-                                </li>
-                            }
-                        </ul>
-                    </div>
+            <!-- Bilgileri Güncelle Formu -->
+            <div id="updateForm" style="display: none; margin-top: 20px;">
+                <h3>Bilgileri Güncelle</h3>
+                <form asp-action="UpdateStudent" method="post">
+                    <input type="hidden" name="id" value="@ViewBag.Student.studentID" />
+                    <label for="newEmail">Yeni E-posta:</label>
+                    <input type="email" id="newEmail" name="newEmail" placeholder="Yeni e-posta">
+                    <br><br>
+                    <label for="newPassword">Yeni Şifre:</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifre">
+                    <br><br>
+                    <button type="submit" class="btn btn-secondary">Bilgileri Kaydet</button>
                 </form>
-            }
-            else if (ViewBag.SelectionMessage != null)
-            {
-                <p class="info-message">@ViewBag.SelectionMessage</p>
-            }
-            else
-            {
-                <p class="error-message">Ders bilgileri alınamadı. Lütfen daha sonra tekrar deneyiniz.</p>
-            }
-        </div>
+            </div>
+        }
+        else
+        {
+            <p>Bilgiler yüklenemedi, lütfen tekrar deneyiniz.</p>
+        }
+    </div>
 
-        <!-- Danışman Bilgileri -->
-        <div id="danisman" class="section hidden">
-            <h1>Danışman Bilgileri</h1>
-            @if (ViewBag.Advisor != null)
-            {
-                <p><strong>Adı:</strong> @ViewBag.Advisor.FullName </p>
-            }
-            else
-            {
-                <p>Danışman bilgileri yüklenemedi.</p>
-            }
-        </div>
-        
-        <!-- Çıkış Yap -->
-        <div id="logout" class="section hidden">
-            <h1>Çıkış Yap</h1>
-            <p>Hesabınızdan çıkış yapmak üzeresiniz. Devam etmek istiyor musunuz?</p>
-            <button class="btn" onclick="confirmLogout()">Evet, Çıkış Yap</button>
-        </div>
+    <!-- Ders Bilgileri -->
+    <div id="derslerim" class="section" style="display: none;">
+        <h1>Ders Bilgileri</h1>
+        @if (ViewBag.Scs != null)
+        {
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Ders Adı</th>
+                        <th>Ders Kodu</th>
+                        <th>Kredi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var course in ViewBag.Scs)
+                    {
+                        <tr>
+                            <td>@course.course.courseName</td>
+                            <td>@course.course.courseCode</td>
+                            <td>@course.course.credit</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Henüz ders bilgisi mevcut değil.</p>
+        }
+    </div>
 
+
+    <!-- Ders Seçimi -->
+    <div id="dersler" class="section" style="display: none;">
+        @if (ViewBag.AllowCourseSelection == true)
+        {
+            <h1>Ders Seçimi</h1>
+            <p>Lütfen derslerinizi seçin:</p>
+            <form id="courseSelectionForm" method="post" asp-action="SubmitCourseSelections">
+                <!-- Butonu Liste Üstüne Aldık -->
+                <button type="submit" id="confirmSelection" class="btn">Dersleri Onayla</button>
+
+                <div class="course-selection">
+                    <ul id="courseList" class="combo-list">
+                        @foreach (var course in ViewBag.Courses)
+                        {
+                            <li class="course-option" onclick="toggleCourseSelection('@course.courseID')">
+                                <span>@course.courseName (@course.courseCode)</span>
+                                <span class="course-credits">@course.credit Kredi</span>
+                                <input type="checkbox" name="selectedCourseIds" value="@course.courseID" style="display: none;">
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </form>
+        }
+        else if (ViewBag.SelectionMessage != null)
+        {
+            <p class="info-message">@ViewBag.SelectionMessage</p>
+        }
+        else
+        {
+            <p class="error-message">Ders bilgileri alınamadı. Lütfen daha sonra tekrar deneyiniz.</p>
+        }
+    </div>
+
+
+    <!-- Danışman Bilgileri -->
+    <div id="danisman" class="section" style="display: none;">
+        <h1>Danışman Bilgileri</h1>
+        @if (ViewBag.Advisor != null)
+        {
+            <p><strong>Ad Soyad:</strong> @ViewBag.Advisor.FullName</p>
+            <p><strong>Bölüm:</strong> @ViewBag.Advisor.Department</p>
+            <button class="btn btn-secondary">Mesaj Gönder</button>
+        }
+        else
+        {
+            <p>Danışman bilgileri yüklenemedi.</p>
+        }
+    </div>
     </div>
 
     <script src="~/js/studentpanel.js"></script>
+
 </body>
 </html>

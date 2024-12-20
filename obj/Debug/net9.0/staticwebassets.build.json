@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gDjo1Ot40bRSPuZi1aDnO4l68CkDw4SPj1lBxsYyEj8=",
+  "Hash": "TlnmJ+nyO85wvW2cw3DKniCTH14+KiqCAEow32q7bk0=",
   "Source": "BilgiYonetimSistemi",
   "BasePath": "_content/BilgiYonetimSistemi",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-ig0zub7uaq.gz",
+      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-vrwgkz27cu.gz",
       "SourceId": "BilgiYonetimSistemi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BilgiYonetimSistemi",
-      "RelativePath": "js/studentpanel#[.{fingerprint=ig0zub7uaq}]?.js.gz",
+      "RelativePath": "js/studentpanel#[.{fingerprint=vrwgkz27cu}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,8 +31,8 @@
       "RelatedAsset": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "exy17ipqfi",
-      "Integrity": "EmbWMIjRHNQfXfOWQKQJ8JxA103y6WLPYZtSswivZMk=",
+      "Fingerprint": "2w628uk00o",
+      "Integrity": "nvB0Lzkb153gjLYx+KIgiyDO5uu2pEa0NaLIvtNsbbU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js"
@@ -101,12 +101,12 @@
       "OriginalItemSpec": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\advisorpanel.js"
     },
     {
-      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-rtfep2tqdg.gz",
+      "Identity": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-j2qv92rvdu.gz",
       "SourceId": "BilgiYonetimSistemi",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BilgiYonetimSistemi",
-      "RelativePath": "css/studentpanel#[.{fingerprint=rtfep2tqdg}]?.css.gz",
+      "RelativePath": "css/studentpanel#[.{fingerprint=j2qv92rvdu}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -115,8 +115,8 @@
       "RelatedAsset": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\studentpanel.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "icm7rro05r",
-      "Integrity": "4jODZOUszz4zxKUfH3h3pcDYlHeop52SrY+O1OWn8MU=",
+      "Fingerprint": "9i8419m7b1",
+      "Integrity": "EYkK7lEkYgpOBquzhWZStMooY0TEINEiZI7rMQ+lnzY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\studentpanel.css"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "rtfep2tqdg",
-      "Integrity": "n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg=",
+      "Fingerprint": "j2qv92rvdu",
+      "Integrity": "u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\studentpanel.css"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ig0zub7uaq",
-      "Integrity": "EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4=",
+      "Fingerprint": "vrwgkz27cu",
+      "Integrity": "6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\studentpanel.js"
@@ -889,12 +889,12 @@
     },
     {
       "Route": "css/studentpanel.css",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-rtfep2tqdg.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-j2qv92rvdu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000865800866"
+          "Quality": "0.001937984496"
         }
       ],
       "ResponseHeaders": [
@@ -904,15 +904,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1154"
+          "Value": "515"
         },
         {
           "Name": "ETag",
-          "Value": "\"4jODZOUszz4zxKUfH3h3pcDYlHeop52SrY+O1OWn8MU=\""
+          "Value": "\"EYkK7lEkYgpOBquzhWZStMooY0TEINEiZI7rMQ+lnzY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:26:24 GMT"
+          "Value": "Fri, 20 Dec 2024 14:08:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -932,13 +932,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg=\""
+          "Value": "W/\"u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg="
+          "Value": "sha256-u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g="
         }
       ]
     },
@@ -953,7 +953,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3895"
+          "Value": "1344"
         },
         {
           "Name": "Content-Type",
@@ -961,11 +961,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg=\""
+          "Value": "\"u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:26:24 GMT"
+          "Value": "Fri, 20 Dec 2024 14:08:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -975,13 +975,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg="
+          "Value": "sha256-u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g="
         }
       ]
     },
     {
       "Route": "css/studentpanel.css.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-rtfep2tqdg.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-j2qv92rvdu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -990,7 +990,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1154"
+          "Value": "515"
         },
         {
           "Name": "Content-Type",
@@ -998,11 +998,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4jODZOUszz4zxKUfH3h3pcDYlHeop52SrY+O1OWn8MU=\""
+          "Value": "\"EYkK7lEkYgpOBquzhWZStMooY0TEINEiZI7rMQ+lnzY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:26:24 GMT"
+          "Value": "Fri, 20 Dec 2024 14:08:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1020,18 +1020,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4jODZOUszz4zxKUfH3h3pcDYlHeop52SrY+O1OWn8MU="
+          "Value": "sha256-EYkK7lEkYgpOBquzhWZStMooY0TEINEiZI7rMQ+lnzY="
         }
       ]
     },
     {
-      "Route": "css/studentpanel.rtfep2tqdg.css",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-rtfep2tqdg.gz",
+      "Route": "css/studentpanel.j2qv92rvdu.css",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-j2qv92rvdu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000865800866"
+          "Quality": "0.001937984496"
         }
       ],
       "ResponseHeaders": [
@@ -1041,15 +1041,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1154"
+          "Value": "515"
         },
         {
           "Name": "ETag",
-          "Value": "\"4jODZOUszz4zxKUfH3h3pcDYlHeop52SrY+O1OWn8MU=\""
+          "Value": "\"EYkK7lEkYgpOBquzhWZStMooY0TEINEiZI7rMQ+lnzY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:26:24 GMT"
+          "Value": "Fri, 20 Dec 2024 14:08:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1069,13 +1069,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg=\""
+          "Value": "W/\"u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rtfep2tqdg"
+          "Value": "j2qv92rvdu"
         },
         {
           "Name": "label",
@@ -1083,12 +1083,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg="
+          "Value": "sha256-u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g="
         }
       ]
     },
     {
-      "Route": "css/studentpanel.rtfep2tqdg.css",
+      "Route": "css/studentpanel.j2qv92rvdu.css",
       "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\studentpanel.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1098,7 +1098,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3895"
+          "Value": "1344"
         },
         {
           "Name": "Content-Type",
@@ -1106,11 +1106,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg=\""
+          "Value": "\"u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:26:24 GMT"
+          "Value": "Fri, 20 Dec 2024 14:08:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1120,7 +1120,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rtfep2tqdg"
+          "Value": "j2qv92rvdu"
         },
         {
           "Name": "label",
@@ -1128,13 +1128,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-n5j0jm3TacYSscUyQF09QWAvX9JdK1obgkryZy6wzBg="
+          "Value": "sha256-u/YXe4Wm4+smkBYDDGgPAMv5xnFynOET7TBLoSFwk+g="
         }
       ]
     },
     {
-      "Route": "css/studentpanel.rtfep2tqdg.css.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-rtfep2tqdg.gz",
+      "Route": "css/studentpanel.j2qv92rvdu.css.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\r8se66ja8u-j2qv92rvdu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1143,7 +1143,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1154"
+          "Value": "515"
         },
         {
           "Name": "Content-Type",
@@ -1151,11 +1151,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4jODZOUszz4zxKUfH3h3pcDYlHeop52SrY+O1OWn8MU=\""
+          "Value": "\"EYkK7lEkYgpOBquzhWZStMooY0TEINEiZI7rMQ+lnzY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:26:24 GMT"
+          "Value": "Fri, 20 Dec 2024 14:08:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1173,7 +1173,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "rtfep2tqdg"
+          "Value": "j2qv92rvdu"
         },
         {
           "Name": "label",
@@ -1181,7 +1181,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4jODZOUszz4zxKUfH3h3pcDYlHeop52SrY+O1OWn8MU="
+          "Value": "sha256-EYkK7lEkYgpOBquzhWZStMooY0TEINEiZI7rMQ+lnzY="
         }
       ]
     },
@@ -1864,13 +1864,13 @@
       ]
     },
     {
-      "Route": "js/studentpanel.ig0zub7uaq.js",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-ig0zub7uaq.gz",
+      "Route": "js/studentpanel.js",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-vrwgkz27cu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.004504504505"
+          "Quality": "0.001059322034"
         }
       ],
       "ResponseHeaders": [
@@ -1880,19 +1880,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "221"
+          "Value": "943"
         },
         {
           "Name": "ETag",
-          "Value": "\"EmbWMIjRHNQfXfOWQKQJ8JxA103y6WLPYZtSswivZMk=\""
+          "Value": "\"nvB0Lzkb153gjLYx+KIgiyDO5uu2pEa0NaLIvtNsbbU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:22:57 GMT"
+          "Value": "Fri, 20 Dec 2024 14:42:28 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -1908,26 +1908,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4=\""
+          "Value": "W/\"6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "ig0zub7uaq"
-        },
-        {
-          "Name": "label",
-          "Value": "js/studentpanel.js"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4="
+          "Value": "sha256-6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ="
         }
       ]
     },
     {
-      "Route": "js/studentpanel.ig0zub7uaq.js",
+      "Route": "js/studentpanel.js",
       "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1937,7 +1929,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "425"
+          "Value": "2353"
         },
         {
           "Name": "Content-Type",
@@ -1945,11 +1937,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4=\""
+          "Value": "\"6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:22:57 GMT"
+          "Value": "Fri, 20 Dec 2024 14:42:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/studentpanel.js.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-vrwgkz27cu.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "943"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nvB0Lzkb153gjLYx+KIgiyDO5uu2pEa0NaLIvtNsbbU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Dec 2024 14:42:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nvB0Lzkb153gjLYx+KIgiyDO5uu2pEa0NaLIvtNsbbU="
+        }
+      ]
+    },
+    {
+      "Route": "js/studentpanel.vrwgkz27cu.js",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-vrwgkz27cu.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001059322034"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "943"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nvB0Lzkb153gjLYx+KIgiyDO5uu2pEa0NaLIvtNsbbU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Dec 2024 14:42:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vrwgkz27cu"
+        },
+        {
+          "Name": "label",
+          "Value": "js/studentpanel.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/studentpanel.vrwgkz27cu.js",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2353"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Dec 2024 14:42:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1959,7 +2096,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ig0zub7uaq"
+          "Value": "vrwgkz27cu"
         },
         {
           "Name": "label",
@@ -1967,13 +2104,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4="
+          "Value": "sha256-6+kGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ="
         }
       ]
     },
     {
-      "Route": "js/studentpanel.ig0zub7uaq.js.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-ig0zub7uaq.gz",
+      "Route": "js/studentpanel.vrwgkz27cu.js.gz",
+      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-vrwgkz27cu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1982,7 +2119,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "221"
+          "Value": "943"
         },
         {
           "Name": "Content-Type",
@@ -1990,11 +2127,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"EmbWMIjRHNQfXfOWQKQJ8JxA103y6WLPYZtSswivZMk=\""
+          "Value": "\"nvB0Lzkb153gjLYx+KIgiyDO5uu2pEa0NaLIvtNsbbU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:22:57 GMT"
+          "Value": "Fri, 20 Dec 2024 14:42:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2012,7 +2149,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ig0zub7uaq"
+          "Value": "vrwgkz27cu"
         },
         {
           "Name": "label",
@@ -2020,144 +2157,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-EmbWMIjRHNQfXfOWQKQJ8JxA103y6WLPYZtSswivZMk="
-        }
-      ]
-    },
-    {
-      "Route": "js/studentpanel.js",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-ig0zub7uaq.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.004504504505"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "221"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"EmbWMIjRHNQfXfOWQKQJ8JxA103y6WLPYZtSswivZMk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:22:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4="
-        }
-      ]
-    },
-    {
-      "Route": "js/studentpanel.js",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "425"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:22:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-EsdlMClB1YYqqwxJmfdOlcUHaO10k7NFQH4G3VmbMs4="
-        }
-      ]
-    },
-    {
-      "Route": "js/studentpanel.js.gz",
-      "AssetFile": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\obj\\Debug\\net9.0\\compressed\\0lwlgrcu2f-ig0zub7uaq.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "221"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"EmbWMIjRHNQfXfOWQKQJ8JxA103y6WLPYZtSswivZMk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 19 Dec 2024 19:22:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-EmbWMIjRHNQfXfOWQKQJ8JxA103y6WLPYZtSswivZMk="
+          "Value": "sha256-nvB0Lzkb153gjLYx+KIgiyDO5uu2pEa0NaLIvtNsbbU="
         }
       ]
     }

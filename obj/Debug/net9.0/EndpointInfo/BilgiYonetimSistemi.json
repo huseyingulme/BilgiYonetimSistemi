@@ -1288,7 +1288,7 @@
       "CourseQuotas": {
         "type": "object",
         "properties": {
-          "courseId": {
+          "courseID": {
             "type": "integer",
             "format": "int32"
           },

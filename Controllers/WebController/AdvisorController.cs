@@ -119,7 +119,7 @@ namespace BilgiYonetimSistemi.Controllers.WebController
                     FullName = advisor.FullName,
                     Title = advisor.Title,
                     Department = advisor.Department,
-                    Email = newEmail // Yeni e-posta
+                    Email = newEmail 
                 };
 
                 var advisorJsonContent = new StringContent(JsonConvert.SerializeObject(updatedAdvisor), System.Text.Encoding.UTF8, "application/json");
@@ -255,13 +255,6 @@ namespace BilgiYonetimSistemi.Controllers.WebController
             return RedirectToAction("AdvisorPanel");
         }
 
-
-
-
-
-
     }
-
-
 
 }

@@ -1,2 +1,0 @@
-C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\apanel.css
-C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\js\ascript.js

@@ -164,6 +164,6 @@ C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\refint\BilgiYonetimS
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\BilgiYonetimSistemi.pdb
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\BilgiYonetimSistemi.genruntimeconfig.cache
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\ref\BilgiYonetimSistemi.dll
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\r8se66ja8u-rtfep2tqdg.gz
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\0lwlgrcu2f-ig0zub7uaq.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\8by426bsb9-k901rxkx18.gz
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\r8se66ja8u-j2qv92rvdu.gz
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\0lwlgrcu2f-vrwgkz27cu.gz

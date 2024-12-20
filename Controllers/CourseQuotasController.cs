@@ -24,7 +24,7 @@ namespace BilgiYonetimSistemi.Controllers
                 .Include(cq => cq.Course) // Course ilişkisini dahil ediyoruz
                 .Select(cq => new
                 {
-                    cq.CourseId,
+                    cq.CourseID,
                     cq.Quota,
                     cq.RemainingQuota,
                     CourseName = cq.Course.CourseName // Sadece CourseName alanını dahil ediyoruz
@@ -40,10 +40,10 @@ namespace BilgiYonetimSistemi.Controllers
         public async Task<IActionResult> GetCourseQuota(int id)
         {
             var courseQuota = await _context.CourseQuotas
-                .Where(cq => cq.CourseId == id)
+                .Where(cq => cq.CourseID == id)
                 .Select(cq => new
                 {
-                    cq.CourseId,
+                    cq.CourseID,
                     cq.Quota,
                     cq.RemainingQuota,
                     CourseName = cq.Course.CourseName // Sadece CourseName alanı
@@ -63,7 +63,7 @@ namespace BilgiYonetimSistemi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourseQuota(int id, CourseQuotas courseQuota)
         {
-            if (id != courseQuota.CourseId)
+            if (id != courseQuota.CourseID)
             {
                 return BadRequest();
             }
@@ -100,7 +100,7 @@ namespace BilgiYonetimSistemi.Controllers
             }
             catch (DbUpdateException)
             {
-                if (CourseQuotaExists(courseQuota.CourseId))
+                if (CourseQuotaExists(courseQuota.CourseID))
                 {
                     return Conflict();
                 }
@@ -110,7 +110,7 @@ namespace BilgiYonetimSistemi.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCourseQuota", new { id = courseQuota.CourseId }, courseQuota);
+            return CreatedAtAction("GetCourseQuota", new { id = courseQuota.CourseID }, courseQuota);
         }
 
         // DELETE: api/CourseQuotas/5
@@ -155,7 +155,7 @@ namespace BilgiYonetimSistemi.Controllers
 
         private bool CourseQuotaExists(int id)
         {
-            return _context.CourseQuotas.Any(e => e.CourseId == id);
+            return _context.CourseQuotas.Any(e => e.CourseID == id);
         }
     }
 }

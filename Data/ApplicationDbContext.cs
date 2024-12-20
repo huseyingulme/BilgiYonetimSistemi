@@ -49,7 +49,7 @@ namespace BilgiYonetimSistemi.Data
             modelBuilder.Entity<CourseQuotas>()
     .HasOne(cq => cq.Course)
     .WithOne()  // Burada `WithOne()` çünkü her dersin sadece bir kontenjanı var
-    .HasForeignKey<CourseQuotas>(cq => cq.CourseId);
+    .HasForeignKey<CourseQuotas>(cq => cq.CourseID);
             modelBuilder.Entity<NonConfirmedSelections>()
     .HasOne(ns => ns.Student)
     .WithMany(s => s.NonConfirmedSelections)
