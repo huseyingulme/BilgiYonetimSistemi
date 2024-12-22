@@ -1,242 +1,253 @@
-﻿/* Genel Ayarlar */
+﻿/* Genel stil */
 body {
-    margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
     display: flex;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: #2a3a4e;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Sol Menü */
 .menu {
     width: 250px;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: #2a3a4e;
+    color: white;
+    padding: 20px;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
     position: fixed;
-    z-index: 1000;
-    overflow: auto;
 }
 
     .menu img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin-top: 20px;
-        border: 3px solid #ecf0f1;
-        animation: fadeIn 1s ease-in-out;
+        max-width: 60%;
+        margin: 0 auto;
+        display: block;
     }
 
     .menu h2 {
-        margin-top: 15px;
-        font-weight: 600;
         text-align: center;
-        animation: fadeIn 1.2s ease-in-out;
+        margin-top: 10px;
+        font-size: 20px;
     }
 
 #menu-items {
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 30px;
 }
 
 .nav-item {
-    padding: 15px 20px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
     cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.3s;
-    border-bottom: 1px solid rgba(236, 240, 241, 0.2);
+    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
-    .nav-item:hover {
-        background-color: #34495e;
-        transform: scale(1.05);
+    .nav-item:hover, .nav-item.active {
+        background-color: #3b4b65;
     }
 
 .logout {
-    margin-top: auto;
-    background-color: #e74c3c;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #d9534f;
     color: white;
-    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
     .logout:hover {
-        background-color: #c0392b;
+        background-color: #c9302c;
     }
 
 /* İçerik Alanı */
 .content {
     margin-left: 250px;
     padding: 20px;
-    flex-grow: 1;
-    animation: slideIn 1s ease-in-out;
+    width: calc(100% - 250px);
 }
 
 .section {
     display: none;
-    animation: fadeIn 1s ease-in-out;
 }
 
-    .section h1 {
-        font-size: 2em;
-        color: #34495e;
-        margin-bottom: 20px;
+    .section.active {
+        display: block;
     }
 
-.success-message, .error-message {
-    font-size: 1em;
+/* Başlık ve İçerik */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2a3a4e;
+}
+
+/* Danışman Bilgileri */
+#danismanBilgileri p {
     margin: 10px 0;
 }
 
-/* Animasyonlar */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(50%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Ders Onaylama */
-.course-approval ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.course-option {
-    padding: 15px;
-    border: 1px solid #bdc3c7;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-    .course-option:hover {
-        transform: scale(1.02);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-.btn-approve {
-    padding: 8px 15px;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-    .btn-approve:hover {
-        background-color: #2ecc71;
-    }
-
-.btn-delete {
-    padding: 8px 15px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-    .btn-delete:hover {
-        background-color: #c0392b;
-    }
-
-/* Öğrenci Listesi */
-.combo-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.student-option {
-    padding: 15px;
-    border: 1px solid #bdc3c7;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-    .student-option:hover {
-        transform: scale(1.02);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
 .update-button {
-    padding: 8px 15px;
-    background-color: #3498db;
+    background-color: #5bc0de;
     color: white;
+    padding: 8px 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
     .update-button:hover {
-        background-color: #2980b9;
+        background-color: #31b0d5;
     }
 
-/* Update Form */
 .update-section {
-    padding: 15px;
-    border: 1px solid #bdc3c7;
-    border-radius: 8px;
-    background-color: #ecf0f1;
     margin-top: 20px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-    .update-section label {
-        font-weight: bold;
-        color: #2c3e50;
-    }
 
     .update-section input {
         width: 100%;
-        padding: 8px;
+        padding: 10px;
         margin: 10px 0;
-        border-radius: 4px;
-        border: 1px solid #bdc3c7;
-        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
     .update-section button {
-        padding: 10px 20px;
-        background-color: #27ae60;
+        width: 100%;
+        padding: 10px;
+        background-color: #5bc0de;
         color: white;
         border: none;
-        border-radius: 4px;
+        border-radius: 5px;
         cursor: pointer;
     }
 
         .update-section button:hover {
-            background-color: #2ecc71;
+            background-color: #31b0d5;
         }
+
+/* Ders Onaylama */
+.course-approval {
+    margin-top: 20px;
+}
+
+.combo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.course-option {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+    .course-option:hover {
+        background-color: #f0f0f0;
+    }
+
+.btn-approve, .btn-delete {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-approve {
+    background-color: #5bc0de;
+    color: white;
+}
+
+    .btn-approve:hover {
+        background-color: #31b0d5;
+    }
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
+    .btn-delete:hover {
+        background-color: #c9302c;
+    }
+
+/* Öğrencilerim */
+.student-option {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+    .student-option:hover {
+        background-color: #f0f0f0;
+    }
+
+.success-message, .error-message {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Mobil uyumlu tasarım */
+@media (max-width: 768px) {
+    .menu {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .nav-item, .logout {
+        padding: 10px;
+    }
+
+    .update-section, .course-option, .student-option {
+        font-size: 14px;
+    }
+}

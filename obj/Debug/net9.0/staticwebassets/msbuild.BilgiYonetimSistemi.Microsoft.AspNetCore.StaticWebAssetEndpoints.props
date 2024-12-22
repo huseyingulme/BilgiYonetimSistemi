@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/css/advisorpanel.3v0doe6z9o.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\advisorpanel.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3v0doe6z9o"},{"Name":"integrity","Value":"sha256-YYo0rCdrVC\u002BTLsZqDDjh/mYWoeljX1jj8A\u002BYf5/2lIU="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/css/advisorpanel.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4470"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022YYo0rCdrVC\u002BTLsZqDDjh/mYWoeljX1jj8A\u002BYf5/2lIU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 08:54:19 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/css/advisorpanel.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\advisorpanel.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-g2HeCOpEIL4wlHZVTkKVjp9nrzphMQ\u002BzbSAUlC9JTzA="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4788"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022g2HeCOpEIL4wlHZVTkKVjp9nrzphMQ\u002BzbSAUlC9JTzA=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 19:05:48 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/css/advisorpanel.v9u16rc9bt.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\advisorpanel.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"v9u16rc9bt"},{"Name":"integrity","Value":"sha256-g2HeCOpEIL4wlHZVTkKVjp9nrzphMQ\u002BzbSAUlC9JTzA="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/css/advisorpanel.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4788"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022g2HeCOpEIL4wlHZVTkKVjp9nrzphMQ\u002BzbSAUlC9JTzA=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 19:05:48 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-YYo0rCdrVC\u002BTLsZqDDjh/mYWoeljX1jj8A\u002BYf5/2lIU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4470"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022YYo0rCdrVC\u002BTLsZqDDjh/mYWoeljX1jj8A\u002BYf5/2lIU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 08:54:19 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/css/login.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\login.css'))</AssetFile>
@@ -27,14 +27,14 @@
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/css/studentpanel.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\studentpanel.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-u/YXe4Wm4\u002BsmkBYDDGgPAMv5xnFynOET7TBLoSFwk\u002Bg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1344"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u/YXe4Wm4\u002BsmkBYDDGgPAMv5xnFynOET7TBLoSFwk\u002Bg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Dec 2024 14:08:26 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-NREtNm0uRuR8Yfaaijcsb/KlE/SV/k14RS\u002BUFYaTJaM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2143"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NREtNm0uRuR8Yfaaijcsb/KlE/SV/k14RS\u002BUFYaTJaM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 19:20:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/css/studentpanel.j2qv92rvdu.css">
+    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/css/studentpanel.tq7k1790v9.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\studentpanel.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"j2qv92rvdu"},{"Name":"integrity","Value":"sha256-u/YXe4Wm4\u002BsmkBYDDGgPAMv5xnFynOET7TBLoSFwk\u002Bg="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/css/studentpanel.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1344"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u/YXe4Wm4\u002BsmkBYDDGgPAMv5xnFynOET7TBLoSFwk\u002Bg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Dec 2024 14:08:26 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tq7k1790v9"},{"Name":"integrity","Value":"sha256-NREtNm0uRuR8Yfaaijcsb/KlE/SV/k14RS\u002BUFYaTJaM="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/css/studentpanel.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2143"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022NREtNm0uRuR8Yfaaijcsb/KlE/SV/k14RS\u002BUFYaTJaM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 19:20:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/images/ktu-logo.frmk5qe2z4.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\ktu-logo.png'))</AssetFile>
@@ -52,13 +52,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\advisorpanel.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-bXbl6YsICBkBX6IhAXckxhSW1npnHZa/R540d4iE0Tc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1707"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022bXbl6YsICBkBX6IhAXckxhSW1npnHZa/R540d4iE0Tc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 19:06:15 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1707"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022bXbl6YsICBkBX6IhAXckxhSW1npnHZa/R540d4iE0Tc=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 08:52:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/advisorpanel.luepzfsozp.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\advisorpanel.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"luepzfsozp"},{"Name":"integrity","Value":"sha256-bXbl6YsICBkBX6IhAXckxhSW1npnHZa/R540d4iE0Tc="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/js/advisorpanel.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1707"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022bXbl6YsICBkBX6IhAXckxhSW1npnHZa/R540d4iE0Tc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Dec 2024 19:06:15 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1707"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022bXbl6YsICBkBX6IhAXckxhSW1npnHZa/R540d4iE0Tc=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 08:52:57 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/login.br9xqe6ur1.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\login.js'))</AssetFile>
@@ -72,17 +72,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-p\u002BFbEk8Wri145dLD9Zyxg6xwILpVHlkqwetnAcIHYck="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1954"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022p\u002BFbEk8Wri145dLD9Zyxg6xwILpVHlkqwetnAcIHYck=\u0022"},{"Name":"Last-Modified","Value":"Wed, 18 Dec 2024 21:35:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/studentpanel.c9fm94zxw1.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c9fm94zxw1"},{"Name":"integrity","Value":"sha256-QGDlcJcGMz2MRvR3NB02lgL8gdRSdxF2IigKXpIC\u002BBg="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/js/studentpanel.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2224"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022QGDlcJcGMz2MRvR3NB02lgL8gdRSdxF2IigKXpIC\u002BBg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 19:19:58 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/studentpanel.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6\u002BkGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2353"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00226\u002BkGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Dec 2024 14:42:28 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/studentpanel.vrwgkz27cu.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vrwgkz27cu"},{"Name":"integrity","Value":"sha256-6\u002BkGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/js/studentpanel.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2353"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00226\u002BkGiXpb2DgJOnEoSSDoKWdoYiT7rHBKLyCa7QZBmqQ=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Dec 2024 14:42:28 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-QGDlcJcGMz2MRvR3NB02lgL8gdRSdxF2IigKXpIC\u002BBg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2224"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022QGDlcJcGMz2MRvR3NB02lgL8gdRSdxF2IigKXpIC\u002BBg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Dec 2024 19:19:58 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

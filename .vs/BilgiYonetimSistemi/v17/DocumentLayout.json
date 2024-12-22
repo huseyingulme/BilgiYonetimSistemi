@@ -1,40 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\controllers\\advisorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:controllers\\advisorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\controllers\\webcontroller\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:controllers\\webcontroller\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\controllers\\coursequotascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:controllers\\coursequotascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\advisor\\advisorpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\advisor\\advisorpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\migrations\\20241217085009_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:migrations\\20241217085009_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\models\\coursequotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:models\\coursequotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -42,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 125,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -67,110 +34,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAApwDMAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:09:01.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdvisorController.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\AdvisorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdvisorController.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\AdvisorController.cs",
-              "RelativeToolTip": "Controllers\\AdvisorController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAApwB4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:09:00Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CourseQuotasController.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\CourseQuotasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CourseQuotasController.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\CourseQuotasController.cs",
-              "RelativeToolTip": "Controllers\\CourseQuotasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:08:32.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\WebController\\StudentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\WebController\\StudentController.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\WebController\\StudentController.cs",
-              "RelativeToolTip": "Controllers\\WebController\\StudentController.cs",
-              "ViewState": "AgIAAE4BAAAAAAAAAAAuwGQBAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:08:24.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdvisorPanel.cshtml",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Advisor\\AdvisorPanel.cshtml",
-              "RelativeDocumentMoniker": "Views\\Advisor\\AdvisorPanel.cshtml",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Advisor\\AdvisorPanel.cshtml",
-              "RelativeToolTip": "Views\\Advisor\\AdvisorPanel.cshtml",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAiwKEAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-20T15:07:42.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:07:19.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CourseQuotas.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\CourseQuotas.cs",
-              "RelativeDocumentMoniker": "Models\\CourseQuotas.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\CourseQuotas.cs",
-              "RelativeToolTip": "Models\\CourseQuotas.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:06:39.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20241217085009_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Migrations\\20241217085009_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241217085009_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Migrations\\20241217085009_InitialCreate.cs",
-              "RelativeToolTip": "Migrations\\20241217085009_InitialCreate.cs",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAAH8AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T15:05:35.046Z",
-              "EditorCaption": ""
             }
           ]
         }
