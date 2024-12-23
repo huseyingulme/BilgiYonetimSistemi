@@ -96,14 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const courseList = document.getElementById("courseList");
     const form = document.getElementById("courseSelectionForm");
 
-    courseList.addEventListener("click", event => {
-        const clickedElement = event.target.closest(".course-option");
-        if (clickedElement) {
-            const checkbox = clickedElement.querySelector("input[type='checkbox']");
-            checkbox.checked = !checkbox.checked;
-            clickedElement.classList.toggle("selected", checkbox.checked);
-        }
-    });
+    
 
     // Form gönderiminde seçili ders kontrolü
     form.addEventListener("submit", event => {

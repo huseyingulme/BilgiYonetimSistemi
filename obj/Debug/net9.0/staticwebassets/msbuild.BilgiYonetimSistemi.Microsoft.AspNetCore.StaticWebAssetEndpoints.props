@@ -60,17 +60,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xmtdyfvexj"},{"Name":"integrity","Value":"sha256-t7pnwX4PXk/DdXcsn88cmD8mOHrGwNg/zHE5DCjYaag="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/js/advisorpanel.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3330"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022t7pnwX4PXk/DdXcsn88cmD8mOHrGwNg/zHE5DCjYaag=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 07:50:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/studentpanel.5urw4zhqba.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5urw4zhqba"},{"Name":"integrity","Value":"sha256-Eyso0\u002Bfbt5r8YWeAMy1zAWhFlhbCTXEkhnEI5xFT8YA="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/js/studentpanel.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4136"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Eyso0\u002Bfbt5r8YWeAMy1zAWhFlhbCTXEkhnEI5xFT8YA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 07:50:39 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/studentpanel.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Eyso0\u002Bfbt5r8YWeAMy1zAWhFlhbCTXEkhnEI5xFT8YA="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4136"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Eyso0\u002Bfbt5r8YWeAMy1zAWhFlhbCTXEkhnEI5xFT8YA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 07:50:39 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-igByYlDxcsdY7mWU6bibYwrVPUnUjMnO1sAEk6K7F8I="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3760"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022igByYlDxcsdY7mWU6bibYwrVPUnUjMnO1sAEk6K7F8I=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 08:00:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/js/studentpanel.mpb56skp55.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"mpb56skp55"},{"Name":"integrity","Value":"sha256-igByYlDxcsdY7mWU6bibYwrVPUnUjMnO1sAEk6K7F8I="},{"Name":"label","Value":"_content/BilgiYonetimSistemi/js/studentpanel.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3760"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022igByYlDxcsdY7mWU6bibYwrVPUnUjMnO1sAEk6K7F8I=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 08:00:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BilgiYonetimSistemi/lib/bootstrap/dist/css/bootstrap-grid.ac7iay2b3k.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css'))</AssetFile>

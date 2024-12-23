@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5urw4zhqba</Fingerprint>
-      <Integrity>Eyso0+fbt5r8YWeAMy1zAWhFlhbCTXEkhnEI5xFT8YA=</Integrity>
+      <Fingerprint>mpb56skp55</Fingerprint>
+      <Integrity>igByYlDxcsdY7mWU6bibYwrVPUnUjMnO1sAEk6K7F8I=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\studentpanel.js'))</OriginalItemSpec>
