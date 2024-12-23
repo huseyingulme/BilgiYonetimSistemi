@@ -10,21 +10,19 @@
     <title>KTÜ Giriş Sayfası</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="~/css/login.css" rel="stylesheet" />
-    <script src="~/js/login.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="login-box">
-            <!-- Logo -->
             <div class="logo-container">
-                <img src="~/images/ktu-logo.png" alt="KTÜ Logo" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Karadeniz_Technical_University_logo.svg/1024px-Karadeniz_Technical_University_logo.svg.png" alt="KTÜ Logo" class="logo">
             </div>
 
-            <h1 class="title">KTÜ Giriş Sistemi</h1>
+            <h1>KTÜ Giriş</h1>
 
-            <!-- Kullanıcı Seçimi -->
+            <!-- Kullanıcı seçimi -->
             <div class="user-selection">
-                <button id="student-login-btn" class="selection-btn active" onclick="showForm('student-form')">Öğrenci Girişi</button>
+                <button id="student-login-btn" class="selection-btn" onclick="showForm('student-form')">Öğrenci Girişi</button>
                 <button id="staff-login-btn" class="selection-btn" onclick="showForm('staff-form')">Personel Girişi</button>
             </div>
 
@@ -39,14 +37,39 @@
                 </form>
 
                 <!-- Personel Giriş Formu -->
-                <form id="staff-form" class="login-form" method="post" asp-action="LoginUser" asp-controller="Account">
+                <form id="staff-form" class="login-form" method="post" asp-action="LoginUser" asp-controller="Account" style="display: none;">
                     <input type="text" name="Username" placeholder="Kullanıcı Adı" required>
                     <input type="password" name="Password" placeholder="Şifre" required>
                     <input type="hidden" name="Role" value="Advisor">
                     <button type="submit" class="submit-btn">Personel Girişi</button>
                 </form>
             </div>
+            <br />
+
+            <!-- Hata mesajı -->
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <p style="color:red">@ViewBag.ErrorMessage</p>
+            }
+
+
+            <!-- Şifremi Unuttum Butonu -->
+            <div class="forgot-password">
+                <a href="@Url.Action("ForgotPassword", "Account")">Şifremi Unuttum</a>
+            </div>
         </div>
     </div>
+
+    <script>        function showForm(formId) {
+                    // Tüm formları gizle
+                    document.getElementById('student-form').style.display = 'none';
+                    document.getElementById('staff-form').style.display = 'none';
+
+                    // Seçilen formu göster
+                    document.getElementById(formId).style.display = 'block';
+                }
+
+                // Başlangıçta öğrenci formunu göster
+                document.getElementById('student-form').style.display = 'block';</script>
 </body>
 </html>

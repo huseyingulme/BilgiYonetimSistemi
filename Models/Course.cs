@@ -12,8 +12,8 @@ namespace BilgiYonetimSistemi.Models
         public int Credit { get; set; }
         public string Department { get; set; }
 
-        // Change Advisors to Advisor (singular)
-        public Advisors Advisor { get; set; }  // One-to-one relationship with Advisor
+ 
+        public Advisors Advisor { get; set; }   
 
         public ICollection<StudentCourseSelections> StudentCourseSelections { get; set; }
         public virtual ICollection<NonConfirmedSelections> NonConfirmedSelections { get; set; }

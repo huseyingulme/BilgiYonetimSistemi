@@ -2,60 +2,63 @@ using BilgiYonetimSistemi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
-internal class Program
+var builder = WebApplication.CreateBuilder(args);
+
+// Veritabaný yapýlandýrmasý - Connection string'i kullanarak DbContext yapýlandýrmasý
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+// Diðer servisler
+builder.Services.AddHttpClient();
+builder.Services.AddControllersWithViews();
+builder.Services.AddLogging(options =>
 {
-    private static void Main(string[] args)
-    {
-        var builder = WebApplication.CreateBuilder(args);
+    options.AddConsole();
+    options.AddDebug();
+    options.AddEventSourceLogger();
+});
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.Strict;
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.IsEssential = true;
+});
 
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-        builder.Services.AddHttpClient();
-        builder.Services.AddControllersWithViews();
-        builder.Services.AddLogging(options =>
-        {
-            options.AddConsole();
-            options.AddDebug();
-            options.AddEventSourceLogger();
-        });
-        builder.Services.AddDistributedMemoryCache();
-        builder.Services.AddSession(options =>
-        {
-            options.Cookie.HttpOnly = true;
-            options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-            options.Cookie.SameSite = SameSiteMode.Strict;
-            options.IdleTimeout = TimeSpan.FromMinutes(30);
-            options.Cookie.IsEssential = true;
-        });
-        builder.Services.AddSwaggerGen(c =>
-        {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "BilgiYonetimSistemi", Version = "v1" });
-        });
+// Swagger yapýlandýrmasý
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "BilgiYonetimSistemi", Version = "v1" });
+});
 
-        var app = builder.Build();
+var app = builder.Build();
 
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BilgiYonetimSistemi v1"));
-        }
-        else
-        {
-            app.UseExceptionHandler("/Home/Error");
-            app.UseHsts();
-        }
-
-        app.UseStaticFiles();
-
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-        app.UseRouting();
-        app.UseAuthorization();
-        app.UseSession();
-        app.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Account}/{action=Login}");
-        app.Run();
-    }
+// Geliþtirme ortamý için Swagger
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BilgiYonetimSistemi v1"));
 }
+else
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+app.UseStaticFiles();
+app.UseHttpsRedirection();
+app.UseRouting();
+app.UseAuthorization();
+app.UseSession();
+
+// Controller routing
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Account}/{action=Login}"
+);
+
+app.Run();

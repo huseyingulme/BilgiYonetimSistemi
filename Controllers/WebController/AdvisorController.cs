@@ -24,9 +24,11 @@ namespace BilgiYonetimSistemi.Controllers.WebController
                 return RedirectToAction("Login", "Account");
             }
 
+            // advisorIdString'i int'e dönüştür
             if (!int.TryParse(advisorIdString, out int advisorId))
             {
-                return BadRequest("Geçersiz Danışman ID'si.");
+                ViewBag.ErrorMessage = "Danışman ID hatalı.";
+                return View("Error");
             }
 
             // API'den danışman bilgilerini çek
@@ -67,136 +69,87 @@ namespace BilgiYonetimSistemi.Controllers.WebController
                 TempData["ErrorMessage"] = $"Ders listesi yüklenirken bir hata oluştu: {ex.Message}";
             }
 
+            // Dersleri API'den çek
+            var courseResponse = await _httpClient.GetAsync("https://localhost:7227/api/Courses");
+            if (!courseResponse.IsSuccessStatusCode)
+            {
+                ViewBag.ErrorMessage = "Ders bilgileri yüklenemedi. Lütfen tekrar deneyin.";
+                return View("AdvisorPanel");
+            }
+
+            var courseJson = await courseResponse.Content.ReadAsStringAsync();
+            var courses = JsonConvert.DeserializeObject<List<dynamic>>(courseJson);
+
+            // Sadece seçmeli dersleri filtrele (isMandatory = false)
+            var electiveCourses = courses.Where(course => course.isMandatory == false).ToList();
+
+            // Kota bilgilerini ekle
+            var coursesWithQuota = new List<dynamic>();
+            foreach (var course in electiveCourses)
+            {
+                var quotaResponse = await _httpClient.GetAsync($"https://localhost:7227/api/CourseQuotas/{course.courseID}");
+                if (quotaResponse.IsSuccessStatusCode)
+                {
+                    var quotaJson = await quotaResponse.Content.ReadAsStringAsync();
+                    var quotaData = JsonConvert.DeserializeObject<dynamic>(quotaJson);
+
+                    // Kota bilgilerini ders objesine ekle
+                    coursesWithQuota.Add(new
+                    {
+                        course.courseID,
+                        course.courseName,
+                        course.courseCode,
+                        course.credit,
+                        quota = quotaData.quota,
+                        remainingQuota = quotaData.remainingQuota
+                    });
+                }
+                else
+                {
+                    // Kota bilgisi alınamadığında varsayılan değerler ekle
+                    coursesWithQuota.Add(new
+                    {
+                        course.courseID,
+                        course.courseName,
+                        course.courseCode,
+                        course.credit,
+                        quota = "-",
+                        remainingQuota = "-"
+                    });
+                }
+            }
+
+            // ViewBag'e kota bilgileriyle birlikte seçmeli dersleri ekle
+            ViewBag.Courses = coursesWithQuota;
+
             return View();
-        }
-
-
-
-
-
-        [HttpPost]
-        public async Task<IActionResult> UpdateAdvisor(int id, string newEmail, string newPassword)
-        {
-            // Oturumdan AdvisorID ve UserID'yi alın
-            var advisorIdString = HttpContext.Session.GetString("AdvisorID");
-            var userIdString = HttpContext.Session.GetString("UserID");
-
-            if (string.IsNullOrEmpty(advisorIdString) || !int.TryParse(advisorIdString, out int advisorId))
-            {
-                TempData["ErrorMessage"] = "Oturum bilgisi alınamadı. Lütfen tekrar giriş yapın.";
-                return RedirectToAction("Login", "Account");
-            }
-
-            if (advisorId != id)
-            {
-                TempData["ErrorMessage"] = "Geçersiz işlem. ID eşleşmiyor.";
-                return RedirectToAction("AdvisorPanel");
-            }
-
-            if (string.IsNullOrEmpty(newEmail) && string.IsNullOrEmpty(newPassword))
-            {
-                TempData["ErrorMessage"] = "En az bir alan doldurulmalıdır.";
-                return RedirectToAction("AdvisorPanel");
-            }
-
-            // Danışman bilgilerini Advisors API'den al
-            var advisorResponse = await _httpClient.GetAsync($"https://localhost:7227/api/Advisors/{id}");
-            if (!advisorResponse.IsSuccessStatusCode)
-            {
-                TempData["ErrorMessage"] = "Danışman bilgileri alınamadı.";
-                return RedirectToAction("AdvisorPanel");
-            }
-
-            var advisorJson = await advisorResponse.Content.ReadAsStringAsync();
-            var advisor = JsonConvert.DeserializeObject<Advisors>(advisorJson);
-
-            // Advisors API'de yalnızca email güncellemesi yapılır
-            if (!string.IsNullOrEmpty(newEmail))
-            {
-                var updatedAdvisor = new
-                {
-                    AdvisorID = advisor.AdvisorID,
-                    FullName = advisor.FullName,
-                    Title = advisor.Title,
-                    Department = advisor.Department,
-                    Email = newEmail 
-                };
-
-                var advisorJsonContent = new StringContent(JsonConvert.SerializeObject(updatedAdvisor), System.Text.Encoding.UTF8, "application/json");
-                var updateAdvisorResponse = await _httpClient.PutAsync($"https://localhost:7227/api/Advisors/{id}", advisorJsonContent);
-
-                if (!updateAdvisorResponse.IsSuccessStatusCode)
-                {
-                    var errorContent = await updateAdvisorResponse.Content.ReadAsStringAsync();
-                    TempData["ErrorMessage"] = $"Danışman bilgileri güncellenirken bir hata oluştu: {errorContent}";
-                    return RedirectToAction("AdvisorPanel");
-                }
-            }
-
-            // Kullanıcı bilgilerini Users API'den al
-            if (!string.IsNullOrEmpty(userIdString))
-            {
-                var userResponse = await _httpClient.GetAsync($"https://localhost:7227/api/Users/{userIdString}");
-                if (!userResponse.IsSuccessStatusCode)
-                {
-                    TempData["ErrorMessage"] = "Kullanıcı bilgileri alınamadı.";
-                    return RedirectToAction("AdvisorPanel");
-                }
-
-                var userJson = await userResponse.Content.ReadAsStringAsync();
-                var user = JsonConvert.DeserializeObject<dynamic>(userJson);
-
-                // Users API'de email ve/veya şifre güncellemesi yapılır
-                var updatedUser = new
-                {
-                    UserID = user.userID,
-                    Username = user.username,
-                    PasswordHash = !string.IsNullOrEmpty(newPassword) ? newPassword : user.passwordHash, // Şifreyi güncelle
-                    Email = !string.IsNullOrEmpty(newEmail) ? newEmail : user.email, // E-posta güncelle
-                    Role = user.role,
-                    RelatedID = user.relatedID
-                };
-
-                var userJsonContent = new StringContent(JsonConvert.SerializeObject(updatedUser), System.Text.Encoding.UTF8, "application/json");
-                var updateUserResponse = await _httpClient.PutAsync($"https://localhost:7227/api/Users/{userIdString}", userJsonContent);
-
-                if (!updateUserResponse.IsSuccessStatusCode)
-                {
-                    var errorContent = await updateUserResponse.Content.ReadAsStringAsync();
-                    TempData["ErrorMessage"] = $"Kullanıcı bilgileri güncellenirken bir hata oluştu: {errorContent}";
-                    return RedirectToAction("AdvisorPanel");
-                }
-            }
-
-            TempData["SuccessMessage"] = "Bilgiler başarıyla güncellendi.";
-            return RedirectToAction("AdvisorPanel");
         }
 
         [HttpGet]
         public async Task<IActionResult> GetPendingCourses()
         {
-            var response = await _httpClient.GetAsync("https://localhost:7227/api/NonConfirmedSelections");
+            var apiUrl = "https://localhost:7227/api/NonConfirmedSelections";
+            var response = await _httpClient.GetAsync(apiUrl);
 
-            if (!response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
-                TempData["ErrorMessage"] = "Onay bekleyen dersler alınamadı.";
-                return RedirectToAction("AdvisorPanel");
+                var data = await response.Content.ReadAsStringAsync();
+                var pendingCourses = JsonConvert.DeserializeObject<List<dynamic>>(data);
+                ViewBag.PendingCourses = pendingCourses;
+                return View("PendingCourses");
             }
 
-            var json = await response.Content.ReadAsStringAsync();
-            var pendingCourses = JsonConvert.DeserializeObject<List<dynamic>>(json);
-
-            ViewBag.PendingCourses = pendingCourses;
-
-            return View("PendingCourses");
+            TempData["ErrorMessage"] = "Onay bekleyen dersler alınamadı.";
+            return RedirectToAction("AdvisorPanel");
         }
+
         [HttpPost]
         public async Task<IActionResult> RejectCourse(int id)
         {
             try
             {
-                // NonConfirmedSelections API'den sil
-                var response = await _httpClient.DeleteAsync($"https://localhost:7227/api/NonConfirmedSelections/{id}");
+                var apiUrl = $"https://localhost:7227/api/NonConfirmedSelections/{id}";
+                var response = await _httpClient.DeleteAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -204,8 +157,8 @@ namespace BilgiYonetimSistemi.Controllers.WebController
                 }
                 else
                 {
-                    var errorContent = await response.Content.ReadAsStringAsync();
-                    TempData["RejectCourse"] = $"Ders reddedilirken bir hata oluştu: {errorContent}";
+                    var errorMessage = await response.Content.ReadAsStringAsync();
+                    TempData["RejectCourse"] = $"Ders reddedilirken bir hata oluştu: {errorMessage}";
                 }
             }
             catch (Exception ex)
@@ -216,13 +169,11 @@ namespace BilgiYonetimSistemi.Controllers.WebController
             return RedirectToAction("AdvisorPanel");
         }
 
-
         [HttpPost]
         public async Task<IActionResult> ApproveCourse(int id, int studentID, int courseID)
         {
             try
             {
-                // Yeni seçim oluştur
                 var approvedSelection = new
                 {
                     CourseID = courseID,
@@ -231,20 +182,20 @@ namespace BilgiYonetimSistemi.Controllers.WebController
                     IsApproved = true
                 };
 
-                // API'ye POST isteği gönder
+                var apiUrl = "https://localhost:7227/api/StudentCourseSelections";
                 var content = new StringContent(JsonConvert.SerializeObject(approvedSelection), Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync("https://localhost:7227/api/StudentCourseSelections", content);
+                var response = await _httpClient.PostAsync(apiUrl, content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Onaylanan seçimi NonConfirmedSelections'dan sil
-                    await _httpClient.DeleteAsync($"https://localhost:7227/api/NonConfirmedSelections/{id}");
+                    var deleteUrl = $"https://localhost:7227/api/NonConfirmedSelections/{id}";
+                    await _httpClient.DeleteAsync(deleteUrl);
                     TempData["ApproveCourse"] = "Ders başarıyla onaylandı.";
                 }
                 else
                 {
-                    var errorContent = await response.Content.ReadAsStringAsync();
-                    TempData["ApproveCourse"] = $"Ders onaylanırken bir hata oluştu: {errorContent}";
+                    var errorMessage = await response.Content.ReadAsStringAsync();
+                    TempData["ApproveCourse"] = $"Ders onaylanırken bir hata oluştu: {errorMessage}";
                 }
             }
             catch (Exception ex)
@@ -254,6 +205,7 @@ namespace BilgiYonetimSistemi.Controllers.WebController
 
             return RedirectToAction("AdvisorPanel");
         }
+
 
     }
 

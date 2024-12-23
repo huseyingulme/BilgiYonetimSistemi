@@ -15,8 +15,7 @@ namespace BilgiYonetimSistemi.Controllers
         {
             _context = context;
         }
-
-        // GET: api/Students
+ 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudent()
         {
@@ -29,14 +28,14 @@ namespace BilgiYonetimSistemi.Controllers
                     s.Email,
                     Advisor = new
                     {
-                        s.Advisors.FullName, // Danışmanın adı
-                        s.Advisors.Title, // Danışmanın unvanı
-                        s.Advisors.Department // Danışmanın bölümü
+                        s.Advisors.FullName,  
+                        s.Advisors.Title, 
+                        s.Advisors.Department 
                     },
                     Courses = s.StudentCourseSelections.Select(sc => new
                     {
                         sc.CourseID,
-                        sc.Course.CourseName, // Kurs adı
+                        sc.Course.CourseName, 
                         sc.SelectionDate
                     }).ToList()
                 })
@@ -44,8 +43,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return Ok(studentsWithAdvisorAndCourses);
         }
-
-        // GET: api/Students/5
+ 
         [HttpGet("{id}")]
         public async Task<ActionResult<Student>> GetStudent(int id)
         {
@@ -59,31 +57,23 @@ namespace BilgiYonetimSistemi.Controllers
                     s.Email,
                     Advisor = new
                     {
-                        s.AdvisorID, // Bu satırı ekleyin
-                        s.Advisors.FullName, // Danışmanın adı
-                        s.Advisors.Title, // Danışmanın unvanı
-                        s.Advisors.Department // Danışmanın bölümü
+                        s.AdvisorID, 
+                        s.Advisors.FullName,  
+                        s.Advisors.Title,  
+                        s.Advisors.Department  
                     },
                     Courses = s.StudentCourseSelections.Select(sc => new
                     {
                         sc.CourseID,
-                        sc.Course.CourseName, // Kurs adı
+                        sc.Course.CourseName, 
                         sc.SelectionDate
                     }).ToList()
                 })
                 .FirstOrDefaultAsync();
-
-            if (studentWithAdvisorAndCourses == null)
-            {
-                return NotFound(); // Öğrenci bulunamazsa 404 döndür
-            }
-
-            return Ok(studentWithAdvisorAndCourses); // Öğrenci ve ilişkili veriler başarılı şekilde döndürülür
+ 
+            return Ok(studentWithAdvisorAndCourses);  
         }
-
-
-        // PUT: api/Students/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+ 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutStudent(int id, Student student)
         {
@@ -112,9 +102,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return NoContent();
         }
-
-        // POST: api/Students
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+ 
         [HttpPost]
         public async Task<ActionResult<Student>> PostStudent(Student student)
         {
@@ -123,31 +111,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return CreatedAtAction("GetStudent", new { id = student.StudentID }, student);
         }
-
-        // DELETE: api/Students/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStudent(int id)
-        {
-            var student = await _context.Students
-                .Include(s => s.StudentCourseSelections) // İlişkili kayıtları getir
-                .FirstOrDefaultAsync(s => s.StudentID == id);
-
-            if (student == null)
-            {
-                return NotFound();
-            }
-
-            // Önce ilişkili kayıtları sil
-            _context.StudentCourseSelections.RemoveRange(student.StudentCourseSelections);
-
-            // Ardından öğrenciyi sil
-            _context.Students.Remove(student);
-
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
+  
         private bool StudentExists(int id)
         {
             return _context.Students.Any(e => e.StudentID == id);

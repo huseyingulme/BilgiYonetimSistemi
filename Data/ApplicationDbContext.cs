@@ -48,24 +48,22 @@ namespace BilgiYonetimSistemi.Data
 
             modelBuilder.Entity<CourseQuotas>()
     .HasOne(cq => cq.Course)
-    .WithOne()  // Burada `WithOne()` çünkü her dersin sadece bir kontenjanı var
+    .WithOne()   
     .HasForeignKey<CourseQuotas>(cq => cq.CourseID);
             modelBuilder.Entity<NonConfirmedSelections>()
     .HasOne(ns => ns.Student)
     .WithMany(s => s.NonConfirmedSelections)
     .HasForeignKey(ns => ns.StudentId)
-    .OnDelete(DeleteBehavior.Restrict);  // Silme davranışını ayarlıyoruz
-
-            // NonConfirmedSelection ve Course arasındaki ilişki
+    .OnDelete(DeleteBehavior.Restrict);   
+ 
             modelBuilder.Entity<NonConfirmedSelections>()
                 .HasOne(ns => ns.Course)
                 .WithMany(c => c.NonConfirmedSelections)
                 .HasForeignKey(ns => ns.CourseId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            // Keyless (anahtarsız) entity için
+ 
             modelBuilder.Entity<CourseQuotas>()
-                .HasNoKey(); // Bu satırı ekleyin
+                .HasNoKey();  
 
         }
     }

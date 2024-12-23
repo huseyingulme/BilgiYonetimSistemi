@@ -1,4 +1,5 @@
-﻿function showSection(sectionId) {
+﻿// Sayfa içeriklerini gösterme işlevi
+function showSection(sectionId) {
     const sections = document.querySelectorAll(".section");
     const menuItems = document.querySelectorAll(".nav-item");
 
@@ -40,11 +41,56 @@ document.addEventListener("DOMContentLoaded", () => {
 function logout() {
     window.location.href = '/'; // Kullanıcıyı giriş sayfasına yönlendir
 }
-function toggleUpdateForm() {
-    const form = document.getElementById("updateForm");
-    if (form.style.display === "none" || form.style.display === "") {
-        form.style.display = "block"; // Formu göster
-    } else {
-        form.style.display = "none"; // Formu gizle
+
+
+function viewStudentDetails(studentID) {
+    // Modal kutusunu seç
+    const modal = document.getElementById("studentDetailsModal");
+
+    // Modalı temizle
+    document.getElementById("studentName").textContent = "Yükleniyor...";
+    document.getElementById("studentEmail").textContent = "";
+    const coursesList = document.getElementById("studentCoursesList");
+    coursesList.innerHTML = ""; // Önceki dersleri temizle
+
+    // Modalı aç
+    modal.style.display = "block";
+
+    // API çağrısı
+    fetch(`https://localhost:7227/api/Students/${studentID}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`API Hatası: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Modalı doldur
+            document.getElementById("studentName").textContent = `${data.firstName} ${data.lastName}`;
+            document.getElementById("studentEmail").textContent = data.email;
+
+            if (data.courses && data.courses.length > 0) {
+                data.courses.forEach(course => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${course.courseName} (Seçim Tarihi: ${course.selectionDate})`;
+                    coursesList.appendChild(listItem);
+                });
+            } else {
+                const listItem = document.createElement("li");
+                listItem.textContent = "Bu öğrenci henüz ders seçimi yapmamış.";
+                coursesList.appendChild(listItem);
+            }
+        })
+        .catch(error => {
+            console.error("Hata:", error);
+            alert("Öğrenci bilgileri yüklenirken bir hata oluştu.");
+        });
+}
+
+function closeModal() {
+    const modal = document.getElementById("studentDetailsModal");
+    if (modal) {
+        modal.style.display = "none";
     }
 }
+

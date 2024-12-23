@@ -12,21 +12,21 @@ namespace BilgiYonetimSistemi.Models
 
         public virtual Course Course { get; set; }
     }
+
     public class CourseQuotaResponse
     {
         public int CourseID { get; set; }
         public int Quota { get; set; }
         public int RemainingQuota { get; set; }
-        public Course Course { get; set; } // Bu alanda course verisi null geliyor, gerekirse daha fazla özelleştirebilirsiniz
+        public Course Course { get; set; }  
     }
 
     public class CourseSelectionHistory
     {
         [Key]
-        public int StudentID { get; set; }  // Öğrenci ID'si
-        public DateTime SelectionDate { get; set; }  // Seçim tarihi
-
-        // İlişkiler
+        public int StudentID { get; set; }   
+        public DateTime SelectionDate { get; set; }   
+ 
         public virtual Student? Student { get; set; }
     }
 
@@ -40,5 +40,16 @@ namespace BilgiYonetimSistemi.Models
 
         public virtual Student? Student { get; set; }
         public virtual Course? Course { get; set; }
+
+    }
+
+    public class CourseWithQuotaViewModel
+    {
+        public int CourseID { get; set; }
+        public string CourseName { get; set; }
+        public string CourseCode { get; set; }
+        public int Credit { get; set; }
+        public string Quota { get; set; }  
+        public string RemainingQuota { get; set; }  
     }
 }

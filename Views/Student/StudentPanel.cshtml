@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null; // Eğer layout kullanılmayacaksa null bırakılır
 }
 
@@ -27,7 +28,6 @@
             <h2>Öğrenci Bilgileri Yüklenemedi</h2>
         }
         <div id="menu-items">
-            <div class="nav-item active" onclick="showSection('duyurular')">Duyurular</div>
             <div class="nav-item" onclick="showSection('ogrenci')">Öğrenci Bilgileri</div>
             <div class="nav-item" onclick="showSection('derslerim')">Ders Bilgileri</div>
             <div class="nav-item" onclick="showSection('dersler')">Ders Seçimi</div>
@@ -39,13 +39,6 @@
 
     <!-- İçerik Alanı -->
     <div class="content">
-        <!-- Duyurular Sayfası -->
-        <div id="duyurular" class="section">
-            <h1>Duyurular</h1>
-            <p><strong>Yaz Okulu Başvuruları:</strong> 15 Aralık'a kadar başvurular kabul edilmektedir.</p>
-            <p><strong>Final Sınavı Tarihi:</strong> 20 Aralık 2024</p>
-        </div>
-
         <!-- Öğrenci Bilgileri -->
         <div id="ogrenci" class="section" style="display: none;">
             <h1>Öğrenci Bilgileri</h1>
@@ -54,10 +47,72 @@
                 <p><strong>Öğrenci No:</strong> @ViewBag.Student.studentID</p>
                 <p><strong>Ad:</strong> @ViewBag.Student.firstName @ViewBag.Student.lastName</p>
                 <p><strong>Email:</strong> @ViewBag.Student.email</p>
+                <div class="update-section">
+                    <h3>Bilgileri Güncelle</h3>
+                    <form asp-action="UpdateStudent" method="post">
+                        <input type="hidden" name="id" value="@ViewBag.Student.studentID" />
+                        <label for="newEmail">Yeni E-posta (Opsiyonel):</label>
+                        <input type="email" id="newEmail" name="newEmail" placeholder="Yeni e-posta">
+                        <br><br>
+                        <label for="newPassword">Yeni Şifre (Opsiyonel):</label>
+                        <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifre">
+                        <br><br>
+                        <button type="submit" class="btn">Bilgileri Güncelle</button>
+                    </form>
+                </div>
+                <br />
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <p class="success-message" style="color: green;">@TempData["SuccessMessage"]</p>
+                }
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <p class="error-message" style="color: red;">@TempData["ErrorMessage"]</p>
+                }
             }
             else
             {
                 <p>Öğrenci bilgileri yüklenemedi. Lütfen tekrar deneyin.</p>
+            }
+        </div>
+
+        <!-- Ders Bilgileri -->
+        <div id="derslerim" class="section" style="display: none;">
+            <h1>Seçilen Dersler</h1>
+            @if (ViewBag.Scs != null && ViewBag.Scs.Count > 0)
+            {
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Ders Adı</th>
+                            <th>Ders Kodu</th>
+                            <th>Bölüm</th>
+                            <th>Kredi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in ViewBag.Scs)
+                        {
+                            <tr>
+                                <td>@course.course.courseName</td>
+                                <td>@course.course.courseCode</td>
+                                <td>@course.course.department</td>
+                                <td>@course.course.credit</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else if (ViewBag.ErrorMessage != null)
+            {
+                <div class="error-container">
+                    <p class="error-message">@ViewBag.ErrorMessage</p>
+                </div>
+            }
+            else
+            {
+                <p class="info-message">Henüz seçilmiş bir ders bulunmamaktadır.</p>
             }
         </div>
 
@@ -79,11 +134,10 @@
                         <ul id="mandatoryCourseList" class="combo-list">
                             @foreach (var course in courses.Where(c => Convert.ToBoolean(c.isMandatory)))
                             {
-                                <li class="course-option" onclick="toggleCourseSelection(this, @course.courseID)">
+                                <li class="course-option">
                                     <span>@course.courseName (@course.courseCode)</span>
                                     <div>
-                                        <span>Kredi: @course.credit</span>
-                                        <br>
+                                        <span>Kredi: @course.credit</span><br>
                                         <span>Zorunlu</span>
                                     </div>
                                     <input type="checkbox" name="selectedCourseIds" value="@course.courseID" class="mandatory-checkbox" style="display: none;">
@@ -98,11 +152,10 @@
                         <ul id="electiveCourseList" class="combo-list">
                             @foreach (var course in courses.Where(c => !Convert.ToBoolean(c.isMandatory)))
                             {
-                                <li class="course-option" onclick="toggleCourseSelection(this, @course.courseID)">
+                                <li class="course-option">
                                     <span>@course.courseName (@course.courseCode)</span>
                                     <div>
-                                        <span>Kredi: @course.credit</span>
-                                        <br>
+                                        <span>Kredi: @course.credit</span><br>
                                         <span>Seçmeli</span>
                                     </div>
                                     <input type="checkbox" name="selectedCourseIds" value="@course.courseID" style="display: none;">
@@ -124,8 +177,46 @@
             }
         </div>
 
-        <script src="~/js/studentpanel.js"></script>
+
+
+        <script>function toggleCourseSelection(element, courseId) {
+                const checkbox = element.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+
+                if (checkbox.classList.contains('mandatory-checkbox')) {
+                    const mandatoryCheckboxes = document.querySelectorAll('.mandatory-checkbox');
+                    const selectedCount = Array.from(mandatoryCheckboxes).filter(cb => cb.checked).length;
+
+                    if (selectedCount > 6) {
+                        alert('Zorunlu derslerden en fazla 6 adet seçebilirsiniz.');
+                        checkbox.checked = false;
+                    }
+                }
+
+                // Görsel seçili durumu için elementin sınıfını değiştiriyoruz
+                if (checkbox.checked) {
+                    element.classList.add('selected');
+                } else {
+                    element.classList.remove('selected');
+                }
+            }</script>
+
+        <!-- Danışman Bilgileri Sayfası -->
+        <div id="danisman" class="section" style="display: none;">
+            <h1>Danışman Bilgileri</h1>
+            @if (ViewBag.Advisor != null)
+            {
+                <p><strong>Ad:</strong> @ViewBag.Advisor.FullName</p>
+                <p><strong>Unvan:</strong> @ViewBag.Advisor.Title</p>
+                <p><strong>Bölüm:</strong> @ViewBag.Advisor.Department</p>
+            }
+            else
+            {
+                <p>Danışman bilgileri yüklenemedi.</p>
+            }
+        </div>
     </div>
 
+   
 </body>
 </html>

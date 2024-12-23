@@ -15,27 +15,24 @@ namespace BilgiYonetimSistemi.Controllers
         {
             _context = context;
         }
-
-        // GET: api/CourseQuotas
+ 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<object>>> GetCourseQuotas()
         {
             var courseQuotas = await _context.CourseQuotas
-                .Include(cq => cq.Course) // Course ilişkisini dahil ediyoruz
+                .Include(cq => cq.Course)  
                 .Select(cq => new
                 {
                     cq.CourseID,
                     cq.Quota,
                     cq.RemainingQuota,
-                    CourseName = cq.Course.CourseName // Sadece CourseName alanını dahil ediyoruz
+                    CourseName = cq.Course.CourseName  
                 })
                 .ToListAsync();
 
             return Ok(courseQuotas);
         }
-
-
-        // GET: api/CourseQuotas/5
+ 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCourseQuota(int id)
         {
@@ -46,20 +43,13 @@ namespace BilgiYonetimSistemi.Controllers
                     cq.CourseID,
                     cq.Quota,
                     cq.RemainingQuota,
-                    CourseName = cq.Course.CourseName // Sadece CourseName alanı
+                    CourseName = cq.Course.CourseName  
                 })
                 .FirstOrDefaultAsync();
-
-            if (courseQuota == null)
-            {
-                return NotFound(); // Eğer courseQuota bulunamazsa 404 döner
-            }
-
+  
             return Ok(courseQuota);
         }
-
-
-        // PUT: api/CourseQuotas/5
+ 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourseQuota(int id, CourseQuotas courseQuota)
         {
@@ -88,8 +78,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return NoContent();
         }
-
-        // POST: api/CourseQuotas
+ 
         [HttpPost]
         public async Task<ActionResult<CourseQuotas>> PostCourseQuota(CourseQuotas courseQuota)
         {
@@ -112,8 +101,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return CreatedAtAction("GetCourseQuota", new { id = courseQuota.CourseID }, courseQuota);
         }
-
-        // DELETE: api/CourseQuotas/5
+ 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCourseQuota(int id)
         {
@@ -128,9 +116,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return NoContent();
         }
-
-
-
+         
         [HttpPatch("coursequotas/{courseId}")]
         public async Task<IActionResult> UpdateCourseQuota(int courseId)
         {
@@ -140,17 +126,17 @@ namespace BilgiYonetimSistemi.Controllers
             {
                 return NotFound("Ders bulunamadı.");
             }
-
-            // Kontenjanı bir azalt
+ 
             if (courseQuota.RemainingQuota > 0)
             {
                 courseQuota.RemainingQuota--;
-                await _context.SaveChangesAsync(); // Veritabanına kaydediyoruz
-                return Ok(courseQuota); // Güncellenmiş bilgiyi geri gönderiyoruz
+                await _context.SaveChangesAsync(); 
+                return Ok(courseQuota);  
             }
 
             return BadRequest("Kontenjan dolmuş.");
         }
+
 
 
         private bool CourseQuotaExists(int id)

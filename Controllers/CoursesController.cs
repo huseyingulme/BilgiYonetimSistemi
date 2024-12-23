@@ -15,13 +15,12 @@ namespace BilgiYonetimSistemi.Controllers
         {
             _context = context;
         }
-
-        // GET: api/Courses
+ 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<object>>> GetCourse()
         {
             var courses = await _context.Courses
-                .Include(c => c.StudentCourseSelections)  // StudentCourseSelections ilişkisini dahil ediyoruz
+                .Include(c => c.StudentCourseSelections)    
                 .Select(c => new
                 {
                     c.CourseID,
@@ -34,20 +33,18 @@ namespace BilgiYonetimSistemi.Controllers
                     {
                         sc.StudentID,
                         sc.SelectionDate
-                    }).ToList()  // Sadece StudentID ve SelectionDate bilgilerini alıyoruz
+                    }).ToList()   
                 })
                 .ToListAsync();
 
             return Ok(courses);
         }
-
-
-        // GET: api/Courses/5
+ 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCourse(int id)
         {
             var course = await _context.Courses
-                .Include(c => c.StudentCourseSelections)  // StudentCourseSelections ilişkisini dahil ediyoruz
+                .Include(c => c.StudentCourseSelections)   
                 .Where(c => c.CourseID == id)
                 .Select(c => new
                 {
@@ -61,20 +58,13 @@ namespace BilgiYonetimSistemi.Controllers
                     {
                         sc.StudentID,
                         sc.SelectionDate
-                    }).ToList()  // Sadece StudentID ve SelectionDate bilgilerini alıyoruz
+                    }).ToList()   
                 })
                 .FirstOrDefaultAsync();
-
-            if (course == null)
-            {
-                return NotFound();
-            }
-
+ 
             return Ok(course);
         }
-
-
-        // PUT: api/Courses/5
+ 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourse(int id, Course course)
         {
@@ -103,8 +93,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return NoContent();
         }
-
-        // POST: api/Courses
+ 
         [HttpPost]
         public async Task<ActionResult<Course>> PostCourse(Course course)
         {
@@ -113,8 +102,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return CreatedAtAction("GetCourse", new { id = course.CourseID }, course);
         }
-
-        // DELETE: api/Courses/5
+ 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCourse(int id)
         {

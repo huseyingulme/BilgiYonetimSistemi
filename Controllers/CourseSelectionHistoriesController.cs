@@ -15,52 +15,42 @@ namespace BilgiYonetimSistemi.Controllers
         {
             _context = context;
         }
-
-        // GET: api/CourseSelectionHistories
+ 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<object>>> GetCourseSelectionHistory()
         {
             var courseSelectionHistory = await _context.CourseSelectionHistory
-                .Include(csh => csh.Student) // Student ilişkisini dahil ediyoruz
+                .Include(csh => csh.Student)  
                 .Select(csh => new
                 {
                     csh.StudentID,
                     csh.SelectionDate,
-                    StudentName = csh.Student.FirstName, // Öğrencinin adı
-                    StudentLastName = csh.Student.LastName // Öğrencinin soyadı
+                    StudentName = csh.Student.FirstName,  
+                    StudentLastName = csh.Student.LastName  
                 })
                 .ToListAsync();
 
             return Ok(courseSelectionHistory);
         }
-
-
-        // GET: api/CourseSelectionHistories/5
+ 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCourseSelectionHistory(int id)
         {
             var courseSelectionHistory = await _context.CourseSelectionHistory
-                .Include(csh => csh.Student) // Student ilişkisini dahil ediyoruz
+                .Include(csh => csh.Student)  
                 .Where(csh => csh.StudentID == id)
                 .Select(csh => new
                 {
                     csh.StudentID,
                     csh.SelectionDate,
-                    StudentName = csh.Student.FirstName, // Öğrencinin adı
-                    StudentLastName = csh.Student.LastName // Öğrencinin soyadı
+                    StudentName = csh.Student.FirstName,  
+                    StudentLastName = csh.Student.LastName  
                 })
                 .FirstOrDefaultAsync();
-
-            if (courseSelectionHistory == null)
-            {
-                return NotFound();
-            }
-
+ 
             return Ok(courseSelectionHistory);
         }
-
-
-        // PUT: api/CourseSelectionHistories/5
+ 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourseSelectionHistory(int id, CourseSelectionHistory courseSelectionHistory)
         {
@@ -89,8 +79,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return NoContent();
         }
-
-        // POST: api/CourseSelectionHistories
+ 
         [HttpPost]
         public async Task<ActionResult<CourseSelectionHistory>> PostCourseSelectionHistory(CourseSelectionHistory courseSelectionHistory)
         {
@@ -113,8 +102,7 @@ namespace BilgiYonetimSistemi.Controllers
 
             return CreatedAtAction("GetCourseSelectionHistory", new { id = courseSelectionHistory.StudentID }, courseSelectionHistory);
         }
-
-        // DELETE: api/CourseSelectionHistories/5
+ 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCourseSelectionHistory(int id)
         {

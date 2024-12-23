@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\student\\studentpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\student\\studentpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\css\\studentpanel.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\css\\studentpanel.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\js\\studentpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\js\\studentpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\js\\advisorpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\js\\advisorpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\advisor\\advisorpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\advisor\\advisorpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,54 +59,65 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAYwDoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T19:21:01.293Z",
+              "Title": "StudentPanel.cshtml",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\StudentPanel.cshtml",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml*",
+              "RelativeToolTip": "Views\\Student\\StudentPanel.cshtml*",
+              "ViewState": "AgIAANsAAAAAAAAAAAAAANsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T07:48:21.79Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "studentpanel.css",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\studentpanel.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\studentpanel.css",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\studentpanel.css",
-              "RelativeToolTip": "wwwroot\\css\\studentpanel.css",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAUwG4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-22T19:17:09.764Z",
-              "EditorCaption": ""
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T07:48:08.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "studentpanel.js",
               "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\studentpanel.js",
               "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
               "RelativeToolTip": "wwwroot\\js\\studentpanel.js",
-              "ViewState": "AgIAABYAAAAAAAAAAAAuwDkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAuwGIAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-22T18:54:43.851Z",
+              "WhenOpened": "2024-12-23T07:44:43.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StudentPanel.cshtml",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml",
-              "RelativeDocumentMoniker": "Views\\Student\\StudentPanel.cshtml",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml",
-              "RelativeToolTip": "Views\\Student\\StudentPanel.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-22T18:36:40.083Z",
+              "DocumentIndex": 2,
+              "Title": "advisorpanel.js",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\advisorpanel.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\advisorpanel.js",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\advisorpanel.js",
+              "RelativeToolTip": "wwwroot\\js\\advisorpanel.js",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwBcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-23T07:44:32.577Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdvisorPanel.cshtml",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Advisor\\AdvisorPanel.cshtml",
+              "RelativeDocumentMoniker": "Views\\Advisor\\AdvisorPanel.cshtml",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Advisor\\AdvisorPanel.cshtml",
+              "RelativeToolTip": "Views\\Advisor\\AdvisorPanel.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T07:45:43.939Z"
             }
           ]
         }

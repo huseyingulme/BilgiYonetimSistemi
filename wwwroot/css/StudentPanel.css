@@ -1,110 +1,229 @@
-﻿body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+﻿/* Genel Ayarlar */
+* {
     margin: 0;
     padding: 0;
-}
-
-.menu {
-    background-color: #ffffff;
-    border-right: 2px solid #ddd;
-    width: 250px;
-    height: 100vh;
-    padding: 20px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-    .menu .logo {
-        width: 100%;
-        max-width: 200px;
+body {
+    background-color: #00426a;
+    color: white;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sol Menü */
+.menu {
+    width: 250px;
+    background-color: #003354;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: fixed;
+    height: 100%;
+    animation: slideIn 1s ease;
+}
+
+    .menu img.logo {
+        width: 100px;
         margin-bottom: 20px;
     }
 
     .menu h2 {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: #007bff;
-    }
-
-    .menu .nav-item {
-        padding: 10px;
-        margin: 5px 0;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-        .menu .nav-item:hover,
-        .menu .nav-item.active {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-    .menu .logout {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #f44336;
-        color: white;
-        cursor: pointer;
+        font-size: 18px;
         text-align: center;
-        border-radius: 5px;
-        transition: background-color 0.3s;
+        margin-bottom: 20px;
     }
 
-        .menu .logout:hover {
-            background-color: #d32f2f;
-        }
-
-.content {
-    margin-left: 250px;
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.section {
-    display: none;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 8px;
+#menu-items {
+    width: 100%;
     margin-top: 20px;
 }
 
-    .section h1 {
-        margin-bottom: 20px;
-    }
-
-.course-option {
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    margin: 10px 0;
+.nav-item {
+    background-color: #00426a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
-    .course-option:hover {
+    .nav-item:hover {
+        background-color: white;
+        color: #00426a;
         transform: scale(1.05);
-        background-color: #e0f7fa;
     }
 
-    .course-option.selected {
-        background-color: #b2ebf2;
+.logout {
+    margin-top: auto;
+    background-color: #d9534f;
+    color: white;
+}
+
+    .logout:hover {
+        background-color: #ff6161;
+        transform: scale(1.1);
     }
 
-input[type="checkbox"] {
+/* İçerik Alanı */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    overflow-y: auto;
+    width: calc(100% - 250px);
+    animation: fadeIn 1s ease;
+}
+
+/* Bölüm Başlıkları */
+.section {
     display: none;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    .section h1 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 24px;
+        border-bottom: 2px solid white;
+        padding-bottom: 5px;
+    }
+
+/* Tablo Stili */
+table.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    color: #00426a;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-    button:hover {
-        background-color: #0056b3;
+    table.modern-table th,
+    table.modern-table td {
+        text-align: left;
+        padding: 10px;
+        border: 1px solid #ddd;
     }
+
+    table.modern-table th {
+        background-color: #00426a;
+        color: white;
+    }
+
+    table.modern-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+/* Form Stilleri */
+form {
+    margin-top: 20px;
+}
+
+    form label {
+        color: white;
+    }
+
+    form input {
+        width:120px;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #00426a;
+        border-radius: 8px;
+    }
+
+    form button.btn {
+        background-color: #00426a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        form button.btn:hover {
+            background-color: white;
+            color: #00426a;
+            transform: scale(1.1);
+        }
+
+/* Ders Seçimi Stili */
+.combo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.course-option {
+    background-color: white;
+    color: #00426a;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+    .course-option:hover {
+        background-color: #00426a;
+        color: white;
+    }
+
+    .course-option.selected {
+        background-color: #00426a;
+        color: white;
+    }
+
+/* Mesajlar */
+.info-message,
+.error-message,
+.success-message {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.info-message {
+    color: #17a2b8;
+}
+
+.error-message {
+    color: #d9534f;
+}
+
+.success-message {
+    color: #5cb85c;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

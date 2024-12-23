@@ -15,14 +15,13 @@ namespace BilgiYonetimSistemi.Controllers
         {
             _context = context;
         }
-
-        // GET: api/StudentCourseSelections
+ 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentCourseSelections>>> GetStudentCourseSelections()
         {
             var studentsWithCourses = await _context.Students
                 .Include(s => s.StudentCourseSelections)
-                    .ThenInclude(sc => sc.Course) // StudentCourseSelections üzerinden Course ilişkisini yükle
+                    .ThenInclude(sc => sc.Course)  
                 .Select(s => new
                 {
                     s.StudentID,
@@ -36,20 +35,14 @@ namespace BilgiYonetimSistemi.Controllers
                     }).ToList()
                 })
                 .ToListAsync();
-
-
-            if (studentsWithCourses == null || !studentsWithCourses.Any())
-                return NotFound(new { Message = "No students or course selections found." });
-
+  
             return Ok(studentsWithCourses);
         }
-
-
-        // GET: api/StudentCourseSelections/5
+         
         [HttpGet("{studentId}")]
         public IActionResult GetStudentCourseSelections(int studentId)
         {
-            // Veritabanından seçimleri alıyoruz
+ 
             var selections = _context.StudentCourseSelections
                .Where(s => s.StudentID == studentId)
                .Select(s => new
@@ -65,20 +58,10 @@ namespace BilgiYonetimSistemi.Controllers
                })
                .ToList();
 
-
-            // Eğer veri yoksa NotFound döndür
-            if (selections == null || !selections.Any())
-            {
-                return NotFound("Bu öğrenci için ders seçimi bulunamadı.");
-            }
-
-            // Veri bulundu, JSON formatında geri dön
             return Ok(selections);
         }
 
-        // PUT: api/StudentCourseSelections/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+          [HttpPut("{id}")]
         public async Task<IActionResult> PutStudentCourseSelections(int id, StudentCourseSelections studentCourseSelections)
         {
             if (id != studentCourseSelections.SelectionID)
@@ -107,9 +90,7 @@ namespace BilgiYonetimSistemi.Controllers
             return NoContent();
         }
 
-        // POST: api/StudentCourseSelections
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+         [HttpPost]
         public async Task<ActionResult<StudentCourseSelections>> PostStudentCourseSelections(StudentCourseSelections studentCourseSelections)
         {
             _context.StudentCourseSelections.Add(studentCourseSelections);
@@ -118,7 +99,6 @@ namespace BilgiYonetimSistemi.Controllers
             return CreatedAtAction("GetStudentCourseSelections", new { id = studentCourseSelections.SelectionID }, studentCourseSelections);
         }
 
-        // DELETE: api/StudentCourseSelections/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStudentCourseSelections(int id)
         {
