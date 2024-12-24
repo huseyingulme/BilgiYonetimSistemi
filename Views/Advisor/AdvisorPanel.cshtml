@@ -25,143 +25,144 @@
         {
             <h2>Danışman Bilgileri Yüklenemedi</h2>
         }
-    <div id="menu-items">
-        <div class="nav-item" onclick="showSection('danismanBilgileri')">Danışman Bilgileri</div>
-        <div class="nav-item" onclick="showSection('dersOnaylama')">Ders Onaylama</div>
-        <div class="nav-item" onclick="showSection('ogrencilerim')">Öğrencilerim</div>
-    </div>
+        <div id="menu-items">
+            <div class="nav-item" onclick="showSection('danismanBilgileri')">Danışman Bilgileri</div>
+            <div class="nav-item" onclick="showSection('dersOnaylama')">Ders Onaylama</div>
+            <div class="nav-item" onclick="showSection('ogrencilerim')">Öğrencilerim</div>
+        </div>
         <div class="nav-item logout" onclick="logout()">Çıkış Yap</div>
     </div>
 
     <!-- İçerik Alanı -->
-        <div class="content">
-            
+    <div class="content">
+        
+        <!-- Danışman Bilgileri -->
+        <div id="danismanBilgileri" class="section" style="display: none;">
+            <h1>Danışman Bilgileri</h1>
+
             <!-- Danışman Bilgileri -->
-            <div id="danismanBilgileri" class="section" style="display: none;">
-                <h1>Danışman Bilgileri</h1>
+            @if (ViewBag.Advisor != null)
+            {
+                <p><strong>Ad:</strong> @ViewBag.Advisor.fullName</p>
+                <p><strong>Email:</strong> @ViewBag.Advisor.email</p>
+                <p><strong>Unvan:</strong> @ViewBag.Advisor.title</p>
+                <p><strong>Bölüm:</strong> @ViewBag.Advisor.department</p>
+            }
+            else
+            {
+                <p>Danışman bilgileri yüklenemedi. Lütfen tekrar deneyin.</p>
+            }
 
-                <!-- Danışman Bilgileri -->
-                @if (ViewBag.Advisor != null)
-                {
-                    <p><strong>Ad:</strong> @ViewBag.Advisor.fullName</p>
-                    <p><strong>Email:</strong> @ViewBag.Advisor.email</p>
-                    <p><strong>Unvan:</strong> @ViewBag.Advisor.title</p>
-                    <p><strong>Bölüm:</strong> @ViewBag.Advisor.department</p>
-                }
-                else
-                {
-                    <p>Danışman bilgileri yüklenemedi. Lütfen tekrar deneyin.</p>
-                }
-
-                <!-- Bilgileri Güncelle -->
-                <div class="update-section">
-                    <h3>Bilgileri Güncelle</h3>
-                    <form asp-action="UpdateAdvisor" method="post">
-                        <input type="hidden" name="id" value="@ViewBag.Advisor.advisorID" />
-                        <label for="newEmail">Yeni E-posta (Opsiyonel):</label>
-                        <input type="email" id="newEmail" name="newEmail" placeholder="Yeni e-posta">
-                        <br><br>
-                        <label for="newPassword">Yeni Şifre (Opsiyonel):</label>
-                        <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifre">
-                        <br><br>
-                        <button type="submit" class="btn">Bilgileri Güncelle</button>
-                    </form>
-                </div>
-                <!-- Uyarı Mesajları -->
-                @if (TempData["SuccessMessage"] != null)
-                {
-                    <p class="success-message" style="color: green; font-weight: bold;">@TempData["SuccessMessage"]</p>
-                }
-                @if (TempData["ErrorMessage"] != null)
-                {
-                    <p class="error-message" style="color: red; font-weight: bold;">@TempData["ErrorMessage"]</p>
-                }
-
+            <!-- Bilgileri Güncelle -->
+            <div class="update-section">
+                <h3>Bilgileri Güncelle</h3>
+                <form asp-action="UpdateAdvisor" method="post">
+                    <input type="hidden" name="id" value="@ViewBag.Advisor.advisorID" />
+                    <label for="newEmail">Yeni E-posta (Opsiyonel):</label>
+                    <input type="email" id="newEmail" name="newEmail" placeholder="Yeni e-posta">
+                    <br><br>
+                    <label for="newPassword">Yeni Şifre (Opsiyonel):</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Yeni şifre">
+                    <br><br>
+                    <button type="submit" class="btn">Bilgileri Güncelle</button>
+                </form>
             </div>
+            <!-- Uyarı Mesajları -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <p class="success-message" style="color: green; font-weight: bold;">@TempData["SuccessMessage"]</p>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <p class="error-message" style="color: red; font-weight: bold;">@TempData["ErrorMessage"]</p>
+            }
 
+        </div>
 
+        <div id="dersOnaylama" class="section" style="display: none;">
+            <h1>Ders Onaylama</h1>
 
-            <!-- Ders Onaylama -->
-            <div id="dersOnaylama" class="section" style="display: none;">
-                <h1>Ders Onaylama</h1>
-
-                @if (ViewBag.PendingCourses != null && ViewBag.PendingCourses.Count > 0)
-                {
-                    <table class="modern-table">
-                        <thead>
-                            <tr>
-                                <th>Ders Adı</th>
-                                <th>Ders Kodu</th>
-                                <th>Öğrenci Adı</th>
-                                <th>Öğrenci Numarası</th>
-                                <th>Onay/Reddet</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var course in ViewBag.PendingCourses)
-                            {
-                                <tr>
-                                    <td>@course.courseName</td>
-                                    <td>@course.courseID</td>
-                                    <td>@course.firstName @course.lastName</td>
-                                    <td>@course.studentID</td>
-                                    <td>
-                                        <form asp-controller="Advisor" asp-action="ApproveCourse" method="post" style="display:inline;">
-                                            <input type="hidden" name="id" value="@course.id" />
-                                            <input type="hidden" name="studentID" value="@course.studentID" />
-                                            <input type="hidden" name="courseID" value="@course.courseID" />
-                                            <button type="submit" class="btn btn-approve">Onayla</button>
-                                        </form>
-                                        <form asp-controller="Advisor" asp-action="RejectCourse" method="post" style="display:inline;">
-                                            <input type="hidden" name="id" value="@course.id" />
-                                            <button type="submit" class="btn btn-reject">Reddet</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                }
-                else
-                {
-                    <div class="error-container">
-                        <p>Onay bekleyen ders bulunamadı.</p>
-                    </div>
-                }
-            </div>
-
-            <!-- Öğrencilerim -->
-            <div id="ogrencilerim" class="section" style="display:none;">
-                <h1>Öğrencilerim</h1>
-                @if (ViewBag.Advisor != null && ViewBag.Advisor.students != null && ViewBag.Advisor.students.Count > 0)
-                {
-                    <ul id="studentsList" class="combo-list">
-                        @foreach (var student in ViewBag.Advisor.students)
+            @if (ViewBag.PendingCourses != null && ViewBag.PendingCourses.Count > 0)
+            {
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Ders Adı</th>
+                            <th>Ders Kodu</th>
+                            <th>Öğrenci Adı</th>
+                            <th>Öğrenci Numarası</th>
+                            <th>Onay/Reddet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in ViewBag.PendingCourses)
                         {
-                            <li class="student-option">
-                                <span>@student.firstName @student.lastName (@student.studentID)</span>
-                                <button class="btn" onclick="viewStudentDetails(@student.studentID)">Detayları Gör</button>
-                            </li>
-                        }
-                    </ul>
-                }
-                else
-                {
-                    <p>Öğrenci bilgileri yüklenemedi veya danışmana bağlı öğrenci bulunamadı.</p>
-                }
+                            <tr>
+                                <td>@course.courseName</td>
+                                <td>@course.courseID</td>
+                                <td>@course.firstName @course.lastName</td>
+                                <td>@course.studentID</td>
+                                <td>
+                                    <!-- Onayla -->
+                                    <form asp-controller="Advisor" asp-action="ApproveCourse" method="post" style="display:inline;">
+                                        <input type="hidden" name="id" value="@course.id" />
+                                        <input type="hidden" name="studentID" value="@course.studentID" />
+                                        <input type="hidden" name="courseID" value="@course.courseID" />
+                                        <button type="submit" class="btn btn-approve">Onayla</button>
+                                    </form>
 
-                <!-- Modal Kutusu -->
-                <div id="studentDetailsModal" class="modal" style="display: none;">
-                    <div class="modal-content">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        <h2>Öğrenci Detayları</h2>
-                        <p><strong>Adı Soyadı:</strong> <span id="studentName"></span></p>
-                        <p><strong>E-posta:</strong> <span id="studentEmail"></span></p>
-                        <p><strong>Aldığı Dersler:</strong></p>
-                        <ul id="studentCoursesList"></ul>
-                    </div>
+                                    <!-- Reddet -->
+                                    <form asp-controller="Advisor" asp-action="RejectCourse" method="post" style="display:inline;">
+                                        <input type="hidden" name="id" value="@course.id" />
+                                        <button type="submit" class="btn btn-reject">Reddet</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="error-container">
+                    <p>Onay bekleyen ders bulunamadı.</p>
+                </div>
+            }
+        </div>
+
+
+         
+        <!-- Öğrencilerim -->
+        <div id="ogrencilerim" class="section" style="display:none;">
+            <h1>Öğrencilerim</h1>
+            @if (ViewBag.Advisor != null && ViewBag.Advisor.students != null && ViewBag.Advisor.students.Count > 0)
+            {
+                <ul id="studentsList" class="combo-list">
+                    @foreach (var student in ViewBag.Advisor.students)
+                    {
+                        <li class="student-option">
+                            <span>@student.firstName @student.lastName (@student.studentID)</span>
+                            <button class="btn" onclick="viewStudentDetails(@student.studentID)">Detayları Gör</button>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>Öğrenci bilgileri yüklenemedi veya danışmana bağlı öğrenci bulunamadı.</p>
+            }
+
+            <!-- Modal Kutusu -->
+            <div id="studentDetailsModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Öğrenci Detayları</h2>
+                    <p><strong>Adı Soyadı:</strong> <span id="studentName"></span></p>
+                    <p><strong>E-posta:</strong> <span id="studentEmail"></span></p>
+                    <p><strong>Aldığı Dersler:</strong></p>
+                    <ul id="studentCoursesList"></ul>
                 </div>
             </div>
-
+        </div>
 </body>
 </html>

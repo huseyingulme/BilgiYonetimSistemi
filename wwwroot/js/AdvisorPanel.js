@@ -53,7 +53,6 @@ function viewStudentDetails(studentID) {
     const coursesList = document.getElementById("studentCoursesList");
     coursesList.innerHTML = ""; // Önceki dersleri temizle
 
-    // Modalı aç
     modal.style.display = "block";
 
     // API çağrısı
@@ -86,6 +85,90 @@ function viewStudentDetails(studentID) {
             alert("Öğrenci bilgileri yüklenirken bir hata oluştu.");
         });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Onayla butonlarına tıklama olayı
+    document.querySelectorAll(".btn-approve").forEach(button => {
+        button.addEventListener("click", async event => {
+            event.preventDefault(); // Formun varsayılan gönderimini engelle
+            const form = event.target.closest("form");
+
+            // Formdan verileri al
+            const id = form.querySelector("input[name='id']").value;
+            const studentID = form.querySelector("input[name='studentID']").value;
+            const courseID = form.querySelector("input[name='courseID']").value;
+
+            // Onaylama API isteği
+            const approvedSelection = {
+                CourseID: courseID,
+                StudentID: studentID,
+                SelectionDate: new Date().toISOString(),
+                IsApproved: true
+            };
+
+            try {
+                // API'ye POST isteği gönder
+                const postResponse = await fetch("https://localhost:7227/api/StudentCourseSelections", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(approvedSelection)
+                });
+
+                if (postResponse.ok) {
+                    // API'ye DELETE isteği gönder
+                    const deleteResponse = await fetch(`https://localhost:7227/api/NonConfirmedSelections/${id}`, {
+                        method: "DELETE"
+                    });
+
+                    if (deleteResponse.ok) {
+                        alert("Ders başarıyla onaylandı ve silindi!");
+                        // Sayfayı yeniden yükle
+                        location.reload();
+                    } else {
+                        const errorText = await deleteResponse.text();
+                        alert(`Onay başarılı ancak silme sırasında hata oluştu: ${errorText}`);
+                    }
+                } else {
+                    const errorText = await postResponse.text();
+                    alert(`Ders onaylanırken hata oluştu: ${errorText}`);
+                }
+            } catch (error) {
+                console.error("Onaylama sırasında bir hata oluştu:", error);
+                alert("Onaylama sırasında bir hata oluştu. Daha sonra tekrar deneyin.");
+            }
+        });
+    });
+
+    // Reddet butonlarına tıklama olayı
+    document.querySelectorAll(".btn-reject").forEach(button => {
+        button.addEventListener("click", async event => {
+            event.preventDefault(); // Formun varsayılan gönderimini engelle
+            const form = event.target.closest("form");
+            const id = form.querySelector("input[name='id']").value;
+
+            try {
+                // API'ye DELETE isteği gönder
+                const response = await fetch(`https://localhost:7227/api/NonConfirmedSelections/${id}`, {
+                    method: "DELETE"
+                });
+
+                if (response.ok) {
+                    alert("Ders başarıyla reddedildi ve silindi!");
+                    // Sayfayı yeniden yükle
+                    location.reload();
+                } else {
+                    const errorText = await response.text();
+                    alert(`Ders reddedilirken hata oluştu: ${errorText}`);
+                }
+            } catch (error) {
+                console.error("Reddetme sırasında bir hata oluştu:", error);
+                alert("Reddetme sırasında bir hata oluştu. Daha sonra tekrar deneyin.");
+            }
+        });
+    });
+});
 
 function closeModal() {
     const modal = document.getElementById("studentDetailsModal");

@@ -1,5 +1,0 @@
-C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\js\instructor_script.js
-C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\index.css
-C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\js\student_script.js
-C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\student_panel.css
-C:\Users\husey\Desktop\BilgiYonetimSistemi\wwwroot\css\instructor_panel.css

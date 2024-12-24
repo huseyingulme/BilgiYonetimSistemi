@@ -3,40 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\js\\studentpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\js\\studentpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\models\\coursequotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:models\\coursequotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\models\\studentcourseselections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:models\\studentcourseselections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\models\\studentcourseselectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:models\\studentcourseselectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\controllers\\coursequotascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:controllers\\coursequotascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\js\\advisorpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\js\\advisorpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\student\\studentpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\student\\studentpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\advisor\\advisorpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\advisor\\advisorpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\css\\advisorpanel.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\css\\advisorpanel.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\wwwroot\\js\\studentpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:wwwroot\\js\\studentpanel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|c:\\users\\husey\\desktop\\bilgiyonetimsistemi\\views\\student\\studentpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{58A2B489-118D-4795-8472-584A645BD0F9}|BilgiYonetimSistemi.csproj|solutionrelative:views\\student\\studentpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 125,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,117 +62,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StudentCourseSelectionViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\StudentCourseSelectionViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\StudentCourseSelectionViewModel.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\StudentCourseSelectionViewModel.cs",
-              "RelativeToolTip": "Models\\StudentCourseSelectionViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T07:58:27.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StudentCourseSelections.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\StudentCourseSelections.cs",
-              "RelativeDocumentMoniker": "Models\\StudentCourseSelections.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\StudentCourseSelections.cs",
-              "RelativeToolTip": "Models\\StudentCourseSelections.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAUwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T07:58:23.915Z",
+              "DocumentIndex": 0,
+              "Title": "login.css",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\login.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\login.css",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\login.css",
+              "RelativeToolTip": "wwwroot\\css\\login.css",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-24T20:12:28.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CourseQuotas.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\CourseQuotas.cs",
-              "RelativeDocumentMoniker": "Models\\CourseQuotas.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Models\\CourseQuotas.cs",
-              "RelativeToolTip": "Models\\CourseQuotas.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAUwDYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T07:58:19.104Z",
+              "Title": "advisorpanel.css",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\advisorpanel.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\advisorpanel.css",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\css\\advisorpanel.css",
+              "RelativeToolTip": "wwwroot\\css\\advisorpanel.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-24T20:12:27.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CourseQuotasController.cs",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\CourseQuotasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CourseQuotasController.cs",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\CourseQuotasController.cs",
-              "RelativeToolTip": "Controllers\\CourseQuotasController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T07:58:13.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StudentPanel.cshtml",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml",
-              "RelativeDocumentMoniker": "Views\\Student\\StudentPanel.cshtml",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml",
-              "RelativeToolTip": "Views\\Student\\StudentPanel.cshtml",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAANsAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T07:48:21.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
               "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T07:48:08.925Z"
+              "WhenOpened": "2024-12-24T20:12:13.912Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Controllers\\StudentController.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAgwM0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T19:39:44.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "studentpanel.js",
               "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\studentpanel.js",
               "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\studentpanel.js",
               "RelativeToolTip": "wwwroot\\js\\studentpanel.js",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAkwGIAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-23T07:44:43.661Z",
+              "WhenOpened": "2024-12-24T19:04:29.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "advisorpanel.js",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\advisorpanel.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\advisorpanel.js",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\wwwroot\\js\\advisorpanel.js",
-              "RelativeToolTip": "wwwroot\\js\\advisorpanel.js",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAuwBcAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-23T07:44:32.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdvisorPanel.cshtml",
-              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Advisor\\AdvisorPanel.cshtml",
-              "RelativeDocumentMoniker": "Views\\Advisor\\AdvisorPanel.cshtml",
-              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Advisor\\AdvisorPanel.cshtml",
-              "RelativeToolTip": "Views\\Advisor\\AdvisorPanel.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "StudentPanel.cshtml",
+              "DocumentMoniker": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\StudentPanel.cshtml",
+              "ToolTip": "C:\\Users\\husey\\Desktop\\BilgiYonetimSistemi\\Views\\Student\\StudentPanel.cshtml",
+              "RelativeToolTip": "Views\\Student\\StudentPanel.cshtml",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAYwKUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T07:45:43.939Z"
+              "WhenOpened": "2024-12-24T19:04:24.895Z",
+              "EditorCaption": ""
             }
           ]
         }

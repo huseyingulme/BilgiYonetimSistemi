@@ -52,15 +52,11 @@
                 <p style="color:red">@ViewBag.ErrorMessage</p>
             }
 
-
-            <!-- Şifremi Unuttum Butonu -->
-            <div class="forgot-password">
-                <a href="@Url.Action("ForgotPassword", "Account")">Şifremi Unuttum</a>
-            </div>
         </div>
     </div>
 
-    <script>        function showForm(formId) {
+    <script>        
+                function showForm(formId) {
                     // Tüm formları gizle
                     document.getElementById('student-form').style.display = 'none';
                     document.getElementById('staff-form').style.display = 'none';

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -27,53 +28,6 @@ namespace BilgiYonetimSistemi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "NonConfirmedSelections",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                    .Annotation("SqlServer:Identity", "1, 1"),
-
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_NonConfirmedSelections", x => x.Id);
-                });
-
-
-            migrationBuilder.CreateTable(
-                name: "Courses",
-                columns: table => new
-                {
-                    CourseID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CourseCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CourseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsMandatory = table.Column<bool>(type: "bit", nullable: false),
-                    Credit = table.Column<int>(type: "int", nullable: false),
-                    Department = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Courses", x => x.CourseID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Transcripts",
-                columns: table => new
-                {
-                    TranscriptID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    StudentID = table.Column<int>(type: "int", nullable: false),
-                    CourseID = table.Column<int>(type: "int", nullable: false),
-                    Grade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Semester = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Transcripts", x => x.TranscriptID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -88,6 +42,30 @@ namespace BilgiYonetimSistemi.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.UserID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Courses",
+                columns: table => new
+                {
+                    CourseID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CourseCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CourseName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsMandatory = table.Column<bool>(type: "bit", nullable: false),
+                    Credit = table.Column<int>(type: "int", nullable: false),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdvisorID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Courses", x => x.CourseID);
+                    table.ForeignKey(
+                        name: "FK_Courses_Advisors_AdvisorID",
+                        column: x => x.AdvisorID,
+                        principalTable: "Advisors",
+                        principalColumn: "AdvisorID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -117,7 +95,7 @@ namespace BilgiYonetimSistemi.Migrations
                 name: "CourseQuotas",
                 columns: table => new
                 {
-                    CourseID = table.Column<int>(type: "int", nullable: false),
+                    CourseId = table.Column<int>(type: "int", nullable: false),
                     Quota = table.Column<int>(type: "int", nullable: false),
                     RemainingQuota = table.Column<int>(type: "int", nullable: false)
                 },
@@ -125,7 +103,7 @@ namespace BilgiYonetimSistemi.Migrations
                 {
                     table.ForeignKey(
                         name: "FK_CourseQuotas_Courses_CourseId",
-                        column: x => x.CourseID,
+                        column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseID",
                         onDelete: ReferentialAction.Cascade);
@@ -211,6 +189,11 @@ namespace BilgiYonetimSistemi.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Courses_AdvisorID",
+                table: "Courses",
+                column: "AdvisorID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_NonConfirmedSelections_CourseId",
                 table: "NonConfirmedSelections",
                 column: "CourseId");
@@ -250,9 +233,6 @@ namespace BilgiYonetimSistemi.Migrations
 
             migrationBuilder.DropTable(
                 name: "StudentCourseSelections");
-
-            migrationBuilder.DropTable(
-                name: "Transcripts");
 
             migrationBuilder.DropTable(
                 name: "Users");

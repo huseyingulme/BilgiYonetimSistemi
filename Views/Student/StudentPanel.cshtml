@@ -1,9 +1,4 @@
-﻿
-@{
-    Layout = null; // Eğer layout kullanılmayacaksa null bırakılır
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -12,33 +7,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/studentpanel.css">
     <script src="~/js/studentpanel.js" defer></script>
+
 </head>
 <body>
 
     <!-- Sol Menü -->
     <div class="menu">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Karadeniz_Technical_University_logo.svg/1024px-Karadeniz_Technical_University_logo.svg.png" alt="KTÜ Logo" class="logo">
-        <br>
-        @if (ViewBag.Student != null)
-        {
-            <h2>@ViewBag.Student.firstName @ViewBag.Student.lastName</h2>
-        }
-        else
-        {
-            <h2>Öğrenci Bilgileri Yüklenemedi</h2>
-        }
+        <h2>@(ViewBag.Student != null ? $"{ViewBag.Student.firstName} {ViewBag.Student.lastName}" : "Öğrenci Paneli")</h2>
         <div id="menu-items">
-            <div class="nav-item" onclick="showSection('ogrenci')">Öğrenci Bilgileri</div>
             <div class="nav-item" onclick="showSection('derslerim')">Ders Bilgileri</div>
             <div class="nav-item" onclick="showSection('dersler')">Ders Seçimi</div>
             <div class="nav-item" onclick="showSection('danisman')">Danışman</div>
         </div>
-
-        <div class="nav-item logout" onclick="logout()">Çıkış Yap</div>
+        <div class="logout" onclick="logout()">Çıkış Yap</div>
     </div>
 
     <!-- İçerik Alanı -->
     <div class="content">
+
         <!-- Öğrenci Bilgileri -->
         <div id="ogrenci" class="section" style="display: none;">
             <h1>Öğrenci Bilgileri</h1>
@@ -75,6 +61,8 @@
                 <p>Öğrenci bilgileri yüklenemedi. Lütfen tekrar deneyin.</p>
             }
         </div>
+
+
 
         <!-- Ders Bilgileri -->
         <div id="derslerim" class="section" style="display: none;">
@@ -118,26 +106,25 @@
 
         <!-- Ders Seçimi -->
         @{
-            // ViewBag.Courses'ı kontrol edip varsayılan bir liste oluşturuyoruz
             var courses = ViewBag.Courses != null ? ((IEnumerable<dynamic>)ViewBag.Courses).ToList() : new List<dynamic>();
         }
-
         <div id="dersler" class="section" style="display: none;">
             <h1>Ders Seçimi</h1>
             @if (ViewBag.AllowCourseSelection == true)
             {
                 <p>Lütfen derslerinizi seçin (Zorunlu derslerden en fazla 6 adet seçebilirsiniz):</p>
-                <form id="courseSelectionForm" method="post" asp-action="SubmitCourseSelections">
+                <form id="courseSelectionForm" method="post" action="@Url.Action("SubmitCourseSelections", "Student")">
                     <!-- Zorunlu Dersler Bölümü -->
                     <div class="mandatory-courses">
                         <h2>Zorunlu Dersler</h2>
                         <ul id="mandatoryCourseList" class="combo-list">
                             @foreach (var course in courses.Where(c => Convert.ToBoolean(c.isMandatory)))
                             {
-                                <li class="course-option">
+                                <li class="course-option" onclick="toggleCourseSelection(this, @course.courseID)">
                                     <span>@course.courseName (@course.courseCode)</span>
                                     <div>
-                                        <span>Kredi: @course.credit</span><br>
+                                        <span>Kredi: @course.credit</span>
+                                        <br>
                                         <span>Zorunlu</span>
                                     </div>
                                     <input type="checkbox" name="selectedCourseIds" value="@course.courseID" class="mandatory-checkbox" style="display: none;">
@@ -152,10 +139,11 @@
                         <ul id="electiveCourseList" class="combo-list">
                             @foreach (var course in courses.Where(c => !Convert.ToBoolean(c.isMandatory)))
                             {
-                                <li class="course-option">
+                                <li class="course-option" onclick="toggleCourseSelection(this, @course.courseID)">
                                     <span>@course.courseName (@course.courseCode)</span>
                                     <div>
-                                        <span>Kredi: @course.credit</span><br>
+                                        <span>Kredi: @course.credit</span>
+                                        <br>
                                         <span>Seçmeli</span>
                                     </div>
                                     <input type="checkbox" name="selectedCourseIds" value="@course.courseID" style="display: none;">
@@ -177,30 +165,6 @@
             }
         </div>
 
-
-
-        <script>function toggleCourseSelection(element, courseId) {
-                const checkbox = element.querySelector('input[type="checkbox"]');
-                checkbox.checked = !checkbox.checked;
-
-                if (checkbox.classList.contains('mandatory-checkbox')) {
-                    const mandatoryCheckboxes = document.querySelectorAll('.mandatory-checkbox');
-                    const selectedCount = Array.from(mandatoryCheckboxes).filter(cb => cb.checked).length;
-
-                    if (selectedCount > 6) {
-                        alert('Zorunlu derslerden en fazla 6 adet seçebilirsiniz.');
-                        checkbox.checked = false;
-                    }
-                }
-
-                // Görsel seçili durumu için elementin sınıfını değiştiriyoruz
-                if (checkbox.checked) {
-                    element.classList.add('selected');
-                } else {
-                    element.classList.remove('selected');
-                }
-            }</script>
-
         <!-- Danışman Bilgileri Sayfası -->
         <div id="danisman" class="section" style="display: none;">
             <h1>Danışman Bilgileri</h1>
@@ -217,6 +181,7 @@
         </div>
     </div>
 
-   
+
 </body>
 </html>
+

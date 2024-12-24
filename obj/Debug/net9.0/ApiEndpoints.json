@@ -537,6 +537,22 @@
     ]
   },
   {
+    "ContainingType": "BilgiYonetimSistemi.Controllers.NonConfirmedSelectionsController",
+    "Method": "GetNonConfirmedSelectionsByStudent",
+    "RelativePath": "api/NonConfirmedSelections/Student/{studentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
     "Method": "GetStudentCourseSelections",
     "RelativePath": "api/StudentCourseSelections",
@@ -623,6 +639,22 @@
     "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
     "Method": "GetStudentCourseSelections",
     "RelativePath": "api/StudentCourseSelections/{studentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BilgiYonetimSistemi.Controllers.StudentCourseSelectionsController",
+    "Method": "GetStudentCourses",
+    "RelativePath": "api/StudentCourseSelections/StudentCourses/{studentId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

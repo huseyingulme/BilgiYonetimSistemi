@@ -147,9 +147,9 @@ C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\BilgiYonetimSistemi.
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\scopedcss\bundle\BilgiYonetimSistemi.styles.css
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\3rvo2nf2n9-5kzgoelzi9.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\8by426bsb9-hq6d3kvofw.gz
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\r8se66ja8u-rgoiuwhj76.gz
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\r8se66ja8u-poi69cebs5.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\etnxdp9yzu-61n19gt1b8.gz
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\i0cm3lckaz-xmtdyfvexj.gz
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\i0cm3lckaz-dlz6qc0zbv.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\j1x9g5as6i-ac7iay2b3k.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\nbrmfniryr-st1cbwfwo5.gz
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\g58b1p3cfy-unj9p35syc.gz
@@ -222,4 +222,4 @@ C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\refint\BilgiYonetimS
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\BilgiYonetimSistemi.pdb
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\BilgiYonetimSistemi.genruntimeconfig.cache
 C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\ref\BilgiYonetimSistemi.dll
-C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\0lwlgrcu2f-mpb56skp55.gz
+C:\Users\husey\Desktop\BilgiYonetimSistemi\obj\Debug\net9.0\compressed\0lwlgrcu2f-zhfgwbvv99.gz

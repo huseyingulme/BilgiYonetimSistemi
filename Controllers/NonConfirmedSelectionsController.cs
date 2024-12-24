@@ -127,7 +127,43 @@ namespace BilgiYonetimSistemi.Controllers
 
              return Ok(nonConfirmedSelections);
         }
-  
+
+        [HttpGet("Student/{studentId}")]
+        public async Task<IActionResult> GetNonConfirmedSelectionsByStudent(int studentId)
+        {
+            try
+            {
+                // Veritabanından belirli bir öğrenciye ait onaylanmamış seçimleri al
+                var nonConfirmedSelections = await _context.NonConfirmedSelections
+                    .Include(nc => nc.Course) // İlişkili ders bilgilerini de dahil et
+                    .Where(nc => nc.StudentId == studentId)
+                    .Select(nc => new
+                    {
+                        nc.Id,
+                        nc.StudentId,
+                        FirstName = nc.Student.FirstName,
+                        LastName = nc.Student.LastName,
+                        CourseName = nc.Course.CourseName,
+                        CourseID = nc.Course.CourseID
+                    })
+                    .ToListAsync();
+
+                // Eğer sonuç bulunamazsa NotFound döndür
+                if (nonConfirmedSelections == null || !nonConfirmedSelections.Any())
+                {
+                    return NotFound(new { message = "Bu öğrenci için onay bekleyen ders seçimi bulunamadı." });
+                }
+
+                // JSON formatında başarılı sonuç döndür
+                return Ok(nonConfirmedSelections);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda 500 döndür
+                return StatusCode(500, new { message = "Bir hata oluştu.", error = ex.Message });
+            }
+        }
+
     }
 
 }

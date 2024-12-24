@@ -23,7 +23,7 @@ namespace BilgiYonetimSistemi.Controllers
                 .Include(cq => cq.Course)  
                 .Select(cq => new
                 {
-                    cq.CourseID,
+                    cq.CourseId,
                     cq.Quota,
                     cq.RemainingQuota,
                     CourseName = cq.Course.CourseName  
@@ -37,10 +37,10 @@ namespace BilgiYonetimSistemi.Controllers
         public async Task<IActionResult> GetCourseQuota(int id)
         {
             var courseQuota = await _context.CourseQuotas
-                .Where(cq => cq.CourseID == id)
+                .Where(cq => cq.CourseId == id)
                 .Select(cq => new
                 {
-                    cq.CourseID,
+                    cq.CourseId,
                     cq.Quota,
                     cq.RemainingQuota,
                     CourseName = cq.Course.CourseName  
@@ -53,7 +53,7 @@ namespace BilgiYonetimSistemi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourseQuota(int id, CourseQuotas courseQuota)
         {
-            if (id != courseQuota.CourseID)
+            if (id != courseQuota.CourseId)
             {
                 return BadRequest();
             }
@@ -89,7 +89,7 @@ namespace BilgiYonetimSistemi.Controllers
             }
             catch (DbUpdateException)
             {
-                if (CourseQuotaExists(courseQuota.CourseID))
+                if (CourseQuotaExists(courseQuota.CourseId))
                 {
                     return Conflict();
                 }
@@ -99,7 +99,7 @@ namespace BilgiYonetimSistemi.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCourseQuota", new { id = courseQuota.CourseID }, courseQuota);
+            return CreatedAtAction("GetCourseQuota", new { id = courseQuota.CourseId }, courseQuota);
         }
  
         [HttpDelete("{id}")]
@@ -141,7 +141,7 @@ namespace BilgiYonetimSistemi.Controllers
 
         private bool CourseQuotaExists(int id)
         {
-            return _context.CourseQuotas.Any(e => e.CourseID == id);
+            return _context.CourseQuotas.Any(e => e.CourseId == id);
         }
     }
 }

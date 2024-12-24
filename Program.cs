@@ -12,6 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Diðer servisler
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 builder.Services.AddLogging(options =>
 {
     options.AddConsole();
@@ -21,11 +22,9 @@ builder.Services.AddLogging(options =>
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
-    options.Cookie.HttpOnly = true;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-    options.Cookie.SameSite = SameSiteMode.Strict;
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.IsEssential = true;
+    options.IdleTimeout = TimeSpan.FromMinutes(30); 
+    options.Cookie.HttpOnly = true; 
+    options.Cookie.IsEssential = true;  
 });
 
 // Swagger yapýlandýrmasý
@@ -58,7 +57,7 @@ app.UseSession();
 // Controller routing
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Login}"
-);
+    pattern: "{controller=Account}/{action=Login}/{id?}");
+
 
 app.Run();

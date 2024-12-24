@@ -19,31 +19,16 @@ function showSection(sectionId) {
 
 // LocalStorage kullanarak son aktif menüyü yükleme
 document.addEventListener("DOMContentLoaded", () => {
-    const activeSection = localStorage.getItem("activeSection") || "duyurular";
+    const activeSection = localStorage.getItem("activeSection") || "dersler";
     showSection(activeSection);
 });
 
-
-
-
-// Ders seçimi işlevi
-let selectedCourses = [];
-function toggleSelection(element, courseId) {
-    if (element.classList.contains("selected")) {
-        element.classList.remove("selected");
-        selectedCourses = selectedCourses.filter(id => id !== courseId);
-    } else {
-        element.classList.add("selected");
-        selectedCourses.push(courseId);
-    }
-}
-
+// Ders seçim işlevi
 function toggleCourseSelection(element, courseId) {
     const checkbox = element.querySelector('input[type="checkbox"]');
-    const isMandatory = checkbox.classList.contains('mandatory-checkbox');
     checkbox.checked = !checkbox.checked;
 
-    if (isMandatory) {
+    if (checkbox.classList.contains('mandatory-checkbox')) {
         const mandatoryCheckboxes = document.querySelectorAll('.mandatory-checkbox');
         const selectedCount = Array.from(mandatoryCheckboxes).filter(cb => cb.checked).length;
 
@@ -62,58 +47,7 @@ function toggleCourseSelection(element, courseId) {
     }
 }
 
-// Ders seçimlerini onaylama
-function confirmCourseSelection() {
-    if (selectedCourses.length === 0) {
-        alert("Lütfen en az bir ders seçin.");
-        return;
-    }
-
-    // Seçilen dersleri API'ye gönder
-    fetch('/Student/SubmitCourseSelections', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(selectedCourses)
-    })
-        .then(response => {
-            if (response.ok) {
-                alert("Ders seçimi başarıyla kaydedildi!");
-                location.reload();
-            } else {
-                alert("Ders seçimi sırasında bir hata oluştu.");
-            }
-        })
-        .catch(error => {
-            console.error("Hata:", error);
-            alert("Ders seçimi sırasında bir hata oluştu.");
-        });
-}
-
-// Ders listesi tıklama etkinliği
-document.addEventListener("DOMContentLoaded", () => {
-    const courseList = document.getElementById("courseList");
-    const form = document.getElementById("courseSelectionForm");
-
-    
-
-    // Form gönderiminde seçili ders kontrolü
-    form.addEventListener("submit", event => {
-        const selectedCourses = document.querySelectorAll("input[name='selectedCourseIds']:checked");
-        if (selectedCourses.length === 0) {
-            event.preventDefault();
-            alert("Lütfen en az bir ders seçin.");
-        }
-    });
-});
-
-
-
-
-
 // Çıkış yapma işlemi
 function logout() {
     window.location.href = '/'; // Kullanıcıyı giriş sayfasına yönlendir
 }
-

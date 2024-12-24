@@ -38,7 +38,41 @@ namespace BilgiYonetimSistemi.Controllers
   
             return Ok(studentsWithCourses);
         }
-         
+
+        [HttpGet("StudentCourses/{studentId}")]
+        public IActionResult GetStudentCourses(int studentId)
+        {
+            try
+            {
+                // Veritabanından sadece StudentID eşleşen dersleri getiriyoruz
+                var studentCourses = _context.StudentCourseSelections
+                    .Where(s => s.StudentID == studentId) // Sadece StudentID eşleşmesi
+                    .Select(s => new StudentCourseSelectionViewModel
+                    {
+                        StudentId = s.StudentID,
+                        CourseCode = s.Course.CourseCode,
+                        CourseName = s.Course.CourseName,
+                        Department = s.Course.Department,
+                        Credit = s.Course.Credit
+                    })
+                    .ToList();
+
+                // Eğer ders bulunmazsa uygun bir mesaj döndür
+                if (!studentCourses.Any())
+                {
+                    return NotFound(new { Message = "Bu öğrenci için ders bulunmamaktadır." });
+                }
+
+                // Dersleri JSON formatında döndür
+                return Ok(studentCourses);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda uygun bir hata mesajı döndür
+                return StatusCode(500, new { Message = $"Bir hata oluştu: {ex.Message}" });
+            }
+        }
+
         [HttpGet("{studentId}")]
         public IActionResult GetStudentCourseSelections(int studentId)
         {

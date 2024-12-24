@@ -12,7 +12,5 @@ namespace BilgiYonetimSistemi.Models
         public string Email { get; set; }
 
         public ICollection<Student>? Students { get; set; }
-        public ICollection<Course>? Courses { get; set; }
-
     }
 }

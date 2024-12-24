@@ -55,6 +55,11 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+    .nav-item.active {
+        background-color: white;
+        color: #00426a;
+    }
+
     .nav-item:hover {
         background-color: white;
         color: #00426a;
@@ -65,6 +70,10 @@ body {
     margin-top: auto;
     background-color: #d9534f;
     color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
     .logout:hover {
@@ -85,6 +94,10 @@ body {
 .section {
     display: none;
 }
+
+    .section.active {
+        display: block;
+    }
 
     .section h1 {
         color: white;
@@ -131,7 +144,6 @@ form {
     }
 
     form input {
-        width:120px;
         width: 100%;
         padding: 10px;
         margin-top: 10px;
@@ -147,7 +159,7 @@ form {
         padding: 10px 20px;
         border-radius: 8px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s ease-in-out;
     }
 
         form button.btn:hover {
@@ -186,23 +198,22 @@ form {
     }
 
 /* Mesajlar */
-.info-message,
-.error-message,
-.success-message {
+.info-message {
+    color: #17a2b8;
     font-size: 14px;
     margin-top: 10px;
 }
 
-.info-message {
-    color: #17a2b8;
-}
-
 .error-message {
     color: #d9534f;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 .success-message {
     color: #5cb85c;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 /* Animasyonlar */
